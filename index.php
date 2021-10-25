@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProyectoABP</title>
     <?php
-    include 'bootstrap/index.php'
+    include 'bootstrap/index.php';
     ?>
 </head>
 
 <body>
-
+    <?php
+        include 'views/navBar.php';
+    ?>
 </body>
 
 </html>
