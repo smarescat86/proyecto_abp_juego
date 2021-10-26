@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Centre d'e estudis Politecnics</a>
+        <a class="navbar-brand" href="https://politecnics.barcelona/">
+            <img src="./media/logo.png" alt="" width="200" height="80">    
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,15 +20,23 @@
             </ul>
             <li class="nav-item dropdown d-flex">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
+                    Idiomas
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
                     <li>
-                        <hr class="dropdown-divider">
+                        <a href="">Español
+                            <img src="" alt="">
+                        </a>
                     </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li>
+                        <a href="">Catalan
+                        <img src="" alt="">
+                        </a>
+                    </li><li>
+                        <a href="">Ingles
+                        <img src="" alt="">
+                        </a>
+                    </li>
                 </ul>
             </li>
             <button type="button" class="btn btn-outline-primary">Acceso admin</button>
