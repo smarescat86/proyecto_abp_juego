@@ -1,23 +1,25 @@
-<?php
-include 'bootstrap/index.php';
-?>
-<ul class="nav flex-column">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-person-circle"></i></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-users"></i>
 
+<div class="divDashboard">
+    <div class="apartadoDiv">
+    <a class="nav-link" href="#">
+            <i class="fas fa-user fa-3x apartados"></i>
         </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"><i class="bi bi-controller"></i></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href=""><i class="bi bi-gear-fill"></i></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href=""><i class="bi bi-box-arrow-right"></i></i></a>
-    </li>
-</ul>
+    </div>
+    <div class="apartadoDiv">
+    <a class="nav-link" href="#">
+            <i class="fas fa-users fa-3x apartados"></i>
+        </a>
+    </div>
+    <div class="apartadoDiv">
+    <a class="nav-link" href="#">
+            <i class="fas fa-gamepad fa-3x apartados"></i>
+        </a>
+    </div>
+    <div class="apartadoDiv">
+    <a class="nav-link"  href="#">
+            <i class="fas fa-sign-out-alt fa-3x apartados"></i>
+        </a>
+    </div>
+    
+    
+</div>

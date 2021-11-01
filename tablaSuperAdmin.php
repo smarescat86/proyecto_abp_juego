@@ -9,45 +9,46 @@
     <?php
     include 'bootstrap/index.php';
     ?>
+    <link rel="stylesheet" href="styles/css/estiloDashboard.css">
+
 </head>
 
 <body>
-   
-        <?php
-        include 'views/navBarTablas.php' 
-        ?>
-        
-            <p class="h2">Administración - Super admin</p>
-                <i class="bi bi-person-plus">Crear admin</i>&nbsp;&nbsp;&nbsp;
-                <i class="bi bi-box-arrow-right">Salir</i>
-               
-           
-        <table class="table table-borderless">
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Nombre_Usuario</th>
-                    <th scope="col">Editar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Pepe</th>
-                    <td>Garcia</td>
-                    <td>pepe@gmail.com</td>
-                    <td>PepeGarcia</td>
-                    <td><i class="bi bi-pencil-square"></i></td>
-                </tr>
 
+    <?php
+    include 'views/navBarTablas.php'
+    ?>
+<p class="h2">Administración - Usuarios</p>
+<div class="container">
+<table class="table table-hover table-borderless text-center ">
+   <thead>
+       <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Nickname</th>
+          <th>Rol</th>
+          
+       </tr>
+   </thead>
 
-            </tbody>
-        </table>
-    </div>
+       <tr>
+           <td>Pepe</td>
+           <td>Garcia</td>
+           <td>pepe@gmail.com</td>
+           <td>PepeGarcia</td>
+           <td>Admin</td>
+           <td><i class="bi bi-pencil-square"></i></td>
+           <td><i class="bi bi-trash-fill"></i></td>
+       </tr>
+
+  
+</table>
 
 
 
+
+    <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
