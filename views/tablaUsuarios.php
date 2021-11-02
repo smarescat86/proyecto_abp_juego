@@ -16,41 +16,42 @@
 <body>
 
     <?php
-    include './navBarTablas.php';
     include './navBar.php';
-    
+    include './navBarTablas.php';
     ?>
-<p class="h2">Administración - Usuarios</p>
-<div class="container">
-<table class="table table-hover table-borderless text-center ">
-   <thead>
-       <tr>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Email</th>
-          <th>Nickname</th>
-          <th>Rol</th>
-          
-       </tr>
-   </thead>
+    <p class="h2">Administración - Usuarios</p>
+    <div class="container">
+        <table class="table table-hover table-borderless text-center ">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Nickname</th>
+                    <th>Rol</th>
 
-       <tr>
-           <td>Pepe</td>
-           <td>Garcia</td>
-           <td>pepe@gmail.com</td>
-           <td>PepeGarcia</td>
-           <td>Admin</td>
-           <td><i class="bi bi-pencil-square"></i></td>
-           <td><i class="bi bi-trash-fill"></i></td>
-       </tr>
+                </tr>
+            </thead>
 
-  
-</table>
-
-
-
-
-    <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
+            <tr>
+                <td>Pepe</td>
+                <td>Garcia</td>
+                <td>pepe@gmail.com</td>
+                <td>PepeGarcia</td>
+                <td>Admin</td>
+                <td>
+                    <a class="nav-link fa-1x text-dark" href="#">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                </td>
+                <td>
+                    <a class="nav-link fa-1x text-dark " href="#">
+                        <i class="bi bi-trash-fill"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

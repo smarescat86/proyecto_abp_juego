@@ -16,73 +16,49 @@
 <body>
 
     <?php
-    include './navBarTablas.php';
     include './navBar.php';
-
+    include './navBarTablas.php';
     ?>
     <div class="container">
         <div class="row">
             <div class="col">
-                <p class="h2">Administración - Super Admin </p>
+                <p class="h2">Administración - Super Admin</p>
             </div>
-            <div class="col">
-                <div>
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-user-plus fa-2x apartado">Crear admin</i>
-                    </a>
-                   
-
-                </div>
-              <div> <a class="nav-link" href="#">
-                    <i class="fas fa-sign-out-alt fa-2x apartado1">Salir</i>
+            <div class="col d-flex flex-row-reverse">
+                <a class="nav-link d-flex" href="#">
+                    <i class="fas fa-sign-out-alt fa-1x text-dark">Salir</i>
                 </a>
-            </div>
-                
-
+                <a class="nav-link d-flex" href="#">
+                    <i class="fas fa-user-plus fa-1x text-dark">Crear admin</i>
+                </a>
             </div>
 
         </div>
-
     </div>
-
-
-
-
-
-
-
-
-
-
     <div class="container">
-
-        <table class="table table-hover table-borderless text-center ">
+        <table class="table table-hover table-bordered text-center table-bordeless">
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Email</th>
                     <th>Nickname</th>
-
-
                 </tr>
             </thead>
-
             <tr>
                 <td>Pepe</td>
                 <td>Garcia</td>
                 <td>pepe@gmail.com</td>
                 <td>PepeGarcia</td>
-                <td><i class="bi bi-pencil-square edit"></i></td>
+                <td>
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-pencil-square edit"></i>
+                    </a>
+                </td>
             </tr>
-
-
         </table>
-
-
-
-
-        <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
