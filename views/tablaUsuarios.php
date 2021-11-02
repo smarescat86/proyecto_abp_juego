@@ -7,16 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración - Super admin</title>
     <?php
-    include 'bootstrap/index.php';
+    include '../bootstrap/index.php';
     ?>
-    <link rel="stylesheet" href="styles/css/estiloDashboard.css">
+    <link rel="stylesheet" href="../styles/css/estiloDashboard.css">
 
 </head>
 
 <body>
 
     <?php
-    include 'views/navBarTablas.php'
+    include './navBarTablas.php';
+    include './navBar.php';
+    
     ?>
 <p class="h2">Administración - Usuarios</p>
 <div class="container">
