@@ -9,19 +9,18 @@
     <?php
     include '../bootstrap/index.php';
     ?>
-    <link rel="stylesheet" href="../styles/css/estiloDashboard.css">
+<link rel="stylesheet" href="../styles/css/estiloDashboard.css">
 
 </head>
 
 <body>
 
     <?php
-    include './navBar.php';
     include './navBarTablas.php';
     ?>
-    <p class="h2">Administración - Usuarios</p>
+    <p class="h2"style="margin-left:5%;">Administración - Usuarios</p>
     <div class="container">
-        <table class="table table-hover table-borderless text-center ">
+        <table class="table table-hover table-bordered text-center table-bordeless" style="margin-left:-5%;" >
             <thead>
                 <tr>
                     <th>Nombre</th>

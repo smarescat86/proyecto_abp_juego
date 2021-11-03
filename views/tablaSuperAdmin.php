@@ -16,15 +16,14 @@
 <body>
 
     <?php
-    include './navBar.php';
-    include './navBarTablas.php';
+    //include './navBarTablas.php';
     ?>
     <div class="container">
         <div class="row">
             <div class="col">
-                <p class="h2">Administración - Super Admin</p>
+                <p class="h2" style="margin-left:-9%;;" >Administración - Super Admin</p>
             </div>
-            <div class="col d-flex flex-row-reverse">
+            <div class="col d-flex flex-row-reverse" style="margin-left:-5%;">
                 <a class="nav-link d-flex" href="#">
                     <i class="fas fa-sign-out-alt fa-1x text-dark">Salir</i>
                 </a>
@@ -36,7 +35,8 @@
         </div>
     </div>
     <div class="container">
-        <table class="table table-hover table-bordered text-center table-bordeless">
+        <table class="table table-hover table-bordered text-center table-bordeless bg-light
+" style="margin-left:-5%;">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -51,8 +51,8 @@
                 <td>pepe@gmail.com</td>
                 <td>PepeGarcia</td>
                 <td>
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-pencil-square edit"></i>
+                    <a class="nav-link " href="#">
+                        <i class="bi bi-pencil-square edit fa-1x"></i>
                     </a>
                 </td>
             </tr>
