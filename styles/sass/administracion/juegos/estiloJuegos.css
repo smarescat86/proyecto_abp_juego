@@ -1,0 +1,19 @@
+.colJuego {
+  min-height: 89.1vh;
+}
+
+.rowJuego.title {
+  min-height: 120px;
+}
+
+.lineDiv.juego {
+  width: 40%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.numbers {
+  height: 75px;
+  border: 2px solid gray;
+}
+/*# sourceMappingURL=estiloJuegos.css.map */

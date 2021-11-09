@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración - Super admin</title>
+    <link rel="stylesheet" href="../styles/sass/administracion/dashboard/estiloDashboard.css">
+    <link rel="stylesheet" href="../styles/sass/administracion/juegos/estiloJuegos.css">
     <?php
-    include '../bootstrap/index.php';
+    include ('../bootstrap/index.php')
     ?>
-   <link rel="stylesheet" href="../styles/sass/administracion/dashboard/estiloDashboard.css">
-
+    <title>Document</title>
 </head>
-
 <body>
-<?php
+    <?php
         include('navBar.php')
     ?>
     <?php
-      include('dashboard.php');
+        include('dashboard.php')
     ?>
 
-<div class="colJuego col col-8 col-md-9 col-lg-10">
+    <div class="colJuego col col-8 col-md-9 col-lg-10">
         <div class="row rowJuego title align-items-start">
             <div class="col">
-                <h1 class="p-4">Administración - Super Admin</h1>
-
+                <h1 class="p-4">Juegos</h1>
                 <div class="lineDiv juego"></div>
-            </div>
-            <div class="col d-flex flex-row-reverse" style="margin-left:-5%;">
-                <a class="nav-link d-flex" href="#">
-                    <i class="fas fa-sign-out-alt fa-1x text-dark">Salir</i>
-                </a>
-                <a class="nav-link d-flex" href="#">
-                    <i class="fas fa-user-plus fa-1x text-dark">Crear admin</i>
-                </a>
             </div>
         </div>
 
@@ -128,15 +117,9 @@
 
     </div>
     </div>
+    </div>
     
 
     <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
-
-   
-    
 </body>
-
 </html>
-
-
-

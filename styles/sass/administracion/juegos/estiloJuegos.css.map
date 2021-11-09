@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACN,UAAU,EAAE,MAAM;CACrB;;AAED,AAAA,SAAS,AAAA,MAAM,CAAC;EACZ,UAAU,EAAE,KAAK;CACpB;;AAED,AAAA,QAAQ,AAAA,MAAM,CAAC;EACX,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;CACrB;;AAED,AAAA,QAAQ,CAAC;EACL,MAAM,EAAC,IAAI;EACX,MAAM,EAAC,cAAc;CACxB",
+    "sources": [
+        "estiloJuegos.scss"
+    ],
+    "names": [],
+    "file": "estiloJuegos.css"
+}

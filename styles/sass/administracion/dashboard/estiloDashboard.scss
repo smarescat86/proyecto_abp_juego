@@ -1,0 +1,34 @@
+body {
+    overflow: hidden;
+}
+.rowDashboard {
+    min-height: 55px;
+    
+}
+.rowDashboard.titulo {
+    min-height: 100px;
+}
+.rowDashboard.logout.line {
+    min-height: 50vh;
+    max-height: 50vh;
+}
+.rowDashboard.logout {
+    min-height: 10vh;
+    max-height: 10vh;
+}
+.apartado {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;    
+}
+.apartado:hover {
+    color: gray;
+}
+.dashboard {
+    min-height: 89.1vh;
+}
+.lineDiv {
+    width: 100%;
+    height: 2px;
+    background-color: #434b4d;
+}
