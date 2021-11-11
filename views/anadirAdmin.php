@@ -11,18 +11,16 @@
     
   
 
-    <!-- Main JS-->
 
-    <title>Document</title>
+    <title>Añadir Administrador</title>
 </head>
 
 <body>
 <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-        <!-- Login Form -->
         <form action="">
           <div class="modal-header">
-            <h5 class="modal-title">Anadir Administrador</h5>
+            <h5 class="modal-title">Añadir Administrador</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
