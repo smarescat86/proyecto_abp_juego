@@ -53,10 +53,10 @@
                     <table class="table">
                         <thead class="table-dark">
                             <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nickname</th>
-                            <th scope="col">Puntuación</th>
-                            <th scope="col">Tiempo</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">nombre_usuario</th>
+                            <th scope="col">Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,58 +64,80 @@
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">2</th>
                             <td>Jacob</td>
                             <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td> <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                             <tr class="table-hover">
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>  <a class="nav-link fa-1x text-dark" href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a></td>
                             </tr>
                         </tbody>
                     </table>
