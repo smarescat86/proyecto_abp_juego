@@ -9,20 +9,20 @@
     <?php
     include '../bootstrap/index.php';
     ?>
-<script>
-    var myModal = new bootstrap.Modal(document.getElementById('basiceModal'), options)
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+       $(window).on('load', function() {
+        $("#myModal").modal('show');
+
+    });
 
 </script>
 
 </head>
 
 <body>   
-<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#basiceModal">
- 
- Launch demo modal
 
-</button>
-<div class="modal fade" id="basiceModal" tabindex="-1" aria-labelledby="basicModalLabel" aria-hidden="true" data-bs-target="#basiceModal">
+<div id="myModal" class="modal fade" id="basiceModal" tabindex="-1" aria-labelledby="basicModalLabel" aria-hidden="true" data-bs-target="#basiceModal">
  
   <div class="modal-dialog modal-lg">
  
@@ -62,7 +62,7 @@
  
   </div>
  
-</div>
+</div> 
 </body>
 
 </html>
