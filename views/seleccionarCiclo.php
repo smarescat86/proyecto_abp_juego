@@ -9,23 +9,60 @@
     <?php
     include '../bootstrap/index.php';
     ?>
-    <link rel="stylesheet" type="text/css" href="../styles/css/style.css">
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('basiceModal'), options)
+
+</script>
 
 </head>
 
-<body>
-<div class="container-fluid h-100"> 
-    		<div class="row w-100 align-items-center">
-    			<div class="col text-center  ">
-                <button class="btn btn-danger regular-button" id="marqueting" value="marqueting">Comerç i Màrqueting</button>
-                <button class="btn btn-danger regular-button" id="hoteleria" value="hoteleria">Hoteleria i Turisme </button>
-                <button class="btn btn-danger regular-button" id="informatica" value="informatica"> Informàtica i Comunicacions</button>
-                <button class="btn btn-danger regular-button" id="administracio "value="administracio"> Administració i Gestió</button>
-    			</div>	
-    		</div>
-    
-    	</div>
+<body>   
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#basiceModal">
+ 
+ Launch demo modal
 
+</button>
+<div class="modal fade" id="basiceModal" tabindex="-1" aria-labelledby="basicModalLabel" aria-hidden="true" data-bs-target="#basiceModal">
+ 
+  <div class="modal-dialog modal-lg">
+ 
+    <div class="modal-content">
+ 
+      <div class="modal-header">
+ 
+        <h5 class="modal-title" id="basicModalLabel">Selecciona el ciclo en que estes interesado </h5>
+ 
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+ 
+      </div>
+ 
+      <div class="modal-body">
+ 
+        Instrucciones:
+        <ul>
+            <li>Marketing y Comercio</li>
+            <li>Hotelería y Turismo</li>
+            <li>Informática y Comunicación</li>
+            <li>Administración y Gestión</li>
+
+        </ul>   
+ 
+      </div>
+ 
+      <div class="modal-footer justify-content-center">
+      <button type="button" class="btn btn-primary btn-sm">Marketing y Comercio</button>
+      <button type="button" class="btn btn-primary btn-sm">Hotelería y Turismo</button>
+      <button type="button" class="btn btn-primary btn-sm">Informática y Comunicación</button>
+      <button type="button" class="btn btn-primary btn-sm">Administración y Gestión</button>
+            
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+</div>
 </body>
 
 </html>
