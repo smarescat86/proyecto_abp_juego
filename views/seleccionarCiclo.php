@@ -10,13 +10,13 @@
     include '../bootstrap/index.php';
     ?>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-       $(window).on('load', function() {
-        $("#myModal").modal('show');
+<script>
+  $(window).on('load', function() {
+    $("#myModal").modal('show');
 
-    });
-
+});
 </script>
+
 
 </head>
 
@@ -50,19 +50,20 @@
       </div>
  
       <div class="modal-footer justify-content-center">
-      <button type="button" class="btn btn-primary btn-sm">Marketing y Comercio</button>
-      <button type="button" class="btn btn-primary btn-sm">Hotelería y Turismo</button>
-      <button type="button" class="btn btn-primary btn-sm">Informática y Comunicación</button>
-      <button type="button" class="btn btn-primary btn-sm">Administración y Gestión</button>
+      <a href="../views/seleccionarNivel.php"><button id="mybutton" type="button" class="btn btn-primary btn-sm" value="comercio">Marketing y Comercio</button></a>
+      <a href="../views/seleccionarNivel.php"> <button id="mybutton2" type="button" class="btn btn-primary btn-sm" value="turismo">Hotelería y Turismo</button></a>
+      <a href="../views/seleccionarNivel.php"><button id="mybutton3" type="button" class="btn btn-primary btn-sm" value="comunicion">Informática y Comunicación</button></a>
+      <a href="../views/seleccionarNivel.php"><button id="mybutton4" type="button" class="btn btn-primary btn-sm" value="gestion">Administración y Gestión</button></a>
             
  
       </div>
- 
+
     </div>
  
   </div>
  
 </div> 
+<script src="../js/memory/seleccionarCiclo.js"></script>
 </body>
 
 </html>

@@ -46,12 +46,8 @@
  
       </div>
  
-      <div class="modal-footer justify-content-center">
-      <button type="button" class="btn btn-primary btn-sm">Modo Fácil</button>
-      <button type="button" class="btn btn-primary btn-sm">Modo Difícil</button>
-
-            
- 
+      <div class="modal-footer justify-content-center" id="niveles">
+      
       </div>
  
     </div>
@@ -59,6 +55,7 @@
   </div>
  
 </div> 
+<script src="../js/memory/seleccionarNivel.js"></script>
 </body>
 
 </html>
