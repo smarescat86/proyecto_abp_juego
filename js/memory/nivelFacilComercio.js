@@ -1,23 +1,23 @@
-var backcard = 'url("../../media/salidaProfesionales/background.png")';
-var imgs = ['url("../media/salidaProfesionales/Comercio/img1.png")',
-    'url("../media/salidaProfesionales/Comercio/img10.png")',
-    'url("../media/salidaProfesionales/Comercio/img2.png")',
-    'url("../media/salidaProfesionales/Comercio/img3.png")',
+var backcard = 'url("../media/salidaProfesionales/background.png")';
+var imgs = ['url("../media/salidaProfesionales/Comercio/img1.jpeg")',
+    'url("../media/salidaProfesionales/Comercio/img10.jpg")',
+    'url("../media/salidaProfesionales/Comercio/img2.jpg")',
+    'url("../media/salidaProfesionales/Comercio/img3.jpg")',
     'url("../media/salidaProfesionales/Comercio/img4.png")',
-    'url("../media/salidaProfesionales/Comercio/img5.png")',
-    'url("../media/salidaProfesionales/Comercio/img6.png")',
-    'url("../media/salidaProfesionales/Comercio/img7.png")',
-    'url("../media/salidaProfesionales/Comercio/img8.png")',
+    'url("../media/salidaProfesionales/Comercio/img5.jpeg")',
+    'url("../media/salidaProfesionales/Comercio/img6.jpg")',
+    'url("../media/salidaProfesionales/Comercio/img7.jpg")',
+    'url("../media/salidaProfesionales/Comercio/img8.jpg")',
     'url("../media/salidaProfesionales/Comercio/img9.png")',
-    'url("../media/salidaProfesionales/Comercio/img1.png")',
-    'url("../media/salidaProfesionales/Comercio/img10.png")',
-    'url("../media/salidaProfesionales/Comercio/img2.png")',
-    'url("../media/salidaProfesionales/Comercio/img3.png")',
+    'url("../media/salidaProfesionales/Comercio/img1.jpeg")',
+    'url("../media/salidaProfesionales/Comercio/img10.jpg")',
+    'url("../media/salidaProfesionales/Comercio/img2.jpg")',
+    'url("../media/salidaProfesionales/Comercio/img3.jpg")',
     'url("../media/salidaProfesionales/Comercio/img4.png")',
-    'url("../media/salidaProfesionales/Comercio/img5.png")',
-    'url("../media/salidaProfesionales/Comercio/img6.png")',
-    'url("../media/salidaProfesionales/Comercio/img7.png")',
-    'url("../media/salidaProfesionales/Comercio/img8.png")',
+    'url("../media/salidaProfesionales/Comercio/img5.jpeg")',
+    'url("../media/salidaProfesionales/Comercio/img6.jpg")',
+    'url("../media/salidaProfesionales/Comercio/img7.jpg")',
+    'url("../media/salidaProfesionales/Comercio/img8.jpg")',
     'url("../media/salidaProfesionales/Comercio/img9.png")'
 ];
 
@@ -56,8 +56,8 @@ function canviar_imatge(adre) {
                         adre_anterior.style.backgroundImage = backcard;
                         adre_actual.style.backgroundImage = backcard;
                     }, 400);
-                    fails++;
-                    document.getElementById('miss').innerHTML = "Fails: " + fails;
+
+
                 }
                 ultim_click = "0";
             }
