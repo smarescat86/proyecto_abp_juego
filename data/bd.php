@@ -33,19 +33,34 @@ function selectUser($email) {
     return $result[0];
 }
 
-function selectAdmin($email, $password) {
+function selectAdmin($email, $pass) {
     $connection = openBd();
 
-    $queryText = "SELECT * FROM usuario WHERE email=:email AND contrasena = :password";
+    $queryText = "SELECT * FROM usuario WHERE email = ? AND contrasena = ?";
 
     $query = $connection->prepare($queryText);
-    $query->bindParam(':email', $email);
-    $query->bindParam(':email', md5($password));
-    $query->execute();
+    $query->execute([$email, $pass]);
     $result = $query->fetchAll();
 
     $connection = closeBd();
 
     return $result[0];
+}
+
+function insertUser($nombre, $apellido, $email, $usuario) {
+    $connection = openBd();
+
+    $queryText = "INSERT INTO usuario (id_rol, nombre, apellido, email, nombre_usuario) VALUES (3, :nombre, :apellido, :email, :usuario)";
+
+    $query = $connection->prepare($queryText);
+
+    $query->bindParam(':nombre', $nombre);
+    $query->bindParam(':apellido', $apellido);
+    $query->bindParam(':email', $email);
+    $query->bindParam(':usuario', $usuario);
+
+    $query->execute();
+
+    $connection = closeBd();
 }
 ?>
