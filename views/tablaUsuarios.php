@@ -1,3 +1,8 @@
+<?php
+require_once('../php_librarys/bd.php');
+
+$usuarios = selectUsuarios();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +31,7 @@
 
                 <div class="lineDiv juego"></div>
             </div>
-        
+
         </div>
 
         <div class="row rowJuego align-items-center">
@@ -55,15 +60,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="table-hover">
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
+                                <?php
+                                foreach ($usuarios as $usuario) { ?>
+                                <tr class="table-hover">
+                                <th scope="row"><?php echo $usuario['id_usuario']?></th>
+                                <td><?php echo $usuario['nombre'] ?></td>
+                                <td><?php echo $usuario['apellido'] ?></td>
+                                <td><?php echo $usuario['email'] ?></td>
+                                <td><?php echo $usuario['nombre_usuario'] ?></td>
+                                <td><?php echo $usuario['rol']?></td>
+                                <td><a class="nav-link fa-1x text-dark" href="#">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                 </td>
@@ -72,179 +78,12 @@
                                         <i class="bi bi-trash-fill"></i>
                                     </a>
                                 </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td></td>
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td></td>
-                                <td>@twitter</td>
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td></td>
-                                
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td></td>
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td>@mdo</td>
-                                <td></td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td></td>
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td></td>
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td></td>
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td></td>
-                                <td>@mdo</td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                                </tr>
+                                <?php } ?>
+                               
+                                    
+                           
+                           
                         </tbody>
                     </table>
                 </div>
@@ -259,7 +98,7 @@
     <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
 
 
-   
+
 </body>
 
 </html>

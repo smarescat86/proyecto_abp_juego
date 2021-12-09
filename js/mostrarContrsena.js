@@ -1,36 +1,22 @@
-function myFunction(x) {
-}
 function mostrarContrasena() {
-  var x = document.getElementById("myPassword");
-  if (x.type === "password") {
-    x.type = "text";
-    document.getElementById('icon1').className = "far fa-eye";
-  } else {
-    x.type = "password";
-    document.getElementById('icon1').className = "far fa-eye-slash";
-  }
+    var x = document.getElementById("myPassword");
+    if (x.type === "password") {
+        x.type = "text";
+        document.getElementById('icon1').className = "glyphicon glyphicon-eye-open";
+    } else {
+        x.type = "password";
+        document.getElementById('icon1').className = "glyphicon glyphicon-eye-close";
+    }
 }
+
 function mostrarContrasena2() {
     var x = document.getElementById("myPassword2");
     if (x.type === "password") {
-      x.type = "text";
-      document.getElementById('icon2').className = "far fa-eye";
+        x.type = "text";
+        document.getElementById('icon2').className = "glyphicon glyphicon-eye-open";
 
     } else {
-      x.type = "password";
-      document.getElementById('icon2').className = "far fa-eye-slash";
+        x.type = "password";
+        document.getElementById('icon2').className = "glyphicon glyphicon-eye-close";
     }
-  }
-
-  function mostrarContrasena3() {
-    var x = document.getElementById("myPassword3");
-    if (x.type === "password") {
-      x.type = "text";
-      document.getElementById('icon3').className = "far fa-eye";
-    } else {
-      x.type = "password";
-      document.getElementById('icon3').className = "far fa-eye-slash";
-    }
-  }
-  
- 
+}
