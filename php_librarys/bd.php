@@ -64,7 +64,7 @@ function updatePassword($password,$repitePassword) {
     $sentencia = $conexion->prepare($sentenciaSQL);
     $sentencia->bindParam(':password',$password);
     $sentencia->execute();
-    }
+    } 
     $conexion = closeBd();
 }
 function selectAdmins() {

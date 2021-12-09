@@ -2,6 +2,9 @@
 require_once('../php_librarys/bd.php');
 
 $usuarios = selectAdmins();
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +28,6 @@ $usuarios = selectAdmins();
     <?php
     include('dashboard.php');
     ?>
-
     <div class="colJuego col col-8 col-md-9 col-lg-10">
         <div class="row rowJuego title align-items-start">
             <div class="col">
@@ -33,8 +35,8 @@ $usuarios = selectAdmins();
             </div>
             <div class="col d-flex flex-row-reverse ms-2 text-white" style="margin-top:2%;">
 
-                <button type="button" class="btn  btn-dark btn-sm"><i class="fas fa-sign-out-alt fa-1x text-white">Salir</i></button> 
-                &nbsp; 
+                <button type="button" class="btn  btn-dark btn-sm"><i class="fas fa-sign-out-alt fa-1x text-white">Salir</i></button>
+                &nbsp;
                 <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal"> <i class="fas fa-user-plus fa-1x text-white">Crear admin</i></button>
 
                 <a class="nav-link d-flex" href="#">
@@ -65,11 +67,11 @@ $usuarios = selectAdmins();
                                 </div>
                                 <div class="mb-3">
                                     <label for="Apellidos">Apellidos</label>
-                                    <input type="text" class="form-control" id="apellidos" placeholder="Introduce Apellidos" name="apellidos" >
+                                    <input type="text" class="form-control" id="apellidos" placeholder="Introduce Apellidos" name="apellidos">
                                 </div>
                                 <div class="mb-3">
                                     <label for="Usuario">Usuario<span class="text-danger">*</span></label>
-                                    <input type="text"  class="form-control" id="usuario" placeholder="Introduce Usuario" name="usuario">
+                                    <input type="text" class="form-control" id="usuario" placeholder="Introduce Usuario" name="usuario">
                                 </div>
 
                                 <div class="mb-3">
@@ -78,7 +80,7 @@ $usuarios = selectAdmins();
                                 </div>
                                 <div class="mb-3">
                                     <label for="Email">Email<span class="text-danger">*</span></label>
-                                    <input type="text"  class="form-control" id="email" placeholder="Introduce email" name="email">
+                                    <input type="text" class="form-control" id="email" placeholder="Introduce email" name="email">
                                 </div>
 
                             </div>
@@ -114,17 +116,17 @@ $usuarios = selectAdmins();
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($usuarios as $usuario) { ?>
+                            <?php foreach ($usuarios as $usuario) { ?>
                                 <tr class="table-hover">
-                                <td><?php echo $usuario['nombre'] ?></td>
-                                <td><?php echo $usuario['apellido'] ?></td>
-                                <td><?php echo $usuario['nombre_usuario'] ?></td>
-                          
-                                <td>
-                                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
+                                    <td><?php echo $usuario['nombre'] ?></td>
+                                    <td><?php echo $usuario['apellido'] ?></td>
+                                    <td><?php echo $usuario['nombre_usuario'] ?></td>
+                                    <td>
+                                        <button type="button" style="color:black;" class="btn btn-outline-light" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button>
+                                    </td>
+                                </tr>
                             <?php } ?>
-                           
+
                         </tbody>
                     </table>
                 </div>
@@ -132,55 +134,55 @@ $usuarios = selectAdmins();
             </div>
         </div>
 
-            <div class="container">
-                <!-- Modal -->
-                <form action="../php_controllers/adminController.php" method="POST">
-                    <div class="modal fade" id="myModal2" role="dialog">
-                        <div class="modal-dialog">
+        <div class="container">
+            <!-- Modal -->
+            <form action="../php_controllers/adminController.php" method="POST">
+                <div class="modal fade" id="myModal2" role="dialog">
+                    <div class="modal-dialog">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Cambiar Contraseña</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Cambiar Contraseña</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
 
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="Username">Nueva Contraseña</label>
+
+                                    <div class="input-group mb-3" id="show_hide_password">
+
+                                        <input class="form-control" type="password" id="myPassword2" name="password">
+                                        <span class="glyphicon glyphicon-eye-close" id="icon2" onclick="mostrarContrasena2()"></span>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <label for="Username">Nueva Contraseña</label>
+                                <div class="mb-3">
+                                    <div class="form-group">
+                                        <label for="Username">Repite Contraseña</label>
 
                                         <div class="input-group mb-3" id="show_hide_password">
 
-                                            <input class="form-control" type="password" id="myPassword2" name="password" >
-                                            <span class="glyphicon glyphicon-eye-close" id="icon2" onclick="mostrarContrasena2()" ></span>
+                                            <input class="form-control" type="password" id="myPassword" name="newPassword">
+                                            <span class="glyphicon glyphicon-eye-close" id="icon1" onclick="mostrarContrasena()"></i></span>
                                         </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <div class="form-group">
-                                            <label for="Username">Repite Contraseña</label>
-
-                                            <div class="input-group mb-3" id="show_hide_password">
-
-                                                <input class="form-control" type="password" id="myPassword" name="newPassword">
-                                                <span class="glyphicon glyphicon-eye-close" id="icon1" onclick="mostrarContrasena()"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                             
-
                                 </div>
-                                <div class="modal-footer  align-items-center text-center pt-4">
-                                  
-                                        <button type="submit" class="btn btn-outline-primary" name="update">Aceptar</button>
-                                        <button type="submit" class="btn btn-outline-danger"name="delete"><i class="fas fa-trash-alt"> Eliminar administrador</i></button>
-                                    </div>
 
+
+                            </div>
+                            <div class="modal-footer  align-items-center text-center pt-4">
+
+                                <button type="submit" class="btn btn-outline-primary" name="update">Aceptar</button>
+                                <button type="submit" class="btn btn-outline-danger" name="delete"><i class="fas fa-trash-alt"> Eliminar administrador</i></button>
                             </div>
 
                         </div>
+
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
+        </div>
 
 
     </div>
@@ -194,3 +196,10 @@ $usuarios = selectAdmins();
 </body>
 
 </html>
+<?php
+if ($_SESSION['ok'] === false) {
+    echo "<SCRIPT >
+    setTimeout(function(){ alert('Aviso!, Las contraseñas no coinciden'); }, 500);
+    </SCRIPT>";
+}
+?>
