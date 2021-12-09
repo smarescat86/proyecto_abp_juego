@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "http://localhost:80/proyecto/proyecto_abp_juego/views/tablaSuperAdmin.php",
+            "url": "http://localhost:80/proyecto_abp_juego/views/tablaUsuarios.php",
             "webRoot": "${workspaceFolder}"
         }
     ]

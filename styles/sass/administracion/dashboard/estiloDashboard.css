@@ -1,42 +1,44 @@
 body {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .rowDashboard {
-  min-height: 55px;
+    min-height: 55px;
 }
 
 .rowDashboard.titulo {
-  min-height: 100px;
+    min-height: 100px;
 }
 
 .rowDashboard.logout.line {
-  min-height: 50vh;
-  max-height: 50vh;
+    min-height: 50vh;
+    max-height: 50vh;
 }
 
 .rowDashboard.logout {
-  min-height: 10vh;
-  max-height: 10vh;
+    min-height: 10vh;
+    max-height: 10vh;
 }
 
 .apartado {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .apartado:hover {
-  color: gray;
+    color: gray;
 }
 
 .dashboard {
-  min-height: 89.1vh;
+    min-height: 100vh;
 }
 
 .lineDiv {
-  width: 100%;
-  height: 2px;
-  background-color: #434b4d;
+    width: 100%;
+    height: 2px;
+    background-color: #434b4d;
 }
+
+
 /*# sourceMappingURL=estiloDashboard.css.map */

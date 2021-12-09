@@ -1,3 +1,8 @@
+<?php
+require_once('../php_librarys/bd.php');
+
+$usuarios = selectAdmins();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +33,8 @@
             </div>
             <div class="col d-flex flex-row-reverse ms-2 text-white" style="margin-top:2%;">
 
-                <button type="button" class="btn  btn-dark btn-sm"><i class="fas fa-sign-out-alt fa-1x text-white">Salir</i></button>
-
+                <button type="button" class="btn  btn-dark btn-sm"><i class="fas fa-sign-out-alt fa-1x text-white">Salir</i></button> 
+                &nbsp; 
                 <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal"> <i class="fas fa-user-plus fa-1x text-white">Crear admin</i></button>
 
                 <a class="nav-link d-flex" href="#">
@@ -42,7 +47,7 @@
         </div>
         <div class="container">
             <!-- Modal -->
-            <form action="" method="post">
+            <form action="../php_controllers/adminController.php" method="POST">
                 <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog">
 
@@ -55,30 +60,30 @@
                             </div>
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label for="Username">Nombre</label>
-                                    <input type="text" name="username" class="form-control" id="Username" placeholder="Introduce Nombre">
+                                    <label for="Nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Introduce Nombre" name="nombre">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="Username">Apellidos</label>
-                                    <input type="text" name="username" class="form-control" id="Username" placeholder="Introduce Apellidos">
+                                    <label for="Apellidos">Apellidos</label>
+                                    <input type="text" class="form-control" id="apellidos" placeholder="Introduce Apellidos" name="apellidos" >
                                 </div>
                                 <div class="mb-3">
-                                    <label for="Username">Usuario<span class="text-danger">*</span></label>
-                                    <input type="text" name="username" class="form-control" id="Username" placeholder="Introduce Usuario">
+                                    <label for="Usuario">Usuario<span class="text-danger">*</span></label>
+                                    <input type="text"  class="form-control" id="usuario" placeholder="Introduce Usuario" name="usuario">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="Password">Password<span class="text-danger">*</span></label>
-                                    <input type="password" name="password" class="form-control" id="Password" placeholder="Enter Password">
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" name="password">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="Username">Email<span class="text-danger">*</span></label>
-                                    <input type="text" name="username" class="form-control" id="Username" placeholder="Introduce email">
+                                    <label for="Email">Email<span class="text-danger">*</span></label>
+                                    <input type="text"  class="form-control" id="email" placeholder="Introduce email" name="email">
                                 </div>
 
                             </div>
                             <div class="modal-footer pt-4">
-                                <button type="button" class="btn btn-success mx-auto w-100">Registrar</button>
+                                <button type="submit" class="btn btn-success mx-auto w-100" name="insert">Registrar</button>
                             </div>
 
                         </div>
@@ -109,74 +114,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="table-hover">
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
+                        <?php foreach ($usuarios as $usuario) { ?>
+                                <tr class="table-hover">
+                                <td><?php echo $usuario['nombre'] ?></td>
+                                <td><?php echo $usuario['apellido'] ?></td>
+                                <td><?php echo $usuario['nombre_usuario'] ?></td>
+                          
+                                <td>
+                                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
                             </tr>
-                            <tr class="table-hover">
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
-                            <tr class="table-hover">
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td> <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button></td>
-                            </tr>
+                            <?php } ?>
+                           
                         </tbody>
                     </table>
                 </div>
 
             </div>
         </div>
-        <form action="" method="post">
 
             <div class="container">
                 <!-- Modal -->
-                <form action="" method="post">
+                <form action="../php_controllers/adminController.php" method="POST">
                     <div class="modal fade" id="myModal2" role="dialog">
                         <div class="modal-dialog">
 
@@ -193,7 +151,7 @@
 
                                         <div class="input-group mb-3" id="show_hide_password">
 
-                                            <input class="form-control" type="password" id="myPassword2" >
+                                            <input class="form-control" type="password" id="myPassword2" name="password" >
                                             <span class="glyphicon glyphicon-eye-close" id="icon2" onclick="mostrarContrasena2()" ></span>
                                         </div>
                                     </div>
@@ -203,7 +161,7 @@
 
                                             <div class="input-group mb-3" id="show_hide_password">
 
-                                                <input class="form-control" type="password" id="myPassword" >
+                                                <input class="form-control" type="password" id="myPassword" name="newPassword">
                                                 <span class="glyphicon glyphicon-eye-close" id="icon1" onclick="mostrarContrasena()"></i></span>
                                             </div>
                                         </div>
@@ -213,8 +171,8 @@
                                 </div>
                                 <div class="modal-footer  align-items-center text-center pt-4">
                                   
-                                        <button type="button" class="btn btn-outline-primary">Aceptar</button>
-                                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"> Eliminar administrador</i></button>
+                                        <button type="submit" class="btn btn-outline-primary" name="update">Aceptar</button>
+                                        <button type="submit" class="btn btn-outline-danger"name="delete"><i class="fas fa-trash-alt"> Eliminar administrador</i></button>
                                     </div>
 
                             </div>
