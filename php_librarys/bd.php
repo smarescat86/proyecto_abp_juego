@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION)){
+    session_start();
+   }
+
 function openBD()
 {
     $servername = "localhost";
@@ -33,7 +37,7 @@ function selectUsuarios() {
 function insertAdmin($nombre,$apellido,$usuario,$password,$email) {
     $conexion = openBD();
     $sentenciaSQL = "INSERT INTO usuario values(null,2,:nombre,:apellido,:usuario,:password,:email)";
-
+    $password = md5($password);
     $sentencia = $conexion->prepare($sentenciaSQL);
     $sentencia->bindParam(':nombre',$nombre);
     $sentencia->bindParam(':apellido',$apellido);
@@ -47,8 +51,8 @@ function insertAdmin($nombre,$apellido,$usuario,$password,$email) {
 
 function deleteAdmin() {
     $conexion = openBD();
-    $idUsuario = 1;
-    $sentenciaSQL = "delete from usuario where id_usuario = " .strval($idUsuario);
+    $idUsuario = 8;
+    $sentenciaSQL = "delete from usuario where id_usuario = " .strval($idUsuario)  ;
     $sentencia = $conexion->prepare($sentenciaSQL);
     $sentencia->execute();
     $conexion = closeBd();
@@ -57,8 +61,9 @@ function deleteAdmin() {
 
 function updatePassword($password,$repitePassword) {
     $conexion = openBD();
+
     if($password === $repitePassword) {
-   
+    $password = md5($password);
     $idUsuario = 2;
     $sentenciaSQL = "update usuario set contrasena=:password " . "where id_usuario = " . strval($idUsuario) ;
     $sentencia = $conexion->prepare($sentenciaSQL);
@@ -66,6 +71,7 @@ function updatePassword($password,$repitePassword) {
     $sentencia->execute();
     } 
     $conexion = closeBd();
+    $_SESSION['ok'] = "";
 }
 function selectAdmins() {
     $conexion = openBD();
