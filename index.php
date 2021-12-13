@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>proyecto_abp_juegoABP</title>
+    <title>ProyectoABP</title>
     <?php
-      include 'bootstrap/index.php';
+    include 'bootstrap/index.php';
     ?>
     <link rel="stylesheet" href="styles/estilos.css">
 
@@ -19,13 +19,17 @@
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>
-                    Puertas Abiertas
-                </h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vel eligendi in, dolore vero, fuga laudantium culpa assumenda, ipsam inventore ullam minus alias cupiditate neque totam omnis illo doloremque earum?</p>
+    <?php
+        include 'views/navBar.php';
+        include 'lang/esp.php';
+    ?>
+
+ <!--Primer Scroll-->
+    <div id="primerScroll" class="container-fluid vh-100">
+        <div class="row row-cols-1">
+            <div id="titulo" class="col text-light text-center position-absolute">
+                <h1 class="text-capitalize"><?php echo $lang["titulo"] ?></h1>
+                <p class=""><em><?php echo $lang["descripcionTitulo"] ?></em></p>
             </div>
         </div>
     </div>
@@ -37,7 +41,7 @@
 
         <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto_abp_juego/media/sopa.png" alt="">
+                    <img class="imagen-juego" src="/proyecto/media/sopa.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoUno"] ?> <br> 
@@ -49,7 +53,7 @@
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto_abp_juego/media/dynaman.png" alt="">
+                    <img class="imagen-juego" src="/proyecto/media/dynaman.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoDos"] ?> <br> 
@@ -61,7 +65,7 @@
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto_abp_juego/media/memory.png" alt="">
+                    <img class="imagen-juego" src="/proyecto/media/memory.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
@@ -73,7 +77,7 @@
 
             <div class="col">
              <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto_abp_juego/media/trille.png" alt="">
+                    <img class="imagen-juego" src="/proyecto/media/trille.png" alt="">
                     <div class="medio">
                         <div class="texto">
                         <?php echo $lang["juegoCuatro"] ?> <br> 
@@ -127,7 +131,7 @@
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1">
 
             <div class="col text-center">
-                <img class="img-fluid" src="/proyecto_abp_juego/media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
+                <img class="img-fluid" src="/proyecto/media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["informatica"] ?>
                 </h3>
@@ -137,7 +141,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto_abp_juego/media/logo-marketing.png" alt="" srcset="" width="100px" height="100px">
+                <img src="/proyecto/media/logo-marketing.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["marketing"] ?>
                 </h3>
@@ -147,7 +151,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto_abp_juego/media/logo-turismo.png" alt="" srcset="" width="100px" height="100px">
+                <img src="/proyecto/media/logo-turismo.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["turismo"] ?>
                 </h3>
@@ -157,7 +161,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto_abp_juego/media/logo-administracion.png" alt="" srcset="" width="100px" height="100px">
+                <img src="/proyecto/media/logo-administracion.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["administracion"] ?>
                 </h3>
