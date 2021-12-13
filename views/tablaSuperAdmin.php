@@ -197,9 +197,11 @@ if (!isset($_SESSION)) {
 
 </html>
 <?php
+if(isset($_SESSION['ok'])) {
 if ($_SESSION['ok'] === false) {
     echo "<SCRIPT >
     setTimeout(function(){ alert('Aviso!, Las contraseñas no coinciden'); }, 500);
     </SCRIPT>";
+}
 }
 ?>

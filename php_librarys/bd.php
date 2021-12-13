@@ -51,7 +51,7 @@ function insertAdmin($nombre,$apellido,$usuario,$password,$email) {
 
 function deleteAdmin() {
     $conexion = openBD();
-    $idUsuario = 8;
+    $idUsuario = 10;
     $sentenciaSQL = "delete from usuario where id_usuario = " .strval($idUsuario)  ;
     $sentencia = $conexion->prepare($sentenciaSQL);
     $sentencia->execute();
@@ -64,7 +64,7 @@ function updatePassword($password,$repitePassword) {
 
     if($password === $repitePassword) {
     $password = md5($password);
-    $idUsuario = 2;
+    $idUsuario = 10;
     $sentenciaSQL = "update usuario set contrasena=:password " . "where id_usuario = " . strval($idUsuario) ;
     $sentencia = $conexion->prepare($sentenciaSQL);
     $sentencia->bindParam(':password',$password);

@@ -31,7 +31,7 @@ if(isset($_POST['login-user'])) {
         $admin = selectAdmin($emailAdmin, $passAdmin);
         if(!empty($admin)){
             $_SESSION['admin'] = $admin;
-            header('Location: ../views/administracionPerfil.php');
+            header('Location: ../views/tablaSuperAdmin.php');
             exit;
         } else {
             unset($_SESSION['admin']);

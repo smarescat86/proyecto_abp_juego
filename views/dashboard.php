@@ -1,3 +1,10 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+//print_r($_SESSION['user']);
+//$admin = $_SESSION['user'];
+?>
 <div class="container-fluid">
     <div class="row rowDashboard">
         <div class="dashboard  bg-dark col-4 col-md-3 col-lg-2">
@@ -49,7 +56,7 @@
 
                 <div class="row rowDashboard align-items-center logout">
                     <div class="col">
-                        <a class="apartado" href=""><i class="fas fa-power-off fa-1x"></i> Salir</a>
+                        <a class="apartado" id="salir" href=" ../views/login_admin.php"><i class="fas fa-power-off fa-1x"></i> Salir</a>
                     </div>
                 </div>
                     

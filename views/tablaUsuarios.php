@@ -55,8 +55,7 @@ $usuarios = selectUsuarios();
                                 <th scope="col">Email</th>
                                 <th scope="col">Nickname</th>
                                 <th scope="col">Rol</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
+                               
                             </tr>
                         </thead>
                         <tbody>
@@ -69,15 +68,7 @@ $usuarios = selectUsuarios();
                                 <td><?php echo $usuario['email'] ?></td>
                                 <td><?php echo $usuario['nombre_usuario'] ?></td>
                                 <td><?php echo $usuario['rol']?></td>
-                                <td><a class="nav-link fa-1x text-dark" href="#">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="nav-link fa-1x text-dark " href="#">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
+                               
                                 </tr>
                                 <?php } ?>
                                
