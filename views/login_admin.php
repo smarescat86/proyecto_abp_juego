@@ -3,8 +3,6 @@ include '../bootstrap/index.php';
 session_start();
 $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
 
-print_r($admin);
-
 if (!empty($admin)) 
 {
     header("Location: games.php");
