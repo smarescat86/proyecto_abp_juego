@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="menu" class="navbar navbar-expand-lg navbar-light sticky-top " style="background-color: rgb(241, 137, 56);">
     <div class="container-fluid">
         <a class="navbar-brand" href="https://politecnics.barcelona/">
             <img src="./media/logo.png" alt="" width="200" height="80">    
@@ -9,37 +9,41 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#primerScroll">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Juegos</a>
+                    <a class="nav-link" aria-current="page" href="#segundoScroll">Juegos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Centro</a>
+                    <a class="nav-link" aria-current="page" href="https://politecnics.barcelona/">Centro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="https://politecnics.barcelona/wp-content/uploads/banner-tour-virtual.jpg"">Ciclos</a>
                 </li>
             </ul>
             <li class="nav-item dropdown d-flex">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Idiomas
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li>
-                        <a href="">Español
-                            <img src="" alt="">
+                <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                    <li class="list-group-item">
+                        <a href="indexes.php">
+                            <img src="/proyecto_abp_juego/media/espana.png" height="50px" width="50px" alt="">
                         </a>
                     </li>
-                    <li>
-                        <a href="">Catalan
-                        <img src="" alt="">
+                    <li class="list-group-item">
+                        <a href="indexcat.php">
+                        <img src="/proyecto_abp_juego/media/catalunya.png" height="50px" width="50px" alt="">
                         </a>
-                    </li><li>
-                        <a href="">Ingles
-                        <img src="" alt="">
+                    </li>
+                    <li class="list-group-item">
+                        <a href="indexen.php">
+                        <img src="/proyecto_abp_juego/media/inglaterra.png" height="50px" width="50px" alt="">
                         </a>
                     </li>
                 </ul>
             </li>
-            <button type="button" class="btn btn-outline-primary">Acceso admin</button>
+            <button type="button" class="btn btn-outline-warning">Acceso admin</button>
         </div>
     </div>
 </nav>

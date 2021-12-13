@@ -8,7 +8,11 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
+<<<<<<< HEAD
             "url": "http://localhost:8080/proyectosPhp/proyecto_abp_juego/index.php",
+=======
+            "url": "http://localhost:8080/proyecto_abp_juego/views/tablaUsuarios.php",
+>>>>>>> main
             "webRoot": "${workspaceFolder}"
         }
     ]
