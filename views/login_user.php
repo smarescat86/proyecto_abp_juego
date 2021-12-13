@@ -16,7 +16,7 @@ if (!empty($user))
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-6">
                 <div class="card" style="border-radius: 1rem; box-shadow: 0 4px 8px 0">
-                    <form action="../controllers/loginController.php" method="POST" id="form-login">
+                    <form action="../php_controllers/loginController.php" method="POST" id="form-login">
                         <div class="card-title text-center">
                             <h2 class="p-3">Iniciar sesión</h2>
                         </div>

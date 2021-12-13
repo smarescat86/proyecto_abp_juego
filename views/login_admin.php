@@ -19,7 +19,7 @@ if (!empty($admin))
                     <h2 class="p-3">Administración</h2>
                 </div>
                 <div class="card-body">
-                    <form action="../controllers/loginController.php" method="POST" id="form-admin">
+                    <form action="../php_controllers/loginController.php" method="POST" id="form-admin">
                         <div class="mb-4">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" id="email-admin" name="email-admin" placeholder="Email">
