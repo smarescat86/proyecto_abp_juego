@@ -21,7 +21,7 @@
 
     <?php
         include 'views/navBar.php';
-        include 'lang/esp.php';
+        include 'lang/cat.php';
     ?>
 
  <!--Primer Scroll-->
