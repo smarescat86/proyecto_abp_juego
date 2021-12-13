@@ -1,0 +1,19 @@
+.colPerfil {
+  min-height: 89.1vh;
+}
+
+.lineDiv.perfil {
+  width: 40%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.rowPerfil.inputs {
+  min-height: 100px;
+  margin-left: 20px;
+}
+
+.rowPerfil.title {
+  min-height: 150px;
+}
+/*# sourceMappingURL=estiloPerfil.css.map */
