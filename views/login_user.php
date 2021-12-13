@@ -9,7 +9,7 @@ if (!empty($user))
     header("Location: games.php");
 }
 ?>
-<script src="../js/logins.js"></script>
+<script src="../js/loginUser.js"></script>
 
 <div class="vh-100" style="background-image: url('../media/centre.jpeg'); background-image: url(../media/centre.jpeg);background-color: rgb(200, 200,200); background-blend-mode: soft-light;">
     <div class="container py-5 h-100" style="width: 70%">

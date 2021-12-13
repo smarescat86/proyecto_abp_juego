@@ -19,17 +19,13 @@
 
 <body>
 
-  <?php
-    include 'views/navBar.php';
-    include 'lang/esp.php';
-  ?>
-
- <!--Primer Scroll-->
-    <div id="primerScroll" class="container-fluid vh-100">
-        <div class="row row-cols-1">
-            <div id="titulo" class="col text-light text-center position-absolute">
-                <h1 class="text-capitalize"><?php echo $lang["titulo"] ?></h1>
-                <p class=""><em><?php echo $lang["descripcionTitulo"] ?></em></p>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>
+                    Puertas Abiertas
+                </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vel eligendi in, dolore vero, fuga laudantium culpa assumenda, ipsam inventore ullam minus alias cupiditate neque totam omnis illo doloremque earum?</p>
             </div>
         </div>
     </div>
