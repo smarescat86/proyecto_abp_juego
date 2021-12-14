@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,7 +23,7 @@
 
     <?php
         include 'views/navBar.php';
-        include 'lang/cat.php';
+        include 'lang/esp.php';
     ?>
 
  <!--Primer Scroll-->
@@ -41,7 +43,7 @@
 
         <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto/media/sopa.png" alt="">
+                    <img class="imagen-juego" src="/proyecto_abp_juego/media/sopa.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoUno"] ?> <br> 
@@ -53,7 +55,7 @@
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto/media/dynaman.png" alt="">
+                    <img class="imagen-juego" src="/proyecto_abp_juego/media/dynaman.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoDos"] ?> <br> 
@@ -65,7 +67,7 @@
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto/media/memory.png" alt="">
+                    <img class="imagen-juego" src="/proyecto_abp_juego/media/memory.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
@@ -77,7 +79,7 @@
 
             <div class="col">
              <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto/media/trille.png" alt="">
+                    <img class="imagen-juego" src="/proyecto_abp_juego/media/trille.png" alt="">
                     <div class="medio">
                         <div class="texto">
                         <?php echo $lang["juegoCuatro"] ?> <br> 
@@ -247,7 +249,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2021 Copyright:
-    <a class="text-dark" href="#">Centre d'Estudis Politecnics</a>
+    <a class="text-dark" href="#">Centre d'Estudis Politècnics</a>
   </div>
   <!-- Copyright -->
 </footer>

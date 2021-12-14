@@ -3,7 +3,7 @@
 $lang = array(
 
     "titulo" => "Doors Open",
-    "descripcionTitulo" => "We will show you as students of the Center d'Estudis Politecnics what we have learned from scratch",
+    "descripcionTitulo" => "We will show you as students of the Center d'Estudis Politècnics what we have learned from scratch",
     "juegoUno" => "Alphabet soup",
     "juegoDos" => "¡Dynaman!",
     "juegoTres" => "Memory",
