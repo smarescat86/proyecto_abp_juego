@@ -29,6 +29,8 @@ let musicaAux = 'off';
 
 let gameOver = false;
 
+let puntuacion = 0;
+
 var personaje = {
     isVivo: true,
     x: 2,
@@ -317,24 +319,28 @@ function cogerCiclo(coordenadas){
             document.getElementById('marketing-check').style.visibility = 'visible';
             marketing.encontrado = true;
             audioCorrecto.play();
+            puntuacion++;
         break;
 
         case 7:
             document.getElementById('turismo-check').style.visibility = 'visible';
             turismo.encontrado = true;
             audioCorrecto.play();
+            puntuacion++;
         break;
 
         case 8:
             document.getElementById('informatica-check').style.visibility = 'visible';
             informatica.encontrado = true;
             audioCorrecto.play();
+            puntuacion++;
         break;
 
         case 9:
             document.getElementById('administracion-check').style.visibility = 'visible';
             administracion.encontrado = true;
             audioCorrecto.play();
+            puntuacion++;
         break;
     }
 
@@ -594,6 +600,7 @@ function cogerCiclo(coordenadas){
         var minuto = 1;
         var segundos = 30;
         var cero = "";
+        var tiempoTotal = 0;
 
         document.getElementById("timer").innerHTML = minuto + ":" + segundos;
 
@@ -618,108 +625,10 @@ function cogerCiclo(coordenadas){
                     matarPersonaje();
                 }
             }    
+            tiempoTotal++;
         }, 1000);
 
         /*---------------------------------------------*/
-
-    function borrarMapa(){
-        game = [
-            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-        ];
-
-        var html = "";
-        var gameMap = document.getElementById("game");
-            for (var i = 0; i < game.length; i++) {
-                for (var j = 0; j < game[i].length; j++) {
-                    setTimeout(function(){
-
-                        switch(game[i][j]){
-                            case 1:
-                                html += "<div class='wall'></div>";
-                            break;
-        
-                            case 2:
-                                html += "<div class='vacio'></div>";
-                            break;
-        
-                            case 3:
-                                html += "<div class='barriles'></div>";
-                            break;
-        
-                            case 4:
-                                html += "<div class='vacio'></div>";
-                            break;
-        
-                            case 5:
-                                html += "<div class='" + bomba.imagen + "'></div>";
-                            break;
-        
-                            case 6:
-                                html += "<div class='vacio'></div>";
-                            break;
-        
-                            case 7:
-                                html += "<div class='vacio'></div>";
-                            break;
-        
-                            case 8:
-                                html += "<div class='vacio'></div>";
-                            break;
-        
-                            case 9:
-                                html += "<div class='vacio'></div>";
-                            break;
-        
-                            case 10:
-                                html += "<div class='bomba-centro'></div>";
-                            break;
-        
-                            case 11:
-                                html += "<div class='bomba-medio-horizontal'></div>";
-                            break;
-        
-                            case 12:
-                                html += "<div class='bomba-medio-vertical'></div>";
-                            break;
-        
-                            case 13:
-                                html += "<div class='bomba-up'></div>";
-                            break;
-        
-                            case 14:
-                                html += "<div class='bomba-down'></div>";
-                            break;
-        
-                            case 15:
-                                html += "<div class='bomba-left'></div>";
-                            break;
-        
-                            case 16:
-                                html += "<div class='bomba-right'></div>";
-                            break;
-                        }
-
-                    }, 1000);
-                    
-                }
-                html += "</br>";
-            }
-        gameMap.innerHTML = html;
-    }
 
     function sonarMusica(){
         switch(musicaAux){

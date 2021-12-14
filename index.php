@@ -131,7 +131,7 @@
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1">
 
             <div class="col text-center">
-                <img class="img-fluid" src="/proyecto/media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["informatica"] ?>
                 </h3>
@@ -141,7 +141,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto/media/logo-marketing.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-marketing.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["marketing"] ?>
                 </h3>
@@ -151,7 +151,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto/media/logo-turismo.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-turismo.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["turismo"] ?>
                 </h3>
@@ -161,7 +161,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto/media/logo-administracion.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-administracion.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["administracion"] ?>
                 </h3>
