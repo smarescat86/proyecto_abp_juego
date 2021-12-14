@@ -1,6 +1,6 @@
 <?php
     require_once('../data/bd.php');
-    $idUsuario = 5;
+    $idUsuario = 1;
 ?>
 
 <!DOCTYPE html>

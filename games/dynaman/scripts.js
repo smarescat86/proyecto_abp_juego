@@ -19,7 +19,8 @@ var game = [
 
 //---------OBJETOS------------------
 
-const audio = new Audio ('media/sonido-explosion.mp3');
+const audioExplosion = new Audio ('media/sonido-explosion.mp3');
+const audioCorrecto = new Audio ('media/correcto.mp3');
 
 const musica = new Audio ('media/musica-fondo.mp3');
 musica.loop = true;
@@ -315,21 +316,25 @@ function cogerCiclo(coordenadas){
         case 6:
             document.getElementById('marketing-check').style.visibility = 'visible';
             marketing.encontrado = true;
+            audioCorrecto.play();
         break;
 
         case 7:
             document.getElementById('turismo-check').style.visibility = 'visible';
             turismo.encontrado = true;
+            audioCorrecto.play();
         break;
 
         case 8:
             document.getElementById('informatica-check').style.visibility = 'visible';
             informatica.encontrado = true;
+            audioCorrecto.play();
         break;
 
         case 9:
             document.getElementById('administracion-check').style.visibility = 'visible';
             administracion.encontrado = true;
+            audioCorrecto.play();
         break;
     }
 
@@ -524,7 +529,7 @@ function cogerCiclo(coordenadas){
             matarPersonaje();
         }
 
-        audio.play();
+        audioExplosion.play();
         game[bomba.x][bomba.y] = 10;
         bomba.estado = 'off';
         
@@ -541,7 +546,7 @@ function cogerCiclo(coordenadas){
         drawJugador();
         gameOver = true;
         texto = "Has perdido";
-        document.getElementById("texto-modal").innerHTML = texto;
+        document.getElementById("modal-texto").innerHTML = texto;
         modal.style.display = "block";
         clearInterval(tempo);
     }

@@ -21,7 +21,7 @@
 
     <?php
         include 'views/navBar.php';
-        include 'lang/cat.php';
+        include 'lang/esp.php';
     ?>
 
  <!--Primer Scroll-->
@@ -41,7 +41,7 @@
 
         <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto/media/sopa.png" alt="">
+                    <img class="imagen-juego" src="./media/sopa.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoUno"] ?> <br> 
@@ -53,7 +53,7 @@
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto/media/dynaman.png" alt="">
+                    <img class="imagen-juego" src="./media/dynaman.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoDos"] ?> <br> 
@@ -65,7 +65,7 @@
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto/media/memory.png" alt="">
+                    <img class="imagen-juego" src="./media/memory.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
@@ -77,7 +77,7 @@
 
             <div class="col">
              <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto/media/trille.png" alt="">
+                    <img class="imagen-juego" src="./media/trille.png" alt="">
                     <div class="medio">
                         <div class="texto">
                         <?php echo $lang["juegoCuatro"] ?> <br> 
