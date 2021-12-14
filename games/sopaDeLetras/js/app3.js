@@ -16,15 +16,7 @@ let audio = new Audio('./media/music/music.ogg');
 audio.loop = true;
 
 function initVariables() {
-<<<<<<< HEAD
-    myWords = ['ffff'];
-=======
-<<<<<<< HEAD
-    myWords = ['ffff'];
-=======
     myWords = ['flexibilidad', 'responsabilidad', 'autonomia', 'sociabilidad', 'evolucion'];
->>>>>>> andres-branch
->>>>>>> main
     game = {r:0, c:0, w:25, x:'', y:'', arr:[]};
     placedWords = [];
     validSelectedLetters = [];
@@ -32,15 +24,7 @@ function initVariables() {
     totalWordsFound = 0;  
     seconds = 120;
     score = 0;
-<<<<<<< HEAD
-    gridSize = 4;
-=======
-<<<<<<< HEAD
-    gridSize = 4;
-=======
     gridSize = 15;
->>>>>>> andres-branch
->>>>>>> main
     intervalTimer = null;
     stopCrono = false;
 }
@@ -366,15 +350,7 @@ function markWord(word) {
     let myModal = document.getElementById('modal-word-description');
     let modalBody = myModal.querySelector('.modal-body');
 
-<<<<<<< HEAD
-    if(word.word == 'ffff') {
-=======
-<<<<<<< HEAD
-    if(word.word == 'ffff') {
-=======
     if(word.word == 'flexibilidad') {
->>>>>>> andres-branch
->>>>>>> main
         //Abre modal
         myModal.addEventListener('show.bs.modal', function (event) {
             let modalTitle = myModal.querySelector('.modal-title');

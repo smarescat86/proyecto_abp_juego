@@ -5,7 +5,7 @@ session_start();
 
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
 $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
-print_r($admin);
+print_r($user);
 
 if (empty($user)) 
 {
