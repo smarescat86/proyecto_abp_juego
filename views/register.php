@@ -2,15 +2,17 @@
 include '../bootstrap/index.php';
 ?>
 
-<div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-lg-4 col-md-8 col-sm-8">
+<link rel="stylesheet" href="./../styles/logins.css">
+
+<div class="vh-100" style="background-image: url('../media/centre.jpeg'); background-image: url(../media/centre.jpeg);background-color: rgb(200, 200,200); background-blend-mode: soft-light;">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-8 col-sm-8 mt-5">
             <div class="card shadow">
-                <div class="card-title text-center border-bottom">
+                <div class="card-title text-center border-bottom text-orange">
                     <h2 class="p-3">Registrarse</h2>
                 </div>
                 <div class="card-body">
-                    <form action="../controllers/loginController.php" method="POST" id="form-register">
+                    <form action="../php_controllers/loginController.php" method="POST" id="form-register">
                         <div class="mb-4">
                             <label for="email">Nombre</label>
                             <input type="text" class="form-control" id="email" name="nombre" placeholder="Nombre">
@@ -28,7 +30,7 @@ include '../bootstrap/index.php';
                             <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
                         </div>
                         <div class="d-grid">
-                            <button type="submit" name="registro" class="btn btn-dark">Enviar</button>
+                            <button type="submit" name="registro" class="btn color-orange">Enviar</button>
                         </div>
                     </form>
                 </div>

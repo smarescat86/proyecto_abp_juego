@@ -28,22 +28,22 @@
                 <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                     <li class="list-group-item">
                         <a href="indexes.php">
-                            <img src="/proyecto_abp_juego/media/espana.png" height="50px" width="50px" alt="">
+                            <img src="./media/espana.png" height="50px" width="50px" alt="">
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a href="indexcat.php">
-                        <img src="/proyecto_abp_juego/media/catalunya.png" height="50px" width="50px" alt="">
+                        <img src="./media/catalunya.png" height="50px" width="50px" alt="">
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a href="indexen.php">
-                        <img src="/proyecto_abp_juego/media/inglaterra.png" height="50px" width="50px" alt="">
+                        <img src="./media/inglaterra.png" height="50px" width="50px" alt="">
                         </a>
                     </li>
                 </ul>
             </li>
-            <button type="button" class="btn btn-outline-warning">Acceso admin</button>
+            <button type="button" class="btn btn-outline-warning"><a href="./views/login_admin.php">Acceso admin</a></button>
         </div>
     </div>
 </nav>

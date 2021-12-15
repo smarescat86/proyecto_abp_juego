@@ -10,7 +10,7 @@ h1 {
 }
 
 #primerScroll {
-  background-image: url("/proyecto_abp_juego/media/fondo2.png");
+  background-image: url("../media/fondo2.png");
   background-size: cover;
   background-attachment: fixed;
 }

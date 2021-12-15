@@ -10,7 +10,7 @@ if(isset($_POST['login-user'])) {
         $user = selectUser($email);
         if(!empty($user)) {
             $_SESSION['user'] = $user;
-            header('Location: ../views/games.php');
+            header('Location: ../index.php');
             exit;
         } else {
             unset($_SESSION['user']);
@@ -35,7 +35,7 @@ if(isset($_POST['login-user'])) {
             exit;
         } else {
             unset($_SESSION['admin']);
-            header('Location: ../views/register.php');
+            header('Location: ../views/login_admin.php');
             exit;
         }
     }else {
@@ -51,7 +51,7 @@ if(isset($_POST['login-user'])) {
 
     if(!empty($nombre) && !empty($apellido) &&!empty($email) &&!empty($usuario)) {
         insertUser($nombre, $apellido, $email, $usuario);
-        header('Location: ../views/login_user.php');
+        header('Location: ../views/index.php');
         exit;
     }
 }

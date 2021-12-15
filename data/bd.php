@@ -26,7 +26,7 @@ function selectUser($email) {
     $query = $connection->prepare($queryText);
     $query->bindParam(':email', $email);
     $query->execute();
-    $result = $query->fetchAll();
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
     $connection = closeBd();
 
@@ -40,7 +40,7 @@ function selectAdmin($email, $pass) {
 
     $query = $connection->prepare($queryText);
     $query->execute([$email, $pass]);
-    $result = $query->fetchAll();
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
     $connection = closeBd();
 

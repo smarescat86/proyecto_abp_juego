@@ -3,8 +3,11 @@ require_once('../php_librarys/bd.php');
 
 $usuarios = selectAdmins();
 if (!isset($_SESSION)) {
-    session_start();
+    
 }
+
+$admin = $_SESSION['admin'];
+var_dump($admin);
 ?>
 <!DOCTYPE html>
 <html lang="en">

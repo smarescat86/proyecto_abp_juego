@@ -1,4 +1,9 @@
-
+<?php
+//session
+session_start();
+$user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+var_dump($user);
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -43,11 +48,12 @@
 
         <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="./media/sopa.png" alt="">
+                    <img class="imagen-juego" src="./media/sopa.PNG" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoUno"] ?> <br> 
-                            <a href="games/sopaDeLetras/index.html"><?php echo $lang["juega"] ?></a>
+                            <a href="games/sopaDeLetras/index.php"><?php echo $lang["juega"] ?></a>
+                            <a href="./views/login_user.php"><?php echo 'login' ?></a>
                         </div>
                     </div>
                 </div>
@@ -133,7 +139,7 @@
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1">
 
             <div class="col text-center">
-                <img src="./media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
+                <img class="img-fluid" src="./media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["informatica"] ?>
                 </h3>
