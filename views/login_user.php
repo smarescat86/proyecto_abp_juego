@@ -23,7 +23,7 @@ if (!empty($user))
                             <h2 class="p-3">Iniciar sesión</h2>
                         </div>
                         <div class="mb-2 m-4">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
                         </div>
                             <div id="alert-user">
                                 

@@ -5,7 +5,8 @@ $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
 
 if (!empty($admin)) 
 {
-    header("Location: games.php");
+    header("Location: ../index.php");
+    exit();
 }
 ?>
 <script src="../js/loginAdmin.js"></script>
@@ -23,12 +24,12 @@ if (!empty($admin))
                     <form action="../php_controllers/loginController.php" method="POST" id="form-admin">
                         <div class="mb-4">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email-admin" name="email-admin" placeholder="Email">
+                            <input type="text" class="form-control" id="email-admin" name="email-admin" placeholder="Email" required>
                         </div>
                         <div class="mb-4">
                             <label>Contraseña</label>
                             <div class="input-group">
-                                <input type="Password" id="pass-admin" name="pass-admin"class="form-control" placeholder="Password" >
+                                <input type="Password" id="pass-admin" name="pass-admin"class="form-control" placeholder="Password" required>
                                 <div class="input-group-append">
                                     <button id="show_password" class="btn color-orange" type="button" style="height: 100%; margin-left: 3px" onclick="mostrarPassword()">
                                         <span class="fa fa-eye-slash icon"></span> </button>

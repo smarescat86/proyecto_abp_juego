@@ -52,7 +52,7 @@ var_dump($user);
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoUno"] ?> <br> 
-                            <a href="games/sopaDeLetras/index.html"><?php echo $lang["juega"] ?></a>
+                            <a href="games/sopaDeLetras/index.php"><?php echo $lang["juega"] ?></a>
                             <a href="./views/login_user.php"><?php echo 'login' ?></a>
                         </div>
                     </div>
