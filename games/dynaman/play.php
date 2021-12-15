@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Dynaman!</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="shortcut icon" href="media/dinamita.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <?php
+    require_once 'php/bd.php';
+  ?>
+
     <!--<div class="guy" id="guy"></div>-->
     <div class="container">
         <div class="stats">
@@ -77,7 +86,9 @@
                       <th>Tiempo</th>
                     </tr>
                     <tr>
-                      <td>Andres</td>
+                      <td> <?php 
+                        echo selectNickNameId(1); //poner session id usuario;
+                       ?> </td>
                       <td>4</td>
                       <td>90 sec</td>
                     </tr>
@@ -125,7 +136,7 @@
       </div>
     <!------------------------------------>
 
-    <script src="scripts.js"></script>
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
 

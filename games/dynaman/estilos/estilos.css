@@ -1,5 +1,5 @@
 body{
-    background-image: url('media/fondo.png');
+    background-image: url('../media/fondo.png');
     background-repeat: no-repeat;
     background-size: cover;
     line-height: 0;
@@ -33,7 +33,7 @@ h2{
 
 
 .dynaman{
-    background-image: url("media/dynaman.png");
+    background-image: url("../media/dynaman.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,7 +49,7 @@ h2{
 }
 
 .fondo-explosion{
-    background-image: url("media/fondo-explosion.png");
+    background-image: url("../media/fondo-explosion.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,7 +65,7 @@ h2{
   
 
 .dinamita-fondo{
-    background-image: url("media/dinamita-fondo.png");
+    background-image: url("../media/dinamita-fondo.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -129,7 +129,7 @@ h2{
 
 
 .stats{
-    background-image: url('media/fondo5.png');
+    background-image: url('../media/fondo5.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 679px;
@@ -188,13 +188,13 @@ a{
 }
 
 .wall {
-    background-image: url('media/bloque.png');
+    background-image: url('../media/bloque.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .barriles {
-    background-image: url("media/barril.png");
+    background-image: url("../media/barril.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -202,7 +202,7 @@ a{
 }
 
 .logo-marketing{
-    background-image: url("media/logo-marketing.png");
+    background-image: url("../media/logo-marketing.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -210,7 +210,7 @@ a{
 }
 
 .logo-informatica{
-    background-image: url("media/logo-informatica.png");
+    background-image: url("../media/logo-informatica.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -218,7 +218,7 @@ a{
 }
 
 .logo-turismo{
-    background-image: url("media/logo-turismo.png");
+    background-image: url("../media/logo-turismo.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -226,7 +226,7 @@ a{
 }
 
 .logo-administracion{
-    background-image: url("media/logo-administracion.png");
+    background-image: url("../media/logo-administracion.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -234,14 +234,14 @@ a{
 }
 
 .dinamita{
-    background-image: url("media/dinamita.png");
+    background-image: url("../media/dinamita.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .informatica{
-    background-image: url('media/logo-informatica.png');
+    background-image: url('../media/logo-informatica.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -253,7 +253,7 @@ a{
 }
 
 .marketing{
-    background-image: url('media/logo-marketing.png');
+    background-image: url('../media/logo-marketing.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -265,7 +265,7 @@ a{
 }
 
 .administracion{
-    background-image: url('media/logo-administracion.png');
+    background-image: url('../media/logo-administracion.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -277,7 +277,7 @@ a{
 }
 
 .turismo{
-    background-image: url('media/logo-turismo.png');
+    background-image: url('../media/logo-turismo.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -289,7 +289,7 @@ a{
 }
 
 .informatica-check{
-    background-image: url('media/check.png');
+    background-image: url('../media/check.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -302,7 +302,7 @@ a{
 }
 
 .marketing-check{
-    background-image: url('media/check.png');
+    background-image: url('../media/check.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -315,7 +315,7 @@ a{
 }
 
 .turismo-check{
-    background-image: url('media/check.png');
+    background-image: url('../media/check.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -328,7 +328,7 @@ a{
 }
 
 .administracion-check{
-    background-image: url('media/check.png');
+    background-image: url('../media/check.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -373,7 +373,7 @@ a{
 }
 
 .logo-entero{
-    background-image: url('media/logo-entero.PNG');
+    background-image: url('../media/logo-entero.PNG');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -399,35 +399,35 @@ a{
 /*----------------------PERSONAJE------------------------*/
 
 .personaje-right {
-    background-image: url('media/personaje-right.png');
+    background-image: url('../media/personaje-right.png');
     background-position: center center;
     background-repeat: no-repeat;
     z-index: 2;
 }
 
 .personaje-left {
-    background-image: url('media/personaje-left.png');
+    background-image: url('../media/personaje-left.png');
     background-position: center center;
     background-repeat: no-repeat;
     z-index: 2;
 }
 
 .personaje-up {
-    background-image: url('media/personaje-up.png');
+    background-image: url('../media/personaje-up.png');
     background-position: center center;
     background-repeat: no-repeat;
     z-index: 2;
 }
 
 .personaje-down {
-    background-image: url('media/personaje-down.png');
+    background-image: url('../media/personaje-down.png');
     background-position: center center;
     background-repeat: no-repeat;
     z-index: 2;
 }
 
 .personaje-muerto{
-    background-image: url('media/angel.png');
+    background-image: url('../media/angel.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -440,7 +440,7 @@ a{
 /*-----------------------BOMBA----------------------------------*/
 
 .bomba-centro{
-    background-image: url('media/explosion-centro.png');
+    background-image: url('../media/explosion-centro.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -448,7 +448,7 @@ a{
 }
 
 .bomba-medio-horizontal{
-    background-image: url('media/explosion-medio-horizontal.png');
+    background-image: url('../media/explosion-medio-horizontal.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -456,7 +456,7 @@ a{
 }
 
 .bomba-medio-vertical{
-    background-image: url('media/explosion-medio-vertical.png');
+    background-image: url('../media/explosion-medio-vertical.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -465,7 +465,7 @@ a{
 }
 
 .bomba-up {
-    background-image: url('media/explosion-up.png');
+    background-image: url('../media/explosion-up.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -473,7 +473,7 @@ a{
 }
 
 .bomba-down {
-    background-image: url('media/explosion-down.png');
+    background-image: url('../media/explosion-down.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -481,7 +481,7 @@ a{
 }
 
 .bomba-left {
-    background-image: url('media/explosion-left.png');
+    background-image: url('../media/explosion-left.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -489,7 +489,7 @@ a{
 }
 
 .bomba-right {
-    background-image: url('media/explosion-right.png');
+    background-image: url('../media/explosion-right.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

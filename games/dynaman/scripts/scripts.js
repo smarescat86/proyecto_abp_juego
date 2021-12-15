@@ -1,3 +1,5 @@
+
+
 var game = [
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
 	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -350,6 +352,7 @@ function cogerCiclo(coordenadas){
         document.getElementById("texto-modal").innerHTML = texto;
         modal.style.display = "block";
         clearInterval(tempo);
+        enviarPuntos(puntuacion);
     }
 }
 
@@ -555,6 +558,7 @@ function cogerCiclo(coordenadas){
         document.getElementById("modal-texto").innerHTML = texto;
         modal.style.display = "block";
         clearInterval(tempo);
+        enviarPuntos(puntuacion);
     }
 
     function borrarExplosion(){
@@ -642,6 +646,12 @@ function cogerCiclo(coordenadas){
                 musicaAux = 'off';
             break;
         }
+    }
+
+    function enviarPuntos(puntos) {
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("GET","bd.php ? puntos = " + puntos, true);
+        xhttp.send();
     }
     
 
