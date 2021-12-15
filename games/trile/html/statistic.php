@@ -1,5 +1,5 @@
 <?php    
-    $datosTabla = selectTableTrile();
+   $datosTabla = selectTableTrile();
 ?>
 
 <div class="container-fluid" id="containerStatistic">

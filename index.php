@@ -43,7 +43,7 @@
 
         <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto_abp_juego/media/sopa.png" alt="">
+                    <img class="imagen-juego" src="./media/sopa.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoUno"] ?> <br> 
@@ -55,7 +55,7 @@
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto_abp_juego/media/dynaman.png" alt="">
+                    <img class="imagen-juego" src="./media/dynaman.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoDos"] ?> <br> 
@@ -67,7 +67,7 @@
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto_abp_juego/media/memory.png" alt="">
+                    <img class="imagen-juego" src="./media/memory.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
@@ -79,7 +79,7 @@
 
             <div class="col">
              <div class="contenedor">
-                    <img class="imagen-juego" src="/proyecto_abp_juego/media/trille.png" alt="">
+                    <img class="imagen-juego" src="./media/trille.png" alt="">
                     <div class="medio">
                         <div class="texto">
                         <?php echo $lang["juegoCuatro"] ?> <br> 
@@ -133,7 +133,7 @@
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1">
 
             <div class="col text-center">
-                <img class="img-fluid" src="/proyecto/media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["informatica"] ?>
                 </h3>
@@ -143,7 +143,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto/media/logo-marketing.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-marketing.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["marketing"] ?>
                 </h3>
@@ -153,7 +153,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto/media/logo-turismo.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-turismo.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["turismo"] ?>
                 </h3>
@@ -163,7 +163,7 @@
             </div>
 
             <div class="col text-center">
-                <img src="/proyecto/media/logo-administracion.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-administracion.png" alt="" srcset="" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["administracion"] ?>
                 </h3>
@@ -249,7 +249,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2021 Copyright:
-    <a class="text-dark" href="#">Centre d'Estudis Politècnics</a>
+    <a class="text-dark" href="#">Centre d'Estudis Politecnics</a>
   </div>
   <!-- Copyright -->
 </footer>

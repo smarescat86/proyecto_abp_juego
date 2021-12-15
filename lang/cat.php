@@ -3,14 +3,14 @@
 $lang = array(
 
     "titulo" => "Portes Obertes",
-    "descripcionTitulo" => "Et mostrarem com a estudiants del Centre d'Estudis Politècnics allò que hem après des de zero",
+    "descripcionTitulo" => "Et mostrarem com a estudiants del Centre d'Estudis Politecnics allò que hem après des de zero",
     "juegoUno" => "Sopa de Lletres",
     "juegoDos" => "¡Dynaman!",
     "juegoTres" => "Memory",
     "juegoCuatro" => "Trille",
     "juega" => "¡Juga!",
-    "registrate" => "Registra't ara per jugar!",
-    "descripcionRegistrate" => "Demostra el bo que ets als teus amics hi ha la comunitat amb el nostre sistema de rànquing.",
+    "registrate" => "¡Registra't ara per jugar!",
+    "descripcionRegistrate" => "Demostra el bo que ets als teus amics ia la comunitat amb el nostre sistema de rànquing.",
     "tituloCiclos" => "Cicles del Centre",
 
     "informatica" => "Informàtica",
