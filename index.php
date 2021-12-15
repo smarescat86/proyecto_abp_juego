@@ -1,9 +1,3 @@
-<?php
-
-session_start();
-$user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
-var_dump($user);
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -48,7 +42,11 @@ var_dump($user);
 
         <div class="col">
                 <div class="contenedor">
+<<<<<<< HEAD
                     <img class="imagen-juego" src="./media/sopa.PNG" alt="">
+=======
+                    <img class="imagen-juego" src="/proyecto_abp_juego/media/sopa.png" alt="">
+>>>>>>> 055e8ab0d0762447f3d2c4135fe844d604f6b031
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoUno"] ?> <br> 
@@ -61,7 +59,11 @@ var_dump($user);
 
             <div class="col">
                 <div class="contenedor">
+<<<<<<< HEAD
                     <img class="imagen-juego" src="./media/dynaman.png" alt="">
+=======
+                    <img class="imagen-juego" src="/proyecto_abp_juego/media/dynaman.png" alt="">
+>>>>>>> 055e8ab0d0762447f3d2c4135fe844d604f6b031
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoDos"] ?> <br> 
@@ -73,7 +75,11 @@ var_dump($user);
 
             <div class="col">
                 <div class="contenedor">
+<<<<<<< HEAD
                     <img class="imagen-juego" src="./media/memory.png" alt="">
+=======
+                    <img class="imagen-juego" src="/proyecto_abp_juego/media/memory.png" alt="">
+>>>>>>> 055e8ab0d0762447f3d2c4135fe844d604f6b031
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
@@ -85,7 +91,11 @@ var_dump($user);
 
             <div class="col">
              <div class="contenedor">
+<<<<<<< HEAD
                     <img class="imagen-juego" src="./media/trille.png" alt="">
+=======
+                    <img class="imagen-juego" src="/proyecto_abp_juego/media/trille.png" alt="">
+>>>>>>> 055e8ab0d0762447f3d2c4135fe844d604f6b031
                     <div class="medio">
                         <div class="texto">
                         <?php echo $lang["juegoCuatro"] ?> <br> 
@@ -255,7 +265,7 @@ var_dump($user);
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2021 Copyright:
-    <a class="text-dark" href="#">Centre d'Estudis Politecnics</a>
+    <a class="text-dark" href="#">Centre d'Estudis Politècnics</a>
   </div>
   <!-- Copyright -->
 </footer>
