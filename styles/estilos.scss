@@ -1,0 +1,85 @@
+$position-values: (
+  0: 0,
+  25: 25%,
+  50: 50%,
+  100: 100%
+);
+
+
+h1{
+  font-family: 'Anton', sans-serif;
+  font-size: 100px;
+}
+
+.texto-home{
+  position: absolute;
+  top: 60%;
+  left: 28%;
+}
+
+#primerScroll{
+    background-image: url('../media/fondo2.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#segundoScroll{
+    background-color: rgb(187, 112, 54);
+}
+
+
+#cuartoScroll{
+  background-color:rgb(241, 137, 56);
+}
+
+#titulo{
+  top:25%;
+}
+
+#menucito {
+    opacity: 0.1;
+}
+
+  .contenedor{
+      position: relative;
+  }
+
+  .imagen-juego {
+    overflow: hidden;
+    max-height: 400px;
+    width: 100%;
+    opacity: 1;
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .medio {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .contenedor:hover .imagen-juego {
+    opacity: 0.3;
+  }
+  
+  .contenedor:hover .medio {
+    opacity: 1;
+  }
+  
+  .texto {
+    background-color: rgb(185, 146, 116);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  

@@ -1,6 +1,7 @@
 body {
     overflow: hidden;
 }
+<<<<<<< HEAD
 .rowDashboard {
     min-height: 55px;
     
@@ -8,14 +9,30 @@ body {
 .rowDashboard.titulo {
     min-height: 100px;
 }
+=======
+
+.rowDashboard {
+    min-height: 55px;
+}
+
+.rowDashboard.titulo {
+    min-height: 100px;
+}
+
+>>>>>>> main
 .rowDashboard.logout.line {
     min-height: 50vh;
     max-height: 50vh;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 .rowDashboard.logout {
     min-height: 10vh;
     max-height: 10vh;
 }
+<<<<<<< HEAD
 .apartado {
     color: white;
     text-decoration: none;
@@ -27,6 +44,23 @@ body {
 .dashboard {
     min-height: 100vh;
 }
+=======
+
+.apartado {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.apartado:hover {
+    color: gray;
+}
+
+.dashboard {
+    min-height: 100vh;
+}
+
+>>>>>>> main
 .lineDiv {
     width: 100%;
     height: 2px;
