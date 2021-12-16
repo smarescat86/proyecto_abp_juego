@@ -16,7 +16,7 @@ let audio = new Audio('./media/music/music.ogg');
 audio.loop = true;
 
 function initVariables() {
-    myWords = ['ffff', 'responsabilidad', 'autonomia', 'sociabilidad', 'evolucion'];
+    myWords = ['flexibilidad', 'responsabilidad', 'autonomia', 'sociabilidad', 'evolucion'];
     game = {r:0, c:0, w:25, x:'', y:'', arr:[]};
     placedWords = [];
     validSelectedLetters = [];
@@ -24,7 +24,7 @@ function initVariables() {
     totalWordsFound = 0;  
     seconds = 120;
     score = 0;
-    gridSize = 4;
+    gridSize = 15;
     intervalTimer = null;
     stopCrono = false;
 }
@@ -140,7 +140,6 @@ function addListeners(elements) {
     elements.playAgain.addEventListener('click', () => {
         elements.gameResult.style.display = 'none';
         elements.gameContainer.style.display = 'block';
-        score = 0;
         stopTimer();
         audio.pause();
         startGame(elements);
@@ -316,6 +315,7 @@ function gridItemMouseUp(event) {
         i++;
     }
     if(wordFound != false) {
+        console.log(charsSelected);
         for (let i = 0; i < charsSelected.length; i++) {
             let div = document.getElementById(charsSelected[i]);
             div.classList.add('bg-green');
@@ -327,7 +327,6 @@ function gridItemMouseUp(event) {
         }
         markWord(wordFound);
         totalWordsFound++;
-        score += 100;
         addScore();
     }
     
@@ -351,7 +350,7 @@ function markWord(word) {
     let myModal = document.getElementById('modal-word-description');
     let modalBody = myModal.querySelector('.modal-body');
 
-    if(word.word == 'ffff') {
+    if(word.word == 'flexibilidad') {
         //Abre modal
         myModal.addEventListener('show.bs.modal', function (event) {
             let modalTitle = myModal.querySelector('.modal-title');
@@ -519,7 +518,7 @@ function timerStart(elements) {
 function addScore(divScore) { 
     divScore = document.getElementById('score');
     divScore.innerHTML = score + ' pts';
-       
+    score += 100;   
 }
 
 function removeMouseListeners() {
@@ -578,15 +577,12 @@ function gameOver() {
         elements.finalText.textContent = seconds == 0 ? "Try again" : "¡You win!";
         elements.gameResult.style.display = 'block';
         loadDataTable();
+        
         let intervalBoard = setInterval( () => {
             elements.scoreBoard.style.visibility = 'visible';
             clearInterval(intervalBoard);
             elements.finalButtons.style.visibility = 'visible';
          }, 1000 );
-
-         if(elements.finalText.textContent == "¡You win!") {
-            uploadScorePlayer();
-        }
     }
 }
 
@@ -600,6 +596,7 @@ function loadDataTable() {
     fetch('./data/bd.php', opciones)
     .then(respuesta => respuesta.json())
     .then(resultado => {
+        console.log(resultado);
         elements.cuerpo.innerHTML = '';
         contador = 1;
         resultado.forEach(player => {
@@ -607,7 +604,7 @@ function loadDataTable() {
             <tr>
                 <td>${contador}</td>
                 <td>${player.nombre_usuario}</td>
-                <td>${player.tiempo + 's'}</td>
+                <td>${player.tiempo}</td>
                 <td>${player.puntuacion}</td>
             </tr>`
             contador++;
