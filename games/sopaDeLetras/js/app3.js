@@ -616,6 +616,7 @@ function loadDataTable() {
 
 }
 
+//Actualizo el score del jugador en la base de datos
 function uploadScorePlayer() {
     const opciones = {
         method: 'POST',

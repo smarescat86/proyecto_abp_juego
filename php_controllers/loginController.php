@@ -10,6 +10,7 @@ if(isset($_POST['login-user'])) {
         $user = selectUser($email);
         if(!empty($user)) {
             $_SESSION['user'] = $user;
+            insertTableUserGame($user['id_usuario']);
             header('Location: ../index.php');
             exit;
         } else {

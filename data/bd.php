@@ -63,4 +63,29 @@ function insertUser($nombre, $apellido, $email, $usuario) {
 
     $connection = closeBd();
 }
+
+function insertTableUserGame($id_usuario) {
+    $conexion = openBD();
+    
+    $sentenciaText = "
+    BEGIN
+    IF NOT EXISTS (SELECT * FROM usuario_juego WHERE id_usuario = :id_usuario)
+        BEGIN
+            INSERT INTO usuario_juego (id_usuario,id_juego,puntuacion,tiempo) VALUES (:id_usuario,:id_juego,:puntuacion,:tiempo)
+        END
+    END";
+    
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':id_usuario', $id_usuario);
+    $sentencia->bindParam(':puntuacion', null);
+    $sentencia->bindParam(':tiempo', null);
+    
+    for ($i = 1; $i < 5; $i++) {
+        $sentencia->bindParam(':id_juego', $i);
+        $sentencia->execute();
+    }
+    $conexion = closeBD();
+}
+
+
 ?>
