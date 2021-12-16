@@ -3,8 +3,7 @@
 
     $idUsuario = 1;
 
-   //
-    $usuario = selectUsuarioId($idUsuario);
+   //$usuario = selectUsuarioId($idUsuario);
     session_start();
 
 ?>
