@@ -24,6 +24,7 @@ function closeBd() {
 }
 
 function selectUsuarios() {
+   
     $conexion = openBD();
     $sentenciaSQL = "select usuario.*,rol.nombre as rol from usuario left join rol on usuario.id_rol = rol.id_rol";
     $sentencia = $conexion->prepare($sentenciaSQL);
@@ -49,23 +50,24 @@ function insertAdmin($nombre,$apellido,$usuario,$password,$email) {
 
 }
 
-function deleteAdmin() {
+function deleteAdmin($id) {
+ 
     $conexion = openBD();
-    $idUsuario = 10;
-    $sentenciaSQL = "delete from usuario where id_usuario = " .strval($idUsuario)  ;
+    $sentenciaSQL = "delete from usuario where id_usuario =" .strval($id)  ;
     $sentencia = $conexion->prepare($sentenciaSQL);
     $sentencia->execute();
     $conexion = closeBd();
+    header('Location: ../views/tablaSuperAdmin.php'); 
 
 }
 
-function updatePassword($password,$repitePassword) {
+function updatePassword($password,$repitePassword,$id ) {
     $conexion = openBD();
 
     if($password === $repitePassword) {
     $password = md5($password);
-    $idUsuario = 10;
-    $sentenciaSQL = "update usuario set contrasena=:password " . "where id_usuario = " . strval($idUsuario) ;
+    
+    $sentenciaSQL = "update usuario set contrasena=:password " . "where id_usuario = " . strval($id) ;
     $sentencia = $conexion->prepare($sentenciaSQL);
     $sentencia->bindParam(':password',$password);
     $sentencia->execute();
@@ -75,7 +77,7 @@ function updatePassword($password,$repitePassword) {
 }
 function selectAdmins() {
     $conexion = openBD();
-    $sentenciaSQL = "select usuario.nombre,usuario.apellido,usuario.nombre_usuario from usuario left join rol on usuario.id_rol = rol.id_rol where rol.nombre='admin'";
+    $sentenciaSQL = "select usuario.id_usuario as id_usuario,usuario.nombre,usuario.apellido,usuario.nombre_usuario from usuario left join rol on usuario.id_rol = rol.id_rol where rol.nombre='admin'";
     $sentencia = $conexion->prepare($sentenciaSQL);
     $sentencia->execute();
     $resultado = $sentencia->fetchAll();
