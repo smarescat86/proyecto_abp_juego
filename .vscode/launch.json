@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "https://localhost:443/projects/web/v_nueva/proyecto_abp_juego/views/administracionPerfil.php",
+            "url": "https://localhost:443/projects/proyecto_abp_juego/views/administracionPerfil.php",
             "webRoot": "${workspaceFolder}"
         }
         
