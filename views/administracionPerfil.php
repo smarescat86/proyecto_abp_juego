@@ -1,9 +1,9 @@
 <?php
-
     require_once('../data/bd.php');
 
     $idUsuario = 1;
 
+   //
     $usuario = selectUsuarioId($idUsuario);
     session_start();
 
