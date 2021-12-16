@@ -1,10 +1,16 @@
 <?php
-include '../bootstrap/index.php';
+
+    include '../bootstrap/index.php';
+
+    session_start();
+
+
 ?>
 
 <link rel="stylesheet" href="./../styles/logins.css">
 
-<div class="vh-100" style="background-image: url('../media/centre.jpeg'); background-image: url(../media/centre.jpeg);background-color: rgb(200, 200,200); background-blend-mode: soft-light;">
+<div class="vh-100" style="background-image: url('../media/centre.jpeg'); background-image: url(../media/centre.jpeg);background-color: rgb(200, 200,200); background-blend-mode: soft-light;
+                            background-repeat:no-repeat; background-position:center; background-size:cover;">
     <div class="row justify-content-center">
         <div class="col-lg-4 col-md-8 col-sm-8 mt-5">
             <div class="card shadow">
@@ -41,8 +47,9 @@ include '../bootstrap/index.php';
 
 <?php
 
-    if(isset($_SESSION["correctoRegister"])) {
-        
+    if(isset($_SESSION["correctoRegister"])) { 
+
+
         if(!$_SESSION["correctoRegister"]) {
             echo "<script>";
             echo "setTimeout(function(){ alert('Usuario duplicado!'); }, 200);";

@@ -10,6 +10,7 @@ if(isset($_POST['login-user'])) {
     if(!empty($email)) {
 
         $user = selectUser($email);
+        
 
         if(!empty($user)) {
             $_SESSION['user'] = $user;
@@ -73,15 +74,19 @@ if(isset($_POST['login-user'])) {
         }
     }
 
+    //var_dump($correcto);
+
     if($correcto) {
         insertUser($nombre, $apellido, $email, $usuario);
         header('Location: ../index.php');
         exit();
     }
     else {
-        $_SESSION["correctoRegister"] = false;
+
+        $_SESSION["correctoRegister"] = false;        
         header('Location: ../views/register.php');
         exit();
+        
     }
 
 }

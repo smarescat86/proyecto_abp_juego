@@ -1,7 +1,7 @@
 <nav id="menu" class="navbar navbar-expand-lg navbar-light sticky-top " style="background-color: rgb(241, 137, 56);">
     <div class="container-fluid">
         <a class="navbar-brand" href="https://politecnics.barcelona/">
-            <img src="../media/logo.png" alt="" width="200" height="80">    
+            <img src="https://localhost:443/projects/proyecto_abp_juego/media/logo.png" alt="" width="200" height="80">    
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@
                     <a class="nav-link" aria-current="page" href="https://politecnics.barcelona/">Centro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="https://politecnics.barcelona/wp-content/uploads/banner-tour-virtual.jpg"">Ciclos</a>
+                    <a class="nav-link" aria-current="page" href="https://politecnics.barcelona/wp-content/uploads/banner-tour-virtual.jpg">Ciclos</a>
                 </li>
             </ul>
             <li class="nav-item dropdown d-flex">
@@ -43,7 +43,43 @@
                     </li>
                 </ul>
             </li>
-            <button type="button" class="btn btn-outline-warning"><a href="./views/login_admin.php"><?php echo $nameButtonAdmin;  ?></a></button>
+            <button type="button" class="btn btn-outline-warning" style="display: <?php 
+                if(!empty($user)) {
+                    echo "none";
+                }
+                else {
+                    echo "block";
+                }
+
+            ?>;">
+            <a href="./views/login_admin.php"><?php echo $nameButtonAdmin;  ?></a>
+            </button>
+            
+            <?php
+                if(!empty($user)) {
+                    echo "<a class='mx-3 nav-link disabled' aria-current='page' href='#'>". $user['nombre_usuario'] ."</a>";
+                    
+                }
+                
+            ?>
+            <form action="php_controllers/btnSalirController.php" method="POST">
+
+                <button type="submit" name="salirUser" class="btn btn-outline-primary mx-3 mt-3" style="color:cadetblue; display: <?php 
+                    if(empty($user)) {
+                        echo "none";
+                    }
+                    else {
+                        echo "block";
+                    }
+
+                ?>;">
+                Salir
+                </button>
+
+
+            </form>
+           
+
         </div>
     </div>
 </nav>

@@ -81,4 +81,21 @@ function selecUsers() {
     
 }
 
+//Puntuation
+
+function selectPuntuationUser($userId) {
+    $conexion = openBd();
+
+    $sentenciaText = "SELECT * FROM usuario_juego WHERE id_usuario = ". strval( $userId);;
+
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+
+    $resultados = $sentencia->fetchAll();    
+
+    $conexion = closeBd();
+
+    return $resultados;
+}
+
 ?>

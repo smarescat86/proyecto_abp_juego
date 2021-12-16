@@ -1,10 +1,11 @@
 <?php
-    require_once('../data/bd.php');
+    require_once('../data/bdAdmin.php');
 
-    $tablaSopaDeLletres = selectTablaId(1);
+    $tablaSopaDeLletres = selectTablaId(1);    
     $tablaBomberman = selectTablaId(2);
-    $tablaTrile = selectTablaId(3);
-    $tablaMemory = selectTablaId(4);
+    $tablaTrile = selectTablaId(4);
+    $tablaMemory = selectTablaId(3);
+    
 
 ?>
 

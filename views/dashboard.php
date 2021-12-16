@@ -1,16 +1,3 @@
-<?php
-
-if (!isset($_SESSION)) {
-    session_start();
-
-    $_SESSION['backLandingPage'] = true;
-}
-else {
-    $_SESSION['backLandingPage'] = true;
-}
-//print_r($_SESSION['user']);
-//$admin = $_SESSION['user'];
-?>
 
 
 <div class="container-fluid">
@@ -27,27 +14,39 @@ else {
             <div class="apartados">
                 <div class="row rowDashboard align-items-center">
                     <div class="col">
-                    <a class="apartado m-3" href="./administracionPerfil.php"><i class="fas fa-user-circle fa-1x"></i> Mi Perfil</a>
+                    <a class="apartado m-3" href="administracionPerfil.php"><i class="fas fa-user-circle fa-1x"></i> Mi Perfil</a>
                     </div>
 
                 </div>
                 <div class="row rowDashboard align-items-center">
                     <div class="col">
-                    <a class="apartado m-3" href="./tablaUsuarios.php"><i class="fas fa-users fa-1x"></i> Usuarios </a>
+                    <a class="apartado m-3" href="tablaUsuarios.php"><i class="fas fa-users fa-1x"></i> Usuarios </a>
                     </div>
 
                     </div>
+
                 <div class="row rowDashboard align-items-center">
                     <div class="col">
-                    <a class="apartado m-3" href="./administracionJuego.php"><i class="fas fa-gamepad fa-1x"></i> Juegos</a>
+                    <a class="apartado m-3" href="administracionJuego.php"><i class="fas fa-gamepad fa-1x"></i> Juegos</a>
                     </div>
                 </div>
-                <div class="row align-items-center">
-                    <div class="col">
-                    <a class="apartado m-3 disabled" href="./tablaSuperAdmin.php"><i class="fas fa-user-cog"></i> Admin</a>
-                    </div>
-                </div>
+
+                <div class="row align-items-center" style="display:<?php  
                 
+                    switch($admin['id_rol']) {
+                        case 1: //SuperAdmin
+                            echo "block";
+                            break;
+                        case 2: //Admin
+                            echo "none";
+                            break;
+                    }
+                
+                ?> ;">
+                    <div class="col">
+                    <a class="apartado m-3 disabled" href="tablaSuperAdmin.php"><i class="fas fa-user-cog"></i> Admin</a>
+                    </div>
+                </div>
                 
                 
             </div>

@@ -1,11 +1,18 @@
 
 
 <?php
+    
 
-    $idUsuario = 1;
+    require_once("../data/bdAdmin.php");
 
-    require_once("bd.php");
+
     session_start();
+
+    $admin =  isset($_SESSION['admin']) ? $_SESSION["admin"] : '';
+
+    $idUsuario = $admin["id_usuario"];
+
+
 
     if(isset($_POST['update'])) {
 

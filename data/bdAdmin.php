@@ -112,7 +112,7 @@ WHERE id_usuario = 1;
 
         $resultados = $sentencia->fetchAll();
 
-        $conexion = closeBd();
+        $conexion = closeBd();  
 
         foreach ($resultados as &$resultado) {
             $idUsuario = $resultado["id_usuario"];

@@ -1,13 +1,23 @@
 <?php
-require_once('../php_librarys/bd.php');
+    require_once('../php_librarys/bd.php');
 
-$usuarios = selectAdmins();
-if (!isset($_SESSION)) {
+    $usuarios = selectAdmins();
+
+    $admin = [];
+
+    if (isset($_SESSION)) {
+
+        $admin = $_SESSION['admin'];
+        var_dump($admin);
+
+        $_SESSION['backLandingPage'] = true;
+        
+    }
+
     
-}
 
-$admin = $_SESSION['admin'];
-var_dump($admin);
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +31,19 @@ var_dump($admin);
     include '../bootstrap/index.php';
     ?>
     <link rel="stylesheet" href="../styles/sass/administracion/dashboard/estiloDashboard.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
 </head>
 
 <body>
 
     <?php
-    include('dashboard.php');
+        include('dashboard.php');
+
     ?>
+
     <div class="colJuego col col-8 col-md-9 col-lg-10">
         <div class="row rowJuego title align-items-start">
             <div class="col">

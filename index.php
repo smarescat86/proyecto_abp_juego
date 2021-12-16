@@ -19,10 +19,34 @@ else {
 
 var_dump($user);
 
-
-
 $_SESSION['backLandingPage'] = false;
 
+  //Puntuacion
+
+  require_once ('data/bd.php');
+ 
+  if(!empty($user) || !empty($admin)) {
+    
+    $userId = 0;
+    
+    if(!empty($user)) {
+      $userId = $user['id_usuario'];
+    }
+    else {
+      $userId = $admin['id_usuario'];
+    }
+
+    $_SESSION['puntuacion'] = selectPuntuationUser($userId);
+    
+
+  }
+
+  $puntuationUser = isset($_SESSION['puntuacion']) ? $_SESSION['puntuacion'] : '';
+
+  
+  var_dump($puntuationUser);
+
+  
 
 
 ?>
@@ -73,24 +97,41 @@ $_SESSION['backLandingPage'] = false;
                     <img class="imagen-juego" src="./media/sopa.PNG" alt="">
                     <div class="medio">
                     <div class="texto">
-                    <?php echo $lang["juegoUno"] ?> <br> 
-                            <a href="games/sopaDeLetras/index.php"><?php echo $lang["juega"] ?></a>
-                            <a href="./views/login_user.php"><?php echo 'login' ?></a>
+                    <?php echo $lang["juegoUno"] ?> <br>
+
+                            <a href="games/sopaDeLetras/index.php" style="display: <?php 
+                              if(empty($user) && empty($admin)) {
+                                echo "none";
+                              }
+                            
+                            ?>"><?php echo $lang["juega"] ?></a>
+
+                            <a href="./views/login_user.php" style="display: <?php 
+                              if(!empty($user) || !empty($admin)) {
+                                echo "none";
+                              }
+                            
+                            ?>;"><?php echo 'login' ?></a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col">
+
+                
                 <div class="contenedor">
-                    <img class="imagen-juego" src="./media/dynaman.png" alt="">
-                    <div class="medio">
-                    <div class="texto">
-                    <?php echo $lang["juegoDos"] ?> <br> 
-                            <a href="games/dynaman/home.html"><?php echo $lang["juega"] ?></a>
-                        </div>
-                    </div>
+                      <img class="imagen-juego" src="./media/dynaman.png" alt="">
+                      <div class="medio">
+                      <div class="texto">
+                      <?php echo $lang["juegoDos"] ?> <br> 
+                              <a href="games/dynaman/home.html"><?php echo $lang["juega"] ?></a>
+                          </div>
+                      </div>
                 </div>
+                
+
+
             </div>
 
             <div class="col">

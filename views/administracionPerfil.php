@@ -36,7 +36,7 @@
                 <div class="lineDiv perfil"></div>
             </div>
         </div>
-        <form action="../data/usuarioController.php" method="POST">
+        <form action="../php_controllers/adminPerfilController.php" method="POST">
             <div class="row rowPerfil inputs align-items-center">
                 <div class="col-sm-12 col-lg-5">
                     <div class="input-group">
