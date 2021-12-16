@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,UAAU,EAAE,MAAM;CACrB;;AAED,AAAA,QAAQ,AAAA,OAAO,CAAC;EACZ,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;CACrB;;AAED,AAAA,UAAU,AAAA,OAAO,CAAC;EACd,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,IAAI;CACpB;;AAED,AAAA,UAAU,AAAA,MAAM,CAAC;EACb,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "estiloPerfil.scss"
+    ],
+    "names": [],
+    "file": "estiloPerfil.css"
+}
