@@ -349,10 +349,10 @@ function cogerCiclo(coordenadas){
     if(marketing.encontrado === true && informatica.encontrado === true && turismo.encontrado === true && administracion.encontrado === true){
         gameOver = true;
         texto = "Has ganado";
-        document.getElementById("texto-modal").innerHTML = texto;
-        modal.style.display = "block";
+        /*document.getElementById("texto-modal").innerHTML = texto;
+        modal.style.display = "block";*/
         clearInterval(tempo);
-        enviarPuntos(puntuacion);
+        redireccionar();
     }
 }
 
@@ -554,11 +554,11 @@ function cogerCiclo(coordenadas){
         personaje.dir = 'personaje-muerto';
         drawJugador();
         gameOver = true;
-        texto = "Has perdido";
+        /*texto = "Has perdido";
         document.getElementById("modal-texto").innerHTML = texto;
-        modal.style.display = "block";
+        modal.style.display = "block";*/
         clearInterval(tempo);
-        enviarPuntos(puntuacion);
+        subirDatos(puntuacion, tiempoTotal);
     }
 
     function borrarExplosion(){
@@ -648,12 +648,19 @@ function cogerCiclo(coordenadas){
         }
     }
 
-    function enviarPuntos(puntos) {
-        let xhttp = new XMLHttpRequest();
-        xhttp.open("GET","bd.php ? puntos = " + puntos, true);
-        xhttp.send();
+    function redireccionar(){
+        window.location="ranking.php";
+
     }
-    
+
+    function subirDatos(puntos, tiempo){
+        var datos = {
+            method: 'POST',
+            body: JSON.stringify({puntos: puntos, tiempo: tiempo})
+        }
+        fetch('./php/subirDatos.php', datos)
+        .then(response => redireccionar())
+    }
 
     var modal = document.getElementById("myModal");
     var texto = "";

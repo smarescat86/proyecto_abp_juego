@@ -19,7 +19,7 @@
 <body>
 
   <?php
-    require_once 'php/bd.php';
+    include 'php/bd.php';
   ?>
 
     <!--<div class="guy" id="guy"></div>-->
@@ -67,7 +67,7 @@
     </div>
 
     <!------------- MODAL ---------------->
-    <div id="myModal" class="modal">
+    <!-- <div id="myModal" class="modal">
 
         <div class="modal-content">
 
@@ -133,9 +133,9 @@
         </div>
         
       
-      </div>
+      </div> -->
     <!------------------------------------>
-
+    
     <script src="scripts/scripts.js"></script>
 </body>
 </html>
