@@ -1,9 +1,18 @@
 <?php 
+session_start();
 
 $data = json_decode(file_get_contents('php://input'), true);
 
 if($data['action'] == 'selectPlayers') {
     selectPlayers();
+}
+if($data['action'] == 'updateUser') {
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+
+    $time = $data['seconds'];
+    $score = $data['score'];
+
+    updateUser($user, $time, $score);
 }
 
 function openBd() {
@@ -36,8 +45,6 @@ function selectPlayers() {
     $query->execute();
     $result = $query->fetchAll();
 
-    $connection = closeBd();
-
     if(!empty($result)) {
         echo json_encode($result);
     } else {
@@ -46,6 +53,23 @@ function selectPlayers() {
 
     $connection = closeBd();
     return $result;
+}
+
+function updateUser($user, $time, $score) {
+    $id = $user['id_usuario'];
+
+    $connection = openBd();
+
+    $queryText = "UPDATE usuario_juego SET puntuacion=:puntuacion, tiempo=:tiempo
+                  WHERE id_usuario =:id AND id_juego = 1";
+
+    $query = $connection->prepare($queryText);
+    $query->bindParam(':puntuacion', $score);
+    $query->bindParam(':tiempo', $time);
+    $query->bindParam(':id', $id);
+    $query->execute();
+
+    $connection = closeBd();
 }
 
 
