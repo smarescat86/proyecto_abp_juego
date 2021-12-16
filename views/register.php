@@ -15,19 +15,19 @@ include '../bootstrap/index.php';
                     <form action="../php_controllers/loginController.php" method="POST" id="form-register">
                         <div class="mb-4">
                             <label for="email">Nombre</label>
-                            <input type="text" class="form-control" id="email" name="nombre" placeholder="Nombre">
+                            <input type="text" class="form-control" id="email" name="nombre" placeholder="Nombre" required>
                         </div>
                         <div class="mb-4">
                             <label for="email">Apellidos</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos">
+                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos" required>
                         </div>
                         <div class="mb-4">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
                         </div>
                         <div class="mb-4">
                             <label for="email">Usuario</label>
-                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
+                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>
                         </div>
                         <div class="d-grid">
                             <button type="submit" name="registro" class="btn color-orange">Enviar</button>
@@ -38,3 +38,20 @@ include '../bootstrap/index.php';
         </div>
     </div>
 </div>
+
+<?php
+
+    if(isset($_SESSION["correctoRegister"])) {
+        
+        if(!$_SESSION["correctoRegister"]) {
+            echo "<script>";
+            echo "setTimeout(function(){ alert('Usuario duplicado!'); }, 200);";
+            echo "</script>";
+        }
+
+        $_SESSION["correctoRegister"] = true;
+
+
+    }
+
+?>

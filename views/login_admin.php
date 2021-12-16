@@ -1,13 +1,46 @@
 <?php
 include '../bootstrap/index.php';
 session_start();
-$admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+//$admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
 
+if (isset($_SESSION)) {
+
+    $backLandingPage = $_SESSION['backLandingPage'];
+
+    var_dump($backLandingPage);
+
+    if($backLandingPage) {
+        header("Location: ../index.php");
+        exit();
+    }
+    else {
+
+        $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+
+        if(!empty($admin)) {
+            
+            if($admin['id_rol'] == 1) { //Si es super admin
+                header('Location: ../views/tablaSuperAdmin.php');
+                exit();
+            } else {
+                header('Location: ../views/tablaUsuarios.php');
+                exit();
+            }
+
+
+        }
+    }
+
+}
+
+/*
 if (!empty($admin)) 
 {
     header("Location: ../index.php");
     exit();
 }
+*/
+
 ?>
 <script src="../js/loginAdmin.js"></script>
 <link rel="stylesheet" href="./../styles/logins.css">

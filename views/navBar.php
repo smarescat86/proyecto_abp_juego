@@ -43,7 +43,7 @@
                     </li>
                 </ul>
             </li>
-            <button type="button" class="btn btn-outline-warning"><a href="./views/login_admin.php">Acceso admin</a></button>
+            <button type="button" class="btn btn-outline-warning"><a href="./views/login_admin.php"><?php echo $nameButtonAdmin;  ?></a></button>
         </div>
     </div>
 </nav>

@@ -39,7 +39,7 @@ function selectAdmin($email, $pass) {
     $queryText = "SELECT * FROM usuario WHERE email = ? AND contrasena = ?";
 
     $query = $connection->prepare($queryText);
-    $query->execute([$email, $pass]);
+    $query->execute([$email, md5($pass)]);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
     $connection = closeBd();
@@ -62,6 +62,23 @@ function insertUser($nombre, $apellido, $email, $usuario) {
     $query->execute();
 
     $connection = closeBd();
+}
+
+function selecUsers() {
+
+    $conexion = openBd();
+
+    $sentenciaText = "select * from usuario";
+
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+
+    $resultado = $sentencia->fetchAll();
+
+    $conexion = closeBd();
+    
+    return $resultado;
+    
 }
 
 ?>

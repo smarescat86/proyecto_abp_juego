@@ -2,6 +2,7 @@
 require_once('../php_librarys/bd.php');
 
 $usuarios = selectUsuarios();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

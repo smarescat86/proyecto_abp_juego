@@ -1,14 +1,11 @@
 <?php
-    require_once('../data/bd.php');
-
-    $idUsuario = 1;
-
-   //$usuario = selectUsuarioId($idUsuario);
+    require_once('../data/bdAdmin.php');
+    
     session_start();
+    $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,13 +41,13 @@
                 <div class="col-sm-12 col-lg-5">
                     <div class="input-group">
                             <span class="input-group-text" id="addon-wrapping"> Nombre</span>
-                            <input name="nombre" type="text" class="form-control" value=<?php echo $usuario[0]['nombre']; ?> aria-label="Username" aria-describedby="addon-wrapping">
+                            <input name="nombre" type="text" class="form-control" value=<?php echo $admin['nombre']; ?> aria-label="Username" aria-describedby="addon-wrapping">
                         </div>
                 </div>
                 <div class="col-sm-12 col-lg-5">
                     <div class="input-group">
                             <span class="input-group-text" id="addon-wrapping">Apellido</span>
-                            <input name="apellido" type="text" class="form-control" value=<?php echo $usuario[0]['apellido']; ?> aria-label="Username" aria-describedby="addon-wrapping">
+                            <input name="apellido" type="text" class="form-control" value=<?php echo $admin['apellido']; ?> aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
             </div>
@@ -59,7 +56,7 @@
                 <div class="col-sm-12 col-lg-5">
                 <div class="input-group">
                             <span class="input-group-text" id="addon-wrapping">Email</span>
-                            <input name="email" type="text" class="form-control" value=<?php echo $usuario[0]['email']; ?> aria-label="Username" aria-describedby="addon-wrapping">
+                            <input name="email" type="text" class="form-control" value=<?php echo $admin['email']; ?> aria-label="Username" aria-describedby="addon-wrapping">
                         </div>
                 </div>
                 <div class="col-sm-12 col-lg-5">
@@ -71,7 +68,7 @@
                     -->
                     <div class="input-group">
                         <span class="input-group-text" id="addon-wrapping">Nickname</span>
-                        <input name="nickname" type="text" class="form-control" value=<?php echo $usuario[0]['nombre_usuario']; ?> aria-label="Username" aria-describedby="addon-wrapping">
+                        <input name="nickname" type="text" class="form-control" value=<?php echo $admin['nombre_usuario']; ?> aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
 
                 </div>

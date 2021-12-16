@@ -2,7 +2,29 @@
 //session
 session_start();
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+
+$admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+
+$nameButtonAdmin = "";
+
+if(!empty($admin)) {
+  $nameButtonAdmin = $admin['nombre_usuario'];
+
+}
+else {
+  $nameButtonAdmin = "Acceso admin";
+}
+
+
+
 var_dump($user);
+
+
+
+$_SESSION['backLandingPage'] = false;
+
+
+
 ?>
 
 <!DOCTYPE html>
