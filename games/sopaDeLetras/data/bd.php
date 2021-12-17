@@ -5,6 +5,14 @@ if($data['action'] == 'selectPlayers') {
     selectPlayers();
 }
 
+if($data['action'] == 'updateUser') {
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+    $time = $data['seconds'];
+    $score = $data['score'];
+
+    updateUser($user, $time, $score);
+}
+
 function openBd() {
     $servername = "localhost";
     $username = "root";
