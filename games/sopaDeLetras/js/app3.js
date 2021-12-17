@@ -583,6 +583,10 @@ function gameOver() {
             clearInterval(intervalBoard);
             elements.finalButtons.style.visibility = 'visible';
          }, 1000 );
+
+         if(elements.finalText.textContent == "¡You win!") {
+            uploadScorePlayer();
+        }
     }
 }
 
