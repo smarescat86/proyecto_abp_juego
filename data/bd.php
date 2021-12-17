@@ -49,43 +49,38 @@ function selectAdmin($email, $pass) {
 
 function insertUser($nombre, $apellido, $email, $usuario) {
     $connection = openBd();
+    try {
+        $connection->beginTransaction();
 
-    $queryText = "INSERT INTO usuario (id_rol, nombre, apellido, email, nombre_usuario) VALUES (3, :nombre, :apellido, :email, :usuario)";
+        $queryText = "INSERT INTO usuario (id_rol, nombre, apellido, email, nombre_usuario) VALUES (3, :nombre, :apellido, :email, :usuario)";
 
-    $query = $connection->prepare($queryText);
+        $query = $connection->prepare($queryText);
+    
+        $query->bindParam(':nombre', $nombre);
+        $query->bindParam(':apellido', $apellido);
+        $query->bindParam(':email', $email);
+        $query->bindParam(':usuario', $usuario);
+        $query->execute();
+    
+        $id_user = $connection->lastInsertId();
 
-    $query->bindParam(':nombre', $nombre);
-    $query->bindParam(':apellido', $apellido);
-    $query->bindParam(':email', $email);
-    $query->bindParam(':usuario', $usuario);
+        $queryTextUserJuego = "Insert into usuario_juego (id_usuario,id_juego,puntuacion,tiempo)VALUES (:id_usuario,:id_juego,0,0)";
+        $quer2 = $connection->prepare($queryTextUserJuego);
+        $quer2->bindParam(':id_usuario', $id_user);
 
-    $query->execute();
+        for ($i = 1; $i <= 4; $i++) {
+            $quer2->bindParam(':id_juego', $i);
+            $quer2->execute();
+        }
 
+        $connection->commit();
+        
+    } catch (PDOException $e) {
+        $connection->rollBack();
+    }
     $connection = closeBd();
 }
 
-function insertTableUserGame($id_usuario) {
-    $conexion = openBD();
-    
-    $sentenciaText = "
-    BEGIN
-    IF NOT EXISTS (SELECT * FROM usuario_juego WHERE id_usuario = :id_usuario)
-        BEGIN
-            INSERT INTO usuario_juego (id_usuario,id_juego,puntuacion,tiempo) VALUES (:id_usuario,:id_juego,:puntuacion,:tiempo)
-        END
-    END";
-    
-    $sentencia = $conexion->prepare($sentenciaText);
-    $sentencia->bindParam(':id_usuario', $id_usuario);
-    $sentencia->bindParam(':puntuacion', null);
-    $sentencia->bindParam(':tiempo', null);
-    
-    for ($i = 1; $i < 5; $i++) {
-        $sentencia->bindParam(':id_juego', $i);
-        $sentencia->execute();
-    }
-    $conexion = closeBD();
-}
 
 
 ?>
