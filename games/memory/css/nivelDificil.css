@@ -26,6 +26,8 @@ img {
     top: 0px;
     left: 0px;
     border-width: 0px;
+    transform: rotateY(0deg);
+    transition: transform 0.6s;
 }
 
 .card:hover {

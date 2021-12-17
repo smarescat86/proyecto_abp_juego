@@ -77,7 +77,7 @@ var_dump($user);
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
-                            <a href="games/memory/index.html"><?php echo $lang["juega"] ?></a>
+                            <a href="games/memory/index.php"><?php echo $lang["juega"] ?></a>
                         </div>
                     </div>
                 </div>

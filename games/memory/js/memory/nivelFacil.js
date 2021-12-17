@@ -157,7 +157,7 @@ function canviar_imatge(adre) {
             adre_actual = adre;
 
             if (adre.style.backgroundImage == backcard) {
-
+                adre.style.transform = "rotateY(180deg)";
                 adre.style.backgroundImage = imatge_element(adre);
             } else {
                 adre.style.backgroundImage = backcard;
@@ -178,7 +178,8 @@ function canviar_imatge(adre) {
                 } else {
 
                     setTimeout(function() {
-
+                        adre_anterior.style.transform = "rotateY(0deg)";
+                        adre_actual.style.transform = "rotateY(0deg)";
                         adre_anterior.style.backgroundImage = backcard;
                         adre_actual.style.backgroundImage = backcard;
                     }, 1000);
@@ -283,7 +284,7 @@ function Ini() {
         i++;
         //document.getElementById('d'+j);
     }
-    startTimer(60 * 2);
+    startTimer(5 * 1);
     setInterval(showModal, 1000);
 
 
@@ -311,7 +312,7 @@ function startTimer(duration) {
         if (--timer < 0) {
             timer = 0;
             //En cas de que score sigui 500 o timeInSeconds sigui 120(2 minuts)
-        } else if (score == 500 || timeInSeconds == 120) {
+        } else if (score == 500 || timeInSeconds == 5) {
             //Mostrem el modal
             showModal();
             //Parem el timer
@@ -325,7 +326,8 @@ function startTimer(duration) {
 
 
 function showModal() {
-    if (score == 500 || timeInSeconds == 120) {
+    if (score == 500 || timeInSeconds == 5) {
+        ajaxPuntuacion();
         $('#staticBackdrop').modal('show');
         document.getElementById("mostrarResultados").innerHTML = "Puntuacio : " + score + " punts " + '<br>' + "Temps : " + timeInSeconds + " segons";
         if (score == 500) {
@@ -334,5 +336,18 @@ function showModal() {
             staticBackdropLabel.innerHTML = 'HAS PERDUT!'
         }
 
+
     }
+}
+
+function ajaxPuntuacion() {
+  
+    let xhttp = new XMLHttpRequest();
+
+
+    xhttp.open("GET", "rankingController.php?puntuation=" + score + "&time=" + timeInSeconds, true);
+
+    //xhttp.open("GET", "rankingController.php?time=" + timeGame , true);
+
+    xhttp.send();
 }

@@ -157,7 +157,7 @@ function canviar_imatge(adre) {
             adre_actual = adre;
 
             if (adre.style.backgroundImage == backcard) {
-
+                adre.style.transform = "rotateY(180deg)";
                 adre.style.backgroundImage = imatge_element(adre);
             } else {
                 adre.style.backgroundImage = backcard;
@@ -178,7 +178,8 @@ function canviar_imatge(adre) {
                 } else {
 
                     setTimeout(function() {
-
+                        adre_anterior.style.transform = "rotateY(0deg)";
+                        adre_actual.style.transform = "rotateY(0deg)";
                         adre_anterior.style.backgroundImage = backcard;
                         adre_actual.style.backgroundImage = backcard;
                     }, 1000);
@@ -290,8 +291,6 @@ function Ini() {
 }
 
 
-
-var timeoutHandle;
 let timeInSeconds = 0;
 
 function startTimer(duration) {
@@ -311,7 +310,7 @@ function startTimer(duration) {
         if (--timer < 0) {
             timer = 0;
             //En cas de que score sigui 500 o timeInSeconds sigui 120(2 minuts)
-        } else if (score == 500 || timeInSeconds == 120) {
+        } else if (score == 500 || timeInSeconds == 5) {
             //Mostrem el modal
             showModal();
             //Parem el timer
@@ -326,6 +325,7 @@ function startTimer(duration) {
 
 function showModal() {
     if (score == 500 || timeInSeconds == 120) {
+        ajaxPuntuacion();
         $('#staticBackdrop').modal('show');
         document.getElementById("mostrarResultados").innerHTML = "Puntuacio : " + score + " punts " + '<br>' + "Temps : " + timeInSeconds + " segons";
         if (score == 500) {
@@ -333,9 +333,9 @@ function showModal() {
         } else {
             staticBackdropLabel.innerHTML = 'HAS PERDUT!'
         }
+
     }
 }
-
 
 async function moveElement() {
 
@@ -348,6 +348,8 @@ async function moveElement() {
     let puntoYbck;
     let i = 1;
 
+    let maxHeight = screen.height * 20;
+    let maxWidth = screen.width * 20;
 
     do {
         div = document.getElementById('d' + i);
@@ -357,19 +359,19 @@ async function moveElement() {
         x = parseFloat(div.style.top);
         y = parseFloat(div.style.left);
         if (x >= puntoYbck || y >= puntoXbck) {
-            x += 1;
-            div.style.top = x + "%";
-            div.style.left = y + "%";
+            x += 0.5;
+            div.style.top = x + "px";
+            div.style.left = y + "px";
 
         } else {
-            x += 1;
-            div.style.top -= x + "%";
-            div.style.left -= y + "%";
+            x -= 0.5;
+            div.style.top -= x + "px";
+            div.style.left -= y + "px";
 
         }
-        puntoYbck = x + "%";
-        puntoXbck = y + "%";
-        await sleep(400);
+        puntoYbck = x + "px";
+        puntoXbck = y + "px";
+        await sleep(1000);
         if (i == imgs.length) {
             i = 1;
         } else {
@@ -384,4 +386,17 @@ async function moveElement() {
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+function ajaxPuntuacion() {
+  
+    let xhttp = new XMLHttpRequest();
+
+
+    xhttp.open("GET", "rankingController.php?puntuation=" + score + "&time=" + timeInSeconds, true);
+
+    //xhttp.open("GET", "rankingController.php?time=" + timeGame , true);
+
+    xhttp.send();
 }

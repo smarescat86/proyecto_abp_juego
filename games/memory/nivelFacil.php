@@ -1,3 +1,21 @@
+<?php
+require_once('./php_librarys/bd.php');
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
+$user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+$admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+
+
+if(!empty($user)) {
+    $_SESSION['idMemory'] = $user['id_usuario'];
+} elseif(!empty($admin)) {
+    $_SESSION['idMemory'] = $admin['id_usuario'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,17 +61,10 @@
 
                     </div>
                     <div class="modal-footer">
+                        
                         <button type="button" class="btn btn-info" onclick="location.reload()">Tornar a jugar</button>
-                        <a href=""><button type="button " class="btn btn-secondary">Mostrar Ranking</button>
-<<<<<<< HEAD
-                            <a href=""> <button type="button " class="btn btn-primary ">Continuar</button></a>
-=======
-<<<<<<< HEAD
-                            <a href=""> <button type="button " class="btn btn-primary ">Continuar</button></a>
-=======
-                            <a href="../../index.php"> <button type="button " class="btn btn-primary ">Continuar</button></a>
->>>>>>> andres-branch
->>>>>>> main
+                        <a href="./clasificacion.php"><button type="button " class="btn btn-secondary">Mostrar Ranking</button>
+                        <a href="./index.php"> <button type="button " class="btn btn-primary ">Continuar</button></a>
                     </div>
                 </div>
             </div>
