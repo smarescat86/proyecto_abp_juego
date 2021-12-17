@@ -1,4 +1,11 @@
 <?php
+
+$PASS_SOPA_DE_LLETRES = 400;
+$PASS_DYNAMAN = 400;
+$PASS_TRILE = 350;
+$PASS_MEMORY = 400;
+
+
 //session
 session_start();
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
@@ -43,7 +50,36 @@ $_SESSION['backLandingPage'] = false;
 
   $puntuationUser = isset($_SESSION['puntuacion']) ? $_SESSION['puntuacion'] : '';
 
-  
+  $puntuacionSopaDeLetras = [];
+  $puntuacionDynaman = [];
+  $puntuacionMemory = [];
+  $puntuacionTrile = [];
+
+  if(!empty($puntuationUser)) {
+    foreach($puntuationUser as $punts) {
+      switch($punts["id_juego"]) {
+        case 1:
+          $puntuacionSopaDeLetras = $punts;
+          break;
+        case 2:
+          $puntuacionDynaman = $punts;
+          break;
+        case 3:
+          $puntuacionMemory = $punts;
+          break;
+        case 4:
+          $puntuacionTrile = $punts;
+          break;
+
+      }
+    }
+
+
+  }
+
+
+
+
   var_dump($puntuationUser);
 
   
@@ -120,43 +156,181 @@ $_SESSION['backLandingPage'] = false;
             <div class="col">
 
                 
-                <div class="contenedor">
-                      <img class="imagen-juego" src="./media/dynaman.png" alt="">
-                      <div class="medio">
+              <div class="contenedor" style="display:<?php 
+                  if(isset($puntuacionSopaDeLetras)) {
+                    if(!empty($puntuacionSopaDeLetras)) {
+                      
+                      if($puntuacionSopaDeLetras["puntuacion"] < $PASS_SOPA_DE_LLETRES) {
+                        echo "none";
+                      }
+
+                    }
+                  }
+                
+                ?>">
+                  <img class="imagen-juego" src="./media/dynaman.png" alt="">
+                    <div class="medio">
                       <div class="texto">
                       <?php echo $lang["juegoDos"] ?> <br> 
-                              <a href="games/dynaman/home.html"><?php echo $lang["juega"] ?></a>
-                          </div>
+                      <a href="games/dynaman/home.html" style="display: <?php 
+                              if(empty($user) && empty($admin)) {
+                                echo "none";
+                              }
+                            
+                            ?>"><?php echo $lang["juega"] ?></a>
+
+                            <a href="./views/login_user.php" style="display: <?php 
+                              if(!empty($user) || !empty($admin)) {
+                                echo "none";
+                              }
+                            
+                            ?>;"><?php echo 'login' ?></a>
                       </div>
+                    </div>
                 </div>
+
+
+                <?php
+                  if(isset($puntuacionSopaDeLetras)) {
+                    if(!empty($puntuacionSopaDeLetras) &&(!empty($user) || !empty($admin))) {
+                      
+                      if($puntuacionSopaDeLetras["puntuacion"] < $PASS_SOPA_DE_LLETRES) {
+
+                        echo "<div class='contenedor block'>";
+                        echo " <img class='imagen-juego block' src='./media/dynaman.png' alt=''>";
+                        echo "<i class='fas fa-lock fa-7x'></i>";
+                        echo "</div>";
+                      }
+
+                    }
+                  }
+
+                ?>
+
                 
 
 
             </div>
 
             <div class="col">
-                <div class="contenedor">
+                <div class="contenedor" style="display: 
+                <?php 
+
+                  if(isset($puntuacionMemory)) {
+                    if(!empty($puntuacionMemory)) {
+                      
+                      if($puntuacionMemory["puntuacion"] < $PASS_MEMORY) {
+                        echo "none";
+                      }
+
+                    }
+                  }           
+                
+                
+                
+                ?>">
                     <img class="imagen-juego" src="./media/memory.png" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
-                            <a href="games/memory/index.html"><?php echo $lang["juega"] ?></a>
+                        <a href="games/memory/index.html" style="display: <?php 
+                              if(empty($user) && empty($admin)) {
+                                echo "none";
+                              }
+                            
+                            ?>"><?php echo $lang["juega"] ?></a>
+
+                            <a href="./views/login_user.php" style="display: <?php 
+                              if(!empty($user) || !empty($admin)) {
+                                echo "none";
+                              }
+                            
+                            ?>;"><?php echo 'login' ?></a>
                         </div>
                     </div>
-                </div>
+              </div>
+                
+              <?php
+                  if(isset($puntuacionMemory)) {
+                    if(!empty($puntuacionMemory) &&(!empty($user) || !empty($admin))) {
+                      
+                      if($puntuacionMemory["puntuacion"] < $PASS_MEMORY) {
+
+                        echo "<div class='contenedor block'>";
+                        echo " <img class='imagen-juego block' src='./media/memory.png' alt=''>";
+                        echo "<i class='fas fa-lock fa-7x'></i>";
+                        echo "</div>";
+                      }
+
+                    }
+                  }
+
+                ?>
+
+
+
             </div>
 
             <div class="col">
-             <div class="contenedor">
+             <div class="contenedor" style="display: 
+             <?php
+
+              if(isset($puntuacionTrile)) {
+                if(!empty($puntuacionTrile)) {
+                  
+                  if($puntuacionTrile["puntuacion"] < $PASS_TRILE) {
+                    echo "none";
+                  }
+
+                }
+              }  
+             
+             
+             ?>">
                     <img class="imagen-juego" src="./media/trille.png" alt="">
                     <div class="medio">
                         <div class="texto">
                         <?php echo $lang["juegoCuatro"] ?> <br> 
-                            <a href="games/trile/html/index.php"><?php echo $lang["juega"] ?></a>
+                        <a href="games/trile/html/index.php" style="display: <?php 
+                              if(empty($user) && empty($admin)) {
+                                echo "none";
+                              }
+                            
+                            ?>"><?php echo $lang["juega"] ?></a>
+
+                            <a href="./views/login_user.php" style="display: <?php 
+                              if(!empty($user) || !empty($admin)) {
+                                echo "none";
+                              }
+                            
+                            ?>;"><?php echo 'login' ?></a>
                         </div>
                     </div>
                 </div>
+
+                <?php
+                  if(isset($puntuacionTrile)) {
+                    if(!empty($puntuacionTrile) &&(!empty($user) || !empty($admin))) {
+                      
+                      if($puntuacionTrile["puntuacion"] < $PASS_TRILE) {
+
+                        echo "<div class='contenedor block'>";
+                        echo " <img class='imagen-juego block' src='./media/trille.png' alt=''>";
+                        echo "<i class='fas fa-lock fa-7x'></i>";
+                        echo "</div>";
+                      }
+
+                    }
+                  }
+
+                ?>
+
+
+
             </div>
+
+
+
         </div>
     </div>
     <!--Segundo Scroll-->
@@ -326,7 +500,7 @@ $_SESSION['backLandingPage'] = false;
     <!--Footer -->
 
         
-    
+    <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
 
 </body>
 
