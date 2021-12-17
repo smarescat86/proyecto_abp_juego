@@ -138,7 +138,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
-            <button type="button" class="btn btn-primary" id="playGame">SI!</button>
+            <button type="button" class="btn btn-primary" id="playGame" data-bs-dismiss="modal">SI!</button>
         </div>
         </div>
     </div>

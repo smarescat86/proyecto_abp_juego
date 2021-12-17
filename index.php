@@ -1,9 +1,10 @@
 <?php
 
-$PASS_SOPA_DE_LLETRES = 400;
-$PASS_DYNAMAN = 400;
+$PASS_SOPA_DE_LLETRES = 500;
+$PASS_DYNAMAN = 4;
+$PASS_MEMORY = 500;
 $PASS_TRILE = 350;
-$PASS_MEMORY = 400;
+
 
 
 //session
@@ -216,10 +217,10 @@ $_SESSION['backLandingPage'] = false;
                 <div class="contenedor" style="display: 
                 <?php 
 
-                  if(isset($puntuacionMemory)) {
-                    if(!empty($puntuacionMemory)) {
+                  if(isset($puntuacionDynaman)) {
+                    if(!empty($puntuacionDynaman)) {
                       
-                      if($puntuacionMemory["puntuacion"] < $PASS_MEMORY) {
+                      if($puntuacionDynaman["puntuacion"] < $PASS_DYNAMAN) {
                         echo "none";
                       }
 
@@ -251,10 +252,10 @@ $_SESSION['backLandingPage'] = false;
               </div>
                 
               <?php
-                  if(isset($puntuacionMemory)) {
-                    if(!empty($puntuacionMemory) &&(!empty($user) || !empty($admin))) {
+                  if(isset($puntuacionDynaman)) {
+                    if(!empty($puntuacionDynaman) &&(!empty($user) || !empty($admin))) {
                       
-                      if($puntuacionMemory["puntuacion"] < $PASS_MEMORY) {
+                      if($puntuacionDynaman["puntuacion"] < $PASS_DYNAMAN) {
 
                         echo "<div class='contenedor block'>";
                         echo " <img class='imagen-juego block' src='./media/memory.png' alt=''>";
@@ -275,10 +276,10 @@ $_SESSION['backLandingPage'] = false;
              <div class="contenedor" style="display: 
              <?php
 
-              if(isset($puntuacionTrile)) {
-                if(!empty($puntuacionTrile)) {
+              if(isset($puntuacionMemory)) {
+                if(!empty($puntuacionMemory)) {
                   
-                  if($puntuacionTrile["puntuacion"] < $PASS_TRILE) {
+                  if($puntuacionMemory["puntuacion"] < $PASS_MEMORY) {
                     echo "none";
                   }
 
@@ -309,10 +310,10 @@ $_SESSION['backLandingPage'] = false;
                 </div>
 
                 <?php
-                  if(isset($puntuacionTrile)) {
-                    if(!empty($puntuacionTrile) &&(!empty($user) || !empty($admin))) {
+                  if(isset($puntuacionMemory)) {
+                    if(!empty($puntuacionMemory) &&(!empty($user) || !empty($admin))) {
                       
-                      if($puntuacionTrile["puntuacion"] < $PASS_TRILE) {
+                      if($puntuacionMemory["puntuacion"] < $PASS_MEMORY) {
 
                         echo "<div class='contenedor block'>";
                         echo " <img class='imagen-juego block' src='./media/trille.png' alt=''>";

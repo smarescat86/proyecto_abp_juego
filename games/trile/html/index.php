@@ -1,6 +1,28 @@
 <?php
     require_once('../data/bd.php');
-    $idUsuario = 5;
+    /*
+    $idUsuario = 2;
+
+
+
+    if(!isset($_COOKIE['puntuation'])) {
+
+        setcookie("puntuation", -1, 0);
+
+       
+    }
+    else {
+        if($_COOKIE['puntuation'] != -1) {
+            saveStatisticBD($idUsuario,$_COOKIE['puntuation']);
+            setcookie("puntuation", -1, 0);
+        }
+    }
+    */
+
+    session_start();
+    $_SESSION['id'] = 1;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -102,5 +124,4 @@
 
 </body>
 </html>
-
 

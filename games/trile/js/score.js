@@ -5,7 +5,46 @@ var containerScore = document.getElementById("containerScore");
 
 function ejectScore() {
 
-    finalScore = true;
+    let cookies = document.cookie;
+    cookies = cookies.split(";");
+
+    let cookieSplit,nombreCookie;
+    /*
+
+    let puntuacionSuperoir = false;
+
+    a = 4;
+    
+    for(let i = 0; i < cookies.length; i++) {
+
+        cookieSplit = cookies[i].split("=");
+
+        nombreCookie = cookieSplit[0];
+
+        if(nombreCookie == "puntuation") {
+            if(ponits > cookieSplit[1]) {
+                puntuacionSuperoir = true;
+            }
+
+        }
+
+
+    }
+
+    if(puntuacionSuperoir) {
+        document.cookie = "puntuation=" + ponits;
+    }
+   
+
+
+    puntuacionSuperoir = false;
+
+    */
+
+    //finalScore = true;
+
+
+    ajaxPuntuacion();
 
     if(soundButton.className == "buttons index sound on") {
         setTimeout(soundScore,1000);
@@ -202,7 +241,18 @@ scoreHouse.addEventListener("click",function() {
 
 function reseatItems() {
 
-    finalScore = false;
+    //finalScore = false;
+
+    
+
+    //document.cookie = "puntuacion=" + ponits;
+
+    //saveStatistic(ponits);
+
+    
+
+    //ajaxPuntuacion(points);
+
 
     containerScore.style.display = "none";
     ponits = 0;
@@ -234,4 +284,13 @@ function visibleItemsIndex() {
     for(let i = 0; i < indexItems.length; i++) {
         indexItems[i].style.display = "block";
     }
+}
+
+
+function ajaxPuntuacion() {
+    let pointsAjax = ponits;
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET","ajaxPuntuacion.php?puntuation="+pointsAjax,true);
+    xhttp.send();
 }
