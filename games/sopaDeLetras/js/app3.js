@@ -604,7 +604,7 @@ function loadDataTable() {
             <tr>
                 <td>${contador}</td>
                 <td>${player.nombre_usuario}</td>
-                <td>${player.tiempo}</td>
+                <td>${player.tiempo + 's'}</td>
                 <td>${player.puntuacion}</td>
             </tr>`
             contador++;
