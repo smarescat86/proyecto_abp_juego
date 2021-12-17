@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  //session_start();
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 <body>
 
   <?php
-    require_once 'php/bd.php';
+    //include 'php/bd.php';
   ?>
 
     <!--<div class="guy" id="guy"></div>-->
