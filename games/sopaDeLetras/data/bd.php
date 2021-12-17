@@ -1,10 +1,12 @@
 <?php 
+//session
+session_start();
+
 $data = json_decode(file_get_contents('php://input'), true);
 
 if($data['action'] == 'selectPlayers') {
     selectPlayers();
 }
-
 if($data['action'] == 'updateUser') {
     $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
     $time = $data['seconds'];
@@ -43,8 +45,6 @@ function selectPlayers() {
     $query = $connection->prepare($queryText);
     $query->execute();
     $result = $query->fetchAll();
-
-    $connection = closeBd();
 
     if(!empty($result)) {
         echo json_encode($result);
@@ -89,5 +89,6 @@ function updateUser($user, $time, $score) {
     }
 
 }
+
 
 ?>
