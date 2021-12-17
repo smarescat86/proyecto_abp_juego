@@ -1,8 +1,6 @@
 <?php
 
-session_start();
-
-guardarPuntos(1,$_GET['puntos']);
+//guardarPuntos($_SESSION['user'], $_GET['puntos']);
 
 function openBd(){
     $servername = "localhost";
@@ -17,30 +15,23 @@ function openBd(){
 }
 
 
-  function selectTableDynaman() {
+function selectTableDynaman() {
 
-    $idDynaman = 4;
+    $idDynaman = 2;
     
     $conexion = openBd();
 
-    $sentenciaText = "select * from usuario_juego where id_juego = " . strval($idDynaman);
+    $sentenciaText = "select * from usuario_juego where id_juego = :idDynaman ORDER BY puntuacion desc LIMIT 5";
 
     $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia ->bindParam(":idDynaman", $idDynaman);
+
     $sentencia->execute();
 
-    $resultados = $sentencia->fetchAll();
+    $resultados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
     $conexion = closeBd();
 
-    foreach ($resultados as &$resultado) {
-        $idUsuario = $resultado["id_usuario"];
-        $nickname = selectNicknameId( $idUsuario);
-
-        $resultado["id_usuario"] = $nickname[0]['nombre_usuario'];
-
-        //print_r($resultado);
-
-    }
     return $resultados;
 }
 
@@ -62,24 +53,28 @@ function selectNickNameId($idUsuario) {
     return $resultado[0]['nombre_usuario'];
 }
 
-function insertPuntos($puntos, $tiempo, $idUsuario){
+function insertPuntos($idUsuario, $puntos, $tiempo){
     $conexion = openBd();
 
+    $idDynaman = 2;
+
     $sentenciaText = "insert into usuario_juego (id_usuario, id_juego, puntuacion, tiempo) values (:idUsuario, :idJuego, :puntuacion, :tiempo)";
+    
     $sentencia = $conexion->prepare($sentenciaText);
+
     $sentencia ->bindParam(":idUsuario", $idUsuario);
-    $sentencia ->bindParam(":idJuego", 2);
+    $sentencia ->bindParam(":idJuego", $idDynaman);
     $sentencia ->bindParam(":puntuacion", $puntos);
     $sentencia ->bindParam(":tiempo", $tiempo);
+
     $sentencia ->execute();
 
     closeBd();
 }
 
-function updatePuntos($puntos) {
+function updatePuntos($idUsuario, $puntos) {
 
     $idDynaman = 2;
-    $idUsuario = 1;
 
     $conexion = openBd();
 
@@ -101,7 +96,7 @@ function selectTablaId($idUsuario) {
 
     $conexion = openBd();
 
-    $sentenciaText = "select * from usuario_juego where id_usuario = " . $idUsuario . " and id_juego = ". $idTrile .";";
+    $sentenciaText = "select * from usuario_juego where id_usuario = " . $idUsuario . " and id_juego = ". $idDynaman .";";
     $sentencia = $conexion->prepare($sentenciaText);
     $sentencia->execute();
 
@@ -113,27 +108,26 @@ function selectTablaId($idUsuario) {
 }
 
 
-function guardarPuntos($idUsuario,$points) {     
+function guardarPuntos($idUsuario,$puntos) {    
+    $tiempo = 50; 
 
     $datosTablaPuntuacion = selectTablaId($idUsuario);
 
     if(count($datosTablaPuntuacion) == 0) {
         //INSERT
-        insertPuntuacion($idUsuario,$points);
-
+        insertPuntos($idUsuario, $puntos, $tiempo);
     }
     else {
         //UPDATE
         $puntacionSuperior = false;
 
-        foreach($datosTablaPuntuacion as $datoTablaPuntuacion) {
-            if($datoTablaPuntuacion['puntuacion'] < $points) {
-                $puntacionSuperior = true;
-            }
+        if($datoTablaPuntuacion['puntos'] < $puntos) {
+            $puntacionSuperior = true;
         }
+
         
         if($puntacionSuperior) {
-            updatePuntuacion($idUsuario,$points);
+            updatePuntos($idUsuario,$puntos);
         }
 
         $puntacionSuperior = false;
