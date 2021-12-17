@@ -90,5 +90,4 @@ function updateUser($user, $time, $score) {
 
 }
 
-
 ?>
