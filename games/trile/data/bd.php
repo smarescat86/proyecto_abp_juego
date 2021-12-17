@@ -18,7 +18,7 @@
 
     function selectTableTrile() {
 
-        $idTrile = 3;
+        $idTrile = 4;
         
         $conexion = openBd();
 

@@ -1,26 +1,26 @@
 <?php
     require_once('../data/bd.php');
-    /*
-    $idUsuario = 2;
-
-
-
-    if(!isset($_COOKIE['puntuation'])) {
-
-        setcookie("puntuation", -1, 0);
-
-       
-    }
-    else {
-        if($_COOKIE['puntuation'] != -1) {
-            saveStatisticBD($idUsuario,$_COOKIE['puntuation']);
-            setcookie("puntuation", -1, 0);
-        }
-    }
-    */
 
     session_start();
-    $_SESSION['id'] = 1;
+
+    $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+
+    $userId = 0;
+    
+    if(!empty($admin) || !empty($user)) {
+
+        if(!empty($admin)) {
+            $userId = $admin['id_usuario'];
+        }
+        else {
+            $userId = $user['id_usuario'];
+        }
+    }
+
+    $_SESSION['idTrile'] = $userId;
+
+ 
 
 
 ?>

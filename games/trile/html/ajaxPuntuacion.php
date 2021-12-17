@@ -2,7 +2,7 @@
 
     session_start();
 
-    saveStatisticBD($_SESSION['id'],$_GET['puntuation']);
+    saveStatisticBD($_SESSION['idTrile'],$_GET['puntuation']);
 
 
     function openBd() {
@@ -22,7 +22,7 @@
 
     function selectTablaId($idUsuario) {
 
-        $idTrile = 3;
+        $idTrile = 4;
 
         $conexion = openBd();
 
@@ -41,7 +41,7 @@
 
     function insertPuntuacion($idUsuario,$points) {
 
-        $idTrile = 3;
+        $idTrile = 4;
         
         $conexion = openBd();
 
@@ -65,11 +65,11 @@
 
     function updatePuntuacion($idUsuario,$points) {
 
-        $idTrile = 3;
+        $idTrile = 4;
 
         $conexion = openBd();
 
-        $sentenciaText = "update usuario_juego set puntuacion = :point where id_usuario = :id_usuario and id_juego = :id_juego";
+        $sentenciaText = "UPDATE usuario_juego SET puntuacion = :point , tiempo = 90  WHERE id_usuario = :id_usuario AND id_juego = :id_juego";
 
         $sentencia = $conexion->prepare($sentenciaText);
 
