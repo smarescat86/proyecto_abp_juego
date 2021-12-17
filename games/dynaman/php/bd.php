@@ -1,7 +1,5 @@
 <?php
 
-//guardarPuntos($_SESSION['user'], $_GET['puntos']);
-
 function openBd(){
     $servername = "localhost";
     $username = "root";
@@ -21,7 +19,7 @@ function selectTableDynaman() {
     
     $conexion = openBd();
 
-    $sentenciaText = "select * from usuario_juego where id_juego = :idDynaman ORDER BY puntuacion desc LIMIT 5";
+    $sentenciaText = "select * from usuario_juego where id_juego = :idDynaman ORDER BY puntuacion desc, tiempo LIMIT 5";
 
     $sentencia = $conexion->prepare($sentenciaText);
     $sentencia ->bindParam(":idDynaman", $idDynaman);
@@ -70,21 +68,23 @@ function insertPuntos($idUsuario, $puntos, $tiempo){
     $sentencia ->execute();
 
     closeBd();
+    var_dump('Ha hecho la función');
 }
 
-function updatePuntos($idUsuario, $puntos) {
+function updatePuntos($idUsuario, $puntos, $tiempo) {
 
     $idDynaman = 2;
 
     $conexion = openBd();
 
-    $sentenciaText = "update usuario_juego set puntuacion = :puntos where id_usuario = :id_usuario and id_juego = :id_juego";
+    $sentenciaText = "update usuario_juego set puntuacion = :puntos, tiempo = :tiempo where id_usuario = :id_usuario and id_juego = :id_juego";
 
     $sentencia = $conexion->prepare($sentenciaText);
 
-    $sentencia ->bindParam(":puntos",$puntos);
-    $sentencia ->bindParam(":id_usuario",$idUsuario);
-    $sentencia ->bindParam(":id_juego",$idDynaman);
+    $sentencia ->bindParam(":puntos", $puntos);
+    $sentencia ->bindParam(":tiempo", $tiempo);
+    $sentencia ->bindParam(":id_usuario", $idUsuario);
+    $sentencia ->bindParam(":id_juego", $idDynaman);
     
     $sentencia->execute();
 
@@ -96,7 +96,7 @@ function selectTablaId($idUsuario) {
 
     $conexion = openBd();
 
-    $sentenciaText = "select * from usuario_juego where id_usuario = " . $idUsuario . " and id_juego = ". $idDynaman .";";
+    $sentenciaText = "select * from usuario_juego where id_usuario = " . $idUsuario . " and id_juego = " . $idDynaman . ";";
     $sentencia = $conexion->prepare($sentenciaText);
     $sentencia->execute();
 
@@ -108,8 +108,7 @@ function selectTablaId($idUsuario) {
 }
 
 
-function guardarPuntos($idUsuario,$puntos) {    
-    $tiempo = 50; 
+function guardarPuntos($idUsuario, $puntos, $tiempo) {
 
     $datosTablaPuntuacion = selectTablaId($idUsuario);
 
@@ -121,17 +120,19 @@ function guardarPuntos($idUsuario,$puntos) {
         //UPDATE
         $puntacionSuperior = false;
 
-        if($datoTablaPuntuacion['puntos'] < $puntos) {
+        if($datosTablaPuntuacion['puntos'] < $puntos) {
             $puntacionSuperior = true;
         }
-
+        elseif($datosTablaPuntuacion['puntos'] == $puntos){
+            if($datosTablaPuntuacion['tiempo'] > $tiempo){
+                $puntacionSuperior = true;
+            }
+        }
         
         if($puntacionSuperior) {
-            updatePuntos($idUsuario,$puntos);
+            updatePuntos($idUsuario, $puntos, $tiempo);
         }
-
         $puntacionSuperior = false;
-        
     }
 
 

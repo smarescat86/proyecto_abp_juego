@@ -87,7 +87,7 @@
                     </tr>
                     <tr>
                       <td> <?php 
-                        echo selectNickNameId(1); //poner session id usuario;
+                        //echo selectNickNameId(1); //poner session id usuario;
                        ?> </td>
                       <td>4</td>
                       <td>90 sec</td>

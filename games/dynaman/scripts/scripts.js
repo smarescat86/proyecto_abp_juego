@@ -352,7 +352,7 @@ function cogerCiclo(coordenadas){
         /*document.getElementById("texto-modal").innerHTML = texto;
         modal.style.display = "block";*/
         clearInterval(tempo);
-        redireccionar();
+        subirDatos(puntuacion, tiempoTotal);
     }
 }
 
@@ -653,13 +653,16 @@ function cogerCiclo(coordenadas){
 
     }
 
-    function subirDatos(puntos, tiempo){
+    function subirDatos(puntuacion, tiempoTotal){
+        
         var datos = {
             method: 'POST',
-            body: JSON.stringify({puntos: puntos, tiempo: tiempo})
+            body: JSON.stringify({puntos: puntuacion, tiempo: tiempoTotal})
         }
+
         fetch('./php/subirDatos.php', datos)
-        .then(response => redireccionar())
+        .then(response => redireccionar());
+
     }
 
     var modal = document.getElementById("myModal");

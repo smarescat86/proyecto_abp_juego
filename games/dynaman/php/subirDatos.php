@@ -1,14 +1,27 @@
 <?php
+echo 'Hola mundo';
+
     session_start();
 
-    include 'bd.php';
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
 
-    $datos = json_decode(file_get_contents('php://input'),true);
+    $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
 
-    //$idUsuario = $user['id_usuario'];
-    $idUsuario = 1;
+    $idUsuario = 0;
+
+    if(!empty($user)){
+        $idUsuario = $user['id_usuario'];
+    }
+    else{
+        $idUsuario = $admin['id_usuario'];
+    }
+
+    include './bd.php';
+
+    $datos = json_decode(file_get_contents('php://input'), true);
+    //$idUsuario = 1;
     $puntos = $datos['puntos'];
     $tiempo = $datos['tiempo'];
 
-    function insertPuntos($idUsuario, $puntos, $tiempo);
+    guardarPuntos ($idUsuario, $puntos, $tiempo);
 ?> 
