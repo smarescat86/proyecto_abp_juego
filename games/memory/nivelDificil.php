@@ -51,6 +51,24 @@ if(!empty($user)) {
             </div>
         </div>
         <div class="cards" id="wrapper"></div>
+        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Salidas Profesionales</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="salidasProfessionales">
+
+                    </div>
+                    <div class="modal-footer">
+                        
+                    <a data-bs-toggle="modal" href="#staticBackdrop" class="btn btn-primary" data-dismiss="modal">Continuar</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

@@ -92,7 +92,7 @@ function saveStatisticBD($idUsuario,$points,$time) {
         $puntacionSuperior = false;
 
         foreach($datosTablaPuntuacion as $datoTablaPuntuacion) {
-            if($datoTablaPuntuacion['puntuacion'] <= $points) {
+            if($datoTablaPuntuacion['puntuacion'] < $points || ($datoTablaPuntuacion['puntuacion'] < $points && $datoTablaPuntuacion['tiempo'] > $time) ) {
                 $puntacionSuperior = true;
             }
         }

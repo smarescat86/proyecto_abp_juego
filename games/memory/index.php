@@ -38,8 +38,8 @@ if(!empty($user)) {
 
 <body>
 
-    <div class="container">
-    <a href="../../index.php"><i class="fas fa-sign-out-alt fa-3x">Salir</i></a>
+    <div class="container"><br>
+    <a href="../../index.php"><i class="fas fa-sign-out-alt fa-3x text-dark">Salir</i></a>
 
         <h1>Memory</h1>
         <div class="border border-light p-3 mb-4">

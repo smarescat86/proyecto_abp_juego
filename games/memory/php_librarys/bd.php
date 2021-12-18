@@ -31,7 +31,8 @@ function selectMemoryGame()
     ON juego.id_juego=usuario_juego.id_juego
     LEFT JOIN usuario
     ON usuario.id_usuario = usuario_juego.id_usuario
-    WHERE juego.nombre = 'Memory'";
+    WHERE juego.nombre = 'Memory'
+    ORDER BY puntuacion desc,tiempo asc";
 
 
     $sentencia = $conexion->prepare($sentenciaText);
