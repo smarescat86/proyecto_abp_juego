@@ -13,7 +13,7 @@ if (!empty($user))
 <script src="../js/loginUser.js"></script>
 <link rel="stylesheet" href="./../styles/logins.css">
 
-<div class="vh-100" style="background-image: url('../media/centre.jpeg'); background-image: url(../media/centre.jpeg);background-color: rgb(200, 200,200); background-blend-mode: soft-light;">
+<div class="vh-100" style="background-image: url('../media/centre.jpeg'); background-image: url(../media/centre.jpeg);background-color: rgb(200, 200,200); background-blend-mode: soft-light; background-size:cover">
     <div class="container py-5 h-100" style="width: 70%">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-6">

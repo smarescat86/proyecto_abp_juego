@@ -2,7 +2,7 @@
 //session
 session_start();
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
-var_dump($user);
+$_SESSION['lang'] = 'esp';
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ var_dump($user);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProyectoABP</title>
     <?php
-    include 'bootstrap/index.php';
+      include 'bootstrap/index.php';
     ?>
     <link rel="stylesheet" href="styles/estilos.css">
 
@@ -28,15 +28,22 @@ var_dump($user);
 
     <?php
         include 'views/navBar.php';
-        include 'lang/cat.php';
+        //include 'lang/' . $_SESSION['lang'] . '.php';
     ?>
 
  <!--Primer Scroll-->
+
     <div id="primerScroll" class="container-fluid vh-100">
-        <div class="row row-cols-1">
-            <div id="titulo" class="col text-light text-center position-absolute">
-                <h1 class="text-capitalize"><?php echo $lang["titulo"] ?></h1>
-                <p class=""><em><?php echo $lang["descripcionTitulo"] ?></em></p>
+        <div class="row row-cols-1 pt-4 animar">
+            <div id="titulo" class="col text-light text-center position-absolute mt-4 pt-4">
+                <h1 class="text-capitalize align-middle mt-4 pt-4"><?php echo $lang["titulo"] ?></h1>
+                <div class="divisor-principal">
+                  <div class="divider-custom-linea""></div>
+                  <div class="divider-custom-icono"><img src="./media/codigoqr-blanco.PNG" draggable="false" alt=""></div>
+                  <div class="divider-custom-linea"></div>
+                </div>
+                
+                <p class="fs-5"><em><?php echo $lang["descripcionTitulo"] ?></em></p>
             </div>
         </div>
     </div>
@@ -48,7 +55,7 @@ var_dump($user);
 
         <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="./media/sopa.PNG" alt="">
+                    <img class="imagen-juego" src="./media/sopa.PNG" draggable="false" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoUno"] ?> <br> 
@@ -61,7 +68,7 @@ var_dump($user);
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="./media/dynaman.png" alt="">
+                    <img class="imagen-juego" src="./media/dynaman.png" draggable="false" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoDos"] ?> <br> 
@@ -73,7 +80,7 @@ var_dump($user);
 
             <div class="col">
                 <div class="contenedor">
-                    <img class="imagen-juego" src="./media/memory.png" alt="">
+                    <img class="imagen-juego" src="./media/memory.png" draggable="false" alt="">
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
@@ -85,7 +92,7 @@ var_dump($user);
 
             <div class="col">
              <div class="contenedor">
-                    <img class="imagen-juego" src="./media/trille.png" alt="">
+                    <img class="imagen-juego" src="./media/trille.png" draggable="false" alt="">
                     <div class="medio">
                         <div class="texto">
                         <?php echo $lang["juegoCuatro"] ?> <br> 
@@ -99,28 +106,32 @@ var_dump($user);
     <!--Segundo Scroll-->
 
     <!--Tercer Scroll-->
-    <div id="tercerScroll" class="container-fluid">
-        <div class="row row-cols-3 h-25">
-
-            <div class="col">
-
-            </div>
-
-            <div class="col">
-                <h2>
-                <?php echo $lang["registrate"] ?>
+    <div id="tercerScroll" class="container-fluid p-4">
+        <div class="row h-50 p-4">
+                <h2 class="text-center pt-4 bold">
+                  <?php echo $lang["registrate"] ?>
                 </h2>
-                <p>
-                <?php echo $lang["descripcionRegistrate"] ?>
-                </p>
-            </div>
-
-            <div class="col">
                 
-            </div>
+                <div class="divisor-secundario">
+                  <div class="divider-custom-linea" style="background-color: orange"></div>
+                  <div class="divider-custom-icono"><img src="./media/codigoqr-naranja.PNG" draggable="false" alt=""></div>
+                  <div class="divider-custom-linea" style="background-color: orange"></div>
+                </div>
+                
+                <p class="text-center text-secondary">
+                <?php echo $lang["descripcionRegistrate1"] ?>
+                </p>
+
+                <p class="text-center">
+                  <?php echo $lang["descripcionRegistrate2"] ?>
+              </p>
+                <div style="justify-content: center; display:flex">
+                  <button type="button" class="btn btn-secondary p-3 m-2 align-self-center" style="width: 15%;"><?php echo $lang["boton1"] ?></button>
+                  <button type="button" class="btn btn-dark p-3 m-2 align-self-center" style="width: 15%;"><?php echo $lang["boton2"] ?></button>
+                </div>
+
 
         </div>
-        
     </div>
     <!--Tercer Scroll-->
 
@@ -130,16 +141,21 @@ var_dump($user);
 
 
     <!--Cuarto Scroll-->
-    <div id="cuartoScroll" class="container-fluid vh-50 mt-4 text-light">
-        <h2 class="text-center">
+    <div id="cuartoScroll" class="container-fluid vh-50 pt-4 mt-4 text-light">
+        <h2 class="text-center pt-4 mt-4">
         <?php echo $lang["tituloCiclos"] ?>
-            <hr class="divider text-center" width="100%">
         </h2>
         
-        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1">
+        <div class="divisor-secundario">
+                  <div class="divider-custom-linea"></div>
+                  <div class="divider-custom-icono"><img src="./media/codigoqr-blanco.PNG" draggable="false" alt=""></div>
+                  <div class="divider-custom-linea"></div>
+                </div>
+
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 p-4 m-4">
 
             <div class="col text-center">
-                <img class="img-fluid" src="./media/logo-informatica.png" alt="" srcset="" width="100px" height="100px">
+                <img class="img-fluid" src="./media/logo-informatica.png" alt="" draggable="false" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["informatica"] ?>
                 </h3>
@@ -149,7 +165,7 @@ var_dump($user);
             </div>
 
             <div class="col text-center">
-                <img src="./media/logo-marketing.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-marketing.png" alt="" draggable="false" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["marketing"] ?>
                 </h3>
@@ -159,7 +175,7 @@ var_dump($user);
             </div>
 
             <div class="col text-center">
-                <img src="./media/logo-turismo.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-turismo.png" alt="" draggable="false" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["turismo"] ?>
                 </h3>
@@ -169,7 +185,7 @@ var_dump($user);
             </div>
 
             <div class="col text-center">
-                <img src="./media/logo-administracion.png" alt="" srcset="" width="100px" height="100px">
+                <img src="./media/logo-administracion.png" alt="" draggable="false" width="100px" height="100px">
                 <h3 class="border-bottom">
                 <?php echo $lang["administracion"] ?>
                 </h3>
@@ -261,9 +277,6 @@ var_dump($user);
 </footer>
 
     <!--Footer -->
-
-        
-    
 
 </body>
 

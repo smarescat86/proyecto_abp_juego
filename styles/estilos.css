@@ -1,12 +1,39 @@
+body {
+  user-select: none;
+}
+
 h1 {
   font-family: 'Anton', sans-serif;
   font-size: 100px;
+}
+
+.animar {
+  animation-name: aparecer;
+  animation-duration: 6s;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .texto-home {
   position: absolute;
   top: 60%;
   left: 28%;
+}
+
+li {
+  color: white;
+}
+
+li:hover {
+  color: white;
+  border-radius: 10px;
 }
 
 #primerScroll {
@@ -42,21 +69,17 @@ h1 {
   opacity: 1;
   display: block;
   height: auto;
-  -webkit-transition: .5s ease;
   transition: .5s ease;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .medio {
-  -webkit-transition: .5s ease;
   transition: .5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -76,4 +99,56 @@ h1 {
   font-size: 16px;
   padding: 16px 32px;
 }
-/*# sourceMappingURL=estilos.css.map */
+
+.divisor-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.divisor-principal .divider-custom-linea {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 100px;
+  height: 8px;
+  border-radius: 20px;
+}
+
+.divisor-principal .divider-custom-icono {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  max-width: 100px;
+  height: 70px;
+  border-radius: 20px;
+}
+
+.divisor-secundario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.divisor-secundario .divider-custom-linea {
+  background-color: #fff;
+  width: 100%;
+  max-width: 50px;
+  height: 3px;
+  border-radius: 10px;
+}
+
+.divisor-secundario .divider-custom-icono {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  max-width: 60px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.navbar li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}

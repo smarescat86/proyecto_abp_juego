@@ -12,7 +12,7 @@ if (!empty($admin))
 <script src="../js/loginAdmin.js"></script>
 <link rel="stylesheet" href="./../styles/logins.css">
 
-<div class="vh-100" style="background-image: url('../media/centro.jpeg') ; background-color: rgb(200, 200,200); background-blend-mode: soft-light;">
+<div class="vh-100" style="background-image: url('../media/centro.jpeg') ; background-color: rgb(200, 200,200); background-blend-mode: soft-light; background-size:cover">
 <div class="container">
     <div class="row justify-content-center align-items-center h-100">
         <div class="col-lg-6">

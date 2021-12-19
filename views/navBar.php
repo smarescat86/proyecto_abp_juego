@@ -1,3 +1,7 @@
+<?php
+    include './lang/lang.php';
+?>
+
 <nav id="menu" class="navbar navbar-expand-lg navbar-light sticky-top " style="background-color: rgb(241, 137, 56);">
     <div class="container-fluid">
         <a class="navbar-brand" href="https://politecnics.barcelona/">
@@ -7,43 +11,43 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#primerScroll">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#segundoScroll">Juegos</a>
+                    <a class="nav-link" aria-current="page" href="#segundoScroll"><?php echo $lang["juegos"] ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="https://politecnics.barcelona/">Centro</a>
+                    <a class="nav-link" aria-current="page" href="https://politecnics.barcelona/"><?php echo $lang["centro"] ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="https://politecnics.barcelona/wp-content/uploads/banner-tour-virtual.jpg"">Ciclos</a>
+                    <a class="nav-link" aria-current="page" href="#cuartoScroll""><?php echo $lang["ciclos"] ?></a>
                 </li>
             </ul>
             <li class="nav-item dropdown d-flex">
                 <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Idiomas
+                <?php echo $lang["idiomas"] ?>
                 </a>
                 <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                     <li class="list-group-item">
-                        <a href="indexes.php">
+                        <a href="index.php?lang=esp">
                             <img src="./media/espana.png" height="50px" width="50px" alt="">
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="indexcat.php">
+                        <a href="index.php?lang=cat">
                         <img src="./media/catalunya.png" height="50px" width="50px" alt="">
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="indexen.php">
+                        <a href="index.php?lang=eng">
                         <img src="./media/inglaterra.png" height="50px" width="50px" alt="">
                         </a>
                     </li>
                 </ul>
             </li>
-            <button type="button" class="btn btn-outline-warning"><a href="./views/login_admin.php">Acceso admin</a></button>
+            <button type="button" class="btn btn-outline-warning"><a style="text-decoration: none; color:black;" href="./views/login_admin.php"><?php echo $lang["accesoAdmin"] ?></a></button>
         </div>
     </div>
 </nav>
