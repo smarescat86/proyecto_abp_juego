@@ -558,7 +558,8 @@ function cogerCiclo(coordenadas){
         document.getElementById("modal-texto").innerHTML = texto;
         modal.style.display = "block";*/
         clearInterval(tempo);
-        subirDatos(puntuacion, tiempoTotal);
+        borrarMapa();
+        //subirDatos(puntuacion, tiempoTotal);
     }
 
     function borrarExplosion(){
@@ -598,6 +599,45 @@ function cogerCiclo(coordenadas){
         drawMapa();
     }
 
+
+    function borrarMapa(){
+        var game = [
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+        ];
+
+        var html = "";
+        var gameMap = document.getElementById("game");
+        for (var i = 0; i < game.length; i++) {
+            for (var j = 0; j < game[i].length; j++) {
+                switch(game[i][j]){
+
+                    case 1:
+                        html += "<div class='wall'></div>";
+                    break;
+
+                    case 2:
+                        html += "<div class='vacio'></div>";
+                    break;
+                }
+            }
+            html += "</br>";
+        }
+    gameMap.innerHTML = html;
+    }
     /*----------------TIMER----------------*/
 
         var anchoBarra = 0;

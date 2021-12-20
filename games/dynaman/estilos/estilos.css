@@ -5,6 +5,7 @@ body{
     line-height: 0;
     font-family: 'Press Start 2P', cursive;
     font-size: xx-small;
+    user-select: none;
 }
 
 h2{
@@ -174,9 +175,17 @@ h2{
     top: 651px;
     left: 47px;
 }
+
+a:hover{
+    color: rgb(53, 53, 53);
+}
 a{
     text-decoration: none;
     color: black;
+}
+
+img:hover{
+    color: rgb(53, 53, 53);
 }
 
 .musica{
