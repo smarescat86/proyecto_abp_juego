@@ -1,7 +1,20 @@
 <?php
-require_once('../php_librarys/bd.php');
+    require_once('../php_librarys/bd.php');
 
-$usuarios = selectUsuarios();
+    $usuarios = selectUsuarios();
+
+    $admin = [];
+
+    if (isset($_SESSION)) {
+
+        $admin = $_SESSION['admin'];
+        var_dump($admin);
+
+        $_SESSION['backLandingPage'] = true;
+        
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

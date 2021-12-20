@@ -1,5 +1,9 @@
 .colJuego {
+<<<<<<< HEAD
+    min-height: 89.1vh;
+=======
     min-height: 100vh;
+>>>>>>> main
 }
 
 .rowJuego.title {
@@ -12,7 +16,32 @@
     margin-right: 20px;
 }
 
+<<<<<<< HEAD
+.colJuego {
+    height: 100vh;
+}
+/*
+.dropdown {
+    margin-left: 30px;
+    margin-top: 40px;
+    height: 75px;
+}
+*/
+
+#nav {
+    height: 75px;
+}
+
+.divTablas {
+    display: none;
+}
+
+#divTablaSopaDeLletres {
+    display: block;
+}
+=======
 .numbers {
     height:75px;
     border:2px solid gray;
 }
+>>>>>>> main

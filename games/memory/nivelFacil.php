@@ -1,3 +1,21 @@
+<?php
+require_once('./php_librarys/bd.php');
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
+$user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+$admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+
+
+if(!empty($user)) {
+    $_SESSION['idMemory'] = $user['id_usuario'];
+} elseif(!empty($admin)) {
+    $_SESSION['idMemory'] = $admin['id_usuario'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +50,24 @@
 
             </div>
         </div>
+        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Salidas Profesionales</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="salidasProfessionales">
+
+                    </div>
+                    <div class="modal-footer">
+                        
+                    <a data-bs-toggle="modal" href="#staticBackdrop" class="btn btn-primary" data-dismiss="modal">Continuar</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -43,9 +79,10 @@
 
                     </div>
                     <div class="modal-footer">
+                        
                         <button type="button" class="btn btn-info" onclick="location.reload()">Tornar a jugar</button>
-                        <a href=""><button type="button " class="btn btn-secondary">Mostrar Ranking</button>
-                            <a href="../../index.php"> <button type="button " class="btn btn-primary ">Continuar</button></a>
+                        <a href="./clasificacion.php"><button type="button " class="btn btn-secondary">Mostrar Ranking</button>
+                        <a href="./index.php"> <button type="button " class="btn btn-primary ">Continuar</button></a>
                     </div>
                 </div>
             </div>

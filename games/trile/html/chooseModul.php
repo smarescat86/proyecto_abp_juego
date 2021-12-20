@@ -138,7 +138,11 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+<<<<<<< HEAD
             <button type="button" class="btn btn-primary" id="playGame">SI!</button>
+=======
+            <button type="button" class="btn btn-primary" id="playGame" data-bs-dismiss="modal">SI!</button>
+>>>>>>> 0bbd469475920b13ce2c4e9b79e44968ea4fa7e4
         </div>
         </div>
     </div>

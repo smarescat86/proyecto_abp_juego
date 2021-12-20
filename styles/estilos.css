@@ -10,7 +10,7 @@ h1 {
 }
 
 #primerScroll {
-  background-image: url("/proyecto_abp_juego/media/fondo2.png");
+  background-image: url("../media/fondo2.png");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -42,21 +42,17 @@ h1 {
   opacity: 1;
   display: block;
   height: auto;
-  -webkit-transition: .5s ease;
   transition: .5s ease;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .medio {
-  -webkit-transition: .5s ease;
   transition: .5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -76,4 +72,3 @@ h1 {
   font-size: 16px;
   padding: 16px 32px;
 }
-/*# sourceMappingURL=estilos.css.map */

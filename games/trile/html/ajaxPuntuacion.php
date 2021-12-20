@@ -1,5 +1,8 @@
 <?php
-    //$puntos = $_COOKIE["puntuation"];
+
+    session_start();
+
+    saveStatisticBD($_SESSION['idTrile'],$_GET['puntuation']);
 
 
     function openBd() {
@@ -14,60 +17,12 @@
 
         return $conexion;
 
-    }
+    }  
 
-    function selectTableTrile() {
-
-        $idTrile = 4;
-        
-        $conexion = openBd();
-
-        $sentenciaText = "select * from usuario_juego where id_juego = " . strval($idTrile);
-
-        $sentencia = $conexion->prepare($sentenciaText);
-        $sentencia->execute();
-
-        $resultados = $sentencia->fetchAll();
-
-        $conexion = closeBd();
-
-        foreach ($resultados as &$resultado) {
-            $idUsuario = $resultado["id_usuario"];
-            $nickname = selectNicknameId( $idUsuario);
-
-            $resultado["id_usuario"] = $nickname[0]['nombre_usuario'];
-
-            //print_r($resultado);
-
-        }
-        return $resultados;
-    }
-
-    function selectNicknameId($idUsuario) {
-        //SELECT nombre_usuario from usuario where id_usuario = 1;
-
-        $conexion = openBd();
-
-        $sentenciaText = "select nombre_usuario from usuario where id_usuario = " . strval( $idUsuario);
-
-        $sentencia = $conexion->prepare($sentenciaText);
-        $sentencia->execute();
-
-        $resultado = $sentencia->fetchAll();
-
-        
-
-        $conexion = closeBd();
-
-        return $resultado;
-    }
-
-    //Puntuacion
-    /*
 
     function selectTablaId($idUsuario) {
 
-        $idTrile = 3;
+        $idTrile = 4;
 
         $conexion = openBd();
 
@@ -86,7 +41,7 @@
 
     function insertPuntuacion($idUsuario,$points) {
 
-        $idTrile = 3;
+        $idTrile = 4;
         
         $conexion = openBd();
 
@@ -110,11 +65,11 @@
 
     function updatePuntuacion($idUsuario,$points) {
 
-        $idTrile = 3;
+        $idTrile = 4;
 
         $conexion = openBd();
 
-        $sentenciaText = "update usuario_juego set puntuacion = :point where id_usuario = :id_usuario and id_juego = :id_juego";
+        $sentenciaText = "UPDATE usuario_juego SET puntuacion = :point , tiempo = 90  WHERE id_usuario = :id_usuario AND id_juego = :id_juego";
 
         $sentencia = $conexion->prepare($sentenciaText);
 
@@ -160,13 +115,14 @@
 
     }
 
-    */
+
 
 
 
     function closeBd() {
         return null;
     }
+
 
 
 ?>

@@ -1,0 +1,13 @@
+.color-orange {
+    background-color: #f18938 !important;
+}
+.text-orange {
+    color: #f18938 !important;
+}
+
+.btn-register {
+    text-decoration: none;
+}
+body {
+    overflow-x: hidden;
+}

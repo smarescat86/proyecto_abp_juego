@@ -1,6 +1,32 @@
 <?php
     require_once('../data/bd.php');
+<<<<<<< HEAD
     $idUsuario = 5;
+=======
+
+    session_start();
+
+    $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+
+    $userId = 0;
+    
+    if(!empty($admin) || !empty($user)) {
+
+        if(!empty($admin)) {
+            $userId = $admin['id_usuario'];
+        }
+        else {
+            $userId = $user['id_usuario'];
+        }
+    }
+
+    $_SESSION['idTrile'] = $userId;
+
+ 
+
+
+>>>>>>> 0bbd469475920b13ce2c4e9b79e44968ea4fa7e4
 ?>
 
 <!DOCTYPE html>
@@ -103,4 +129,7 @@
 </body>
 </html>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0bbd469475920b13ce2c4e9b79e44968ea4fa7e4
