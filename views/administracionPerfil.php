@@ -3,6 +3,10 @@
     
     session_start();
     $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+    if(!empty($admin)) {
+        $admin = selectUpdateAdmin($admin['id_usuario']);
+
+    }
 
 
 ?>

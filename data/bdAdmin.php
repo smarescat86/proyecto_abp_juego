@@ -66,6 +66,24 @@
         return $resultado;
     }
 
+    //Nuevo
+
+    function selectUpdateAdmin($userId) {
+
+        $connection = openBd();
+
+        $queryText = "SELECT * FROM usuario WHERE id_usuario = ?";
+
+        $query = $connection->prepare($queryText);
+        $query->execute([$userId]);
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        $connection = closeBd();
+
+        return $result[0];
+
+    }
+
     /*
     UPDATE usuario
 SET nombre = 'Pablo', email= 'pablo@gmail.com'

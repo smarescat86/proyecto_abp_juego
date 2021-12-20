@@ -53,7 +53,7 @@
             </div>
             <div class="col d-flex flex-row-reverse ms-2 text-white" style="margin-top:2%;">
 
-                <button type="button" class="btn  btn-dark btn-sm"><i class="fas fa-sign-out-alt fa-1x text-white">Salir</i></button>
+                <!--<button type="button" class="btn  btn-dark btn-sm"><i class="fas fa-sign-out-alt fa-1x text-white">Salir</i></button>-->
                 &nbsp;
                 <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal"> <i class="fas fa-user-plus fa-1x text-white">Crear admin</i></button>
 
@@ -127,21 +127,29 @@
                     <table class="table">
                         <thead class="table-dark">
                             <tr>
+                                <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Apellido</th>
                                 <th scope="col">nombre_usuario</th>
                                 <th scope="col">Editar</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($usuarios as $usuario) { ?>
                                 <tr class="table-hover">
+                                    <td><?php echo $usuario['id_usuario'] ?></td>
                                     <td><?php echo $usuario['nombre'] ?></td>
                                     <td><?php echo $usuario['apellido'] ?></td>
                                     <td><?php echo $usuario['nombre_usuario'] ?></td>
                                     <td>
                                         <button type="button" style="color:black;" class="btn btn-outline-light" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button>
                                     </td>
+                                    <form action="../php_controllers/adminController.php" method="post">                        
+                                    <td>
+                                    <button type="submit"  class="btn btn-outline-danger"   name="delete" value="<?php echo $usuario['id_usuario'] ?>"> <i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                   
                                 </tr>
                             <?php } ?>
 
@@ -191,8 +199,8 @@
                             </div>
                             <div class="modal-footer  align-items-center text-center pt-4">
 
-                                <button type="submit" class="btn btn-outline-primary" name="update">Aceptar</button>
-                                <button type="submit" class="btn btn-outline-danger" name="delete"><i class="fas fa-trash-alt"> Eliminar administrador</i></button>
+                                <button type="submit" class="btn btn-outline-primary" name="update" value="<?php echo $usuario['id_usuario'] ?>">Aceptar</button>
+                                
                             </div>
 
                         </div>

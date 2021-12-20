@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $PASS_SOPA_DE_LLETRES = 500;
 $PASS_DYNAMAN = 4;
 $PASS_MEMORY = 500;
@@ -8,7 +8,6 @@ $PASS_TRILE = 350;
 
 
 //session
-session_start();
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
 
 $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
@@ -234,19 +233,20 @@ $_SESSION['backLandingPage'] = false;
                     <div class="medio">
                     <div class="texto">
                     <?php echo $lang["juegoTres"] ?> <br> 
-                        <a href="games/memory/index.html" style="display: <?php 
-                              if(empty($user) && empty($admin)) {
-                                echo "none";
-                              }
-                            
-                            ?>"><?php echo $lang["juega"] ?></a>
+                    <a href="games/memory/index.php" style="display: <?php 
+                    if(empty($user) && empty($admin)) {
+                      echo "none";
+                    }
+                  
+                  ?>"><?php echo $lang["juega"] ?></a>
 
-                            <a href="./views/login_user.php" style="display: <?php 
-                              if(!empty($user) || !empty($admin)) {
-                                echo "none";
-                              }
-                            
-                            ?>;"><?php echo 'login' ?></a>
+                  <a href="./views/login_user.php" style="display: <?php 
+                    if(!empty($user) || !empty($admin)) {
+                      echo "none";
+                    }
+                  
+                  ?>;"><?php echo 'login' ?></a>
+                            <!--<a href="games/memory/index.php"><?php //echo $lang["juega"] ?></a>-->
                         </div>
                     </div>
               </div>
