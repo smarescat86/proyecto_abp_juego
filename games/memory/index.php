@@ -1,3 +1,21 @@
+<?php
+require_once('./php_librarys/bd.php');
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
+$user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+$admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+
+
+
+if(!empty($user)) {
+    $_SESSION['idMemory'] = $user['id_usuario'];
+} elseif(!empty($admin)) {
+    $_SESSION['idMemory'] = $admin['id_usuario'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,23 +32,26 @@
     <link rel="stylesheet" href="./css/landingPageGame.css">
 </head>
 
-</script>
 
-<script src="./js/memory/seleccionarNiveles.js"></script>
 
 
 
 <body>
 
-    <div class="container">
+    <div class="container"><br>
+    <a href="../../index.php"><i class="fas fa-sign-out-alt fa-3x text-dark">Salir</i></a>
 
         <h1>Memory</h1>
         <div class="border border-light p-3 mb-4">
 
             <div class="center">
 
-                <button type="button" class="btn btn-primary btn-lg " data-toggle="modal" data-target="#exampleModal">
-            Jugar !                 </button>
+            <button type="button" class="button btn btn-primary btn-lg " data-toggle="modal" data-target="#exampleModal">
+            Jugar!                 </button>
+            <button type="button" class=" btn btn-warning btn-lg "><a href="./clasificacion.php">
+            Ranking!                </a></button>
+            </div>
+            
             </div>
 
         </div>
@@ -102,7 +123,9 @@
     </div>
 
 
+    <script src="https://kit.fontawesome.com/7fae944b38.js" crossorigin="anonymous"></script>
 
+    <script src="./js/memory/seleccionarNiveles.js"></script>
 
 
 </body>

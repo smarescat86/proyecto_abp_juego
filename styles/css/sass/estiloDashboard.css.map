@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAEA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,wBAAwB;CAC7C",
-    "sources": [
-        "estiloDashboard.scss"
-    ],
-    "names": [],
-    "file": "estiloDashboard.css"
-}
+{"version":3,"sources":["estiloDashboard.scss"],"names":[],"mappings":"AAEA;EACI,0CAAA;AADJ","file":"estiloDashboard.css"}

@@ -27,17 +27,25 @@ function clickPlayGame() {
         keyboard: false
     });
     */
+   /*
    
     modalModulo.style.display = "none";
 
     
 
     let backdrop = document.getElementsByClassName("modal-backdrop fade show");
-    backdrop[0].style.display = "none";
+
+    if(backdrop.length > 0) {
+        backdrop[0].style.display = "none";
+    }
+    
 
     let modalOpen = document.getElementsByClassName("modal-open");
     //modalOpen[0].className = "";
-    modalOpen[0].style.overflow = "visible";
+    if(modalOpen.length > 0) {
+        modalOpen[0].style.overflow = "visible";
+    }
+    */
 
     
     
@@ -102,6 +110,8 @@ function iconImage () {
         
     }
 
+    moduloSeleccionado[0].className = "modul";
+
 
 }
 
@@ -162,7 +172,7 @@ function modulClick(modulo) {
             break;
         case GVEC:
             nombreModulo = G_S;
-            nombreModulo += " Gestio de Vendes i Espais Comercials";
+            nombreModulo += " Gestió de Vendes i Espais Comercials";
             break;
         case MARP:
             nombreModulo = G_S;

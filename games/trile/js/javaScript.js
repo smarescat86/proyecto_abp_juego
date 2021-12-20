@@ -20,7 +20,7 @@ const POINT_QUESTION = 50;
 const PUNTOS_INICIO = 0;
 
 const TIEMPO = 98;
-//const TIEMPO = 5;
+//const TIEMPO = 60;
 
 const SLEEP_THREE = 131.26;
 
@@ -365,6 +365,7 @@ function clickVaso1(){
 
 vaso1.addEventListener("click",function(){
     if(escoger) {
+        escoger = false;
         levantarVasos();
         levantarVasosBoolean = true;
         ponits+=POINTS_CUP;
@@ -384,6 +385,7 @@ vaso1.addEventListener("click",function(){
 
 vaso2.addEventListener("click",function(){
     if(escoger) {
+        escoger = false;
         levantarVasos();
         levantarVasosBoolean = true;
 
@@ -401,6 +403,7 @@ vaso2.addEventListener("click",function(){
 
 vaso3.addEventListener("click",function(){
     if(escoger) {
+        escoger = false;
         levantarVasos();
         levantarVasosBoolean = true;
 
@@ -488,6 +491,7 @@ function bucle(nAnterior) {
     if(n == 2 && n == nAnterior) {
         n = Math.floor(Math.random() * 2);
     }
+    
     
     switch(n) {
         case 0: //ARRIBA 

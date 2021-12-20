@@ -1,13 +1,46 @@
 <?php
 include '../bootstrap/index.php';
 session_start();
-$admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+//$admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
 
+if (isset($_SESSION)) {
+
+    $backLandingPage = $_SESSION['backLandingPage'];
+
+    //var_dump($backLandingPage);
+
+    if($backLandingPage) {
+        header("Location: ../index.php");
+        exit();
+    }
+    else {
+
+        $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : '';
+
+        if(!empty($admin)) {
+            
+            if($admin['id_rol'] == 1) { //Si es super admin
+                header('Location: ../views/tablaSuperAdmin.php');
+                exit();
+            } else {
+                header('Location: ../views/tablaUsuarios.php');
+                exit();
+            }
+
+
+        }
+    }
+
+}
+
+/*
 if (!empty($admin)) 
 {
     header("Location: ../index.php");
     exit();
 }
+*/
+
 ?>
 <script src="../js/loginAdmin.js"></script>
 <link rel="stylesheet" href="./../styles/logins.css">
@@ -31,16 +64,12 @@ if (!empty($admin))
                             <div class="input-group">
                                 <input type="Password" id="pass-admin" name="pass-admin"class="form-control" placeholder="Password" required>
                                 <div class="input-group-append">
-                                    <button id="show_password" class="btn color-orange" type="button" style="height: 100%; margin-left: 3px" onclick="mostrarPassword()">
-                                        <span class="fa fa-eye-slash icon"></span> </button>
+                                    
                                 </div>
                             </div>  
                         </div>
                             <div id="alert-admin"></div>
-                        <div class="mb-4">
-                            <input type="checkbox" id="remember" class="form-check-input">
-                            <label for="remember">Recordarme</label>
-                        </div>
+                      
                         <div class="d-grid">
                             <button type="submit" id="login-admin" name="login-admin" class="btn color-orange">Confirmar</button>
                         </div>

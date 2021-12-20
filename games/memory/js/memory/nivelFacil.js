@@ -67,7 +67,7 @@ function alertCiclos(ciclo) {
             ];
             maxScore = 500 / 3;
 
-            levelnum = 9;
+            levelnum = 6;
             rows = 2;
             columR0 = 1;
             maxColR0 = 3;
@@ -157,7 +157,7 @@ function canviar_imatge(adre) {
             adre_actual = adre;
 
             if (adre.style.backgroundImage == backcard) {
-
+                adre.style.transform = "rotateY(180deg)";
                 adre.style.backgroundImage = imatge_element(adre);
             } else {
                 adre.style.backgroundImage = backcard;
@@ -178,7 +178,8 @@ function canviar_imatge(adre) {
                 } else {
 
                     setTimeout(function() {
-
+                        adre_anterior.style.transform = "rotateY(0deg)";
+                        adre_actual.style.transform = "rotateY(0deg)";
                         adre_anterior.style.backgroundImage = backcard;
                         adre_actual.style.backgroundImage = backcard;
                     }, 1000);
@@ -325,8 +326,102 @@ function startTimer(duration) {
 
 
 function showModal() {
+    let salidasProfesionales = document.getElementById('salidasProfessionales');
+    switch (ciclo) {
+        case 'comercio':
+            salidasProfesionales.innerHTML = "<table class='table table-hover'> <tr>" +
+                '<td><img src=./img/Comercio/img1.jpeg width="100" height="100"/></td>' + '<td style="padding:50px"><p>Asistent</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img2.jpg width="125" height="100"/></td>' + '<td style="padding:50px"><p>Comercial</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img3.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Creativo</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img4.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Copywriter</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img5.jpeg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Analista</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img6.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Retail Manager</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img7.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Merchandiser</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img8.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Comercial IMP/EXP</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img9.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Asistente de banca</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Comercio/img10.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Coordinador de Trasporte</p></td>' +
+                "</tr></table>";
+
+            break;
+        case 'turismo':
+            salidasProfesionales.innerHTML = "<table class='table table-hover'> <tr>" +
+                '<td><img src=./img/Hoteleria/img1.png width="100" height="100"/></td>' + '<td style="padding:50px"><p>Agente de viajes</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Hoteleria/img2.png width="125" height="100"/></td>' + '<td style="padding:50px"><p>Promotor turistico</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Hoteleria/img3.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Organizador de eventos</p></td>' +
+
+                "</tr></table>";
+
+
+
+            break;
+        case 'comunicion':
+            salidasProfesionales.innerHTML = "<table class='table table-hover'> <tr>" +
+                '<td><img src=./img/Informatica/img1.png width="100" height="100"/></td>' + '<td style="padding:50px"><p>Analitas Aplicaciones Multiplataforma</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Informatica/img2.png width="125" height="100"/></td>' + '<td style="padding:50px"><p>App developer</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Informatica/img3.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Back-end developer</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Informatica/img4.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Desktop developer</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Informatica/img5.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Front-end developer</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Informatica/img6.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Hardware</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Informatica/img7.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Sistemas</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Informatica/img8.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Redes</p></td>' +
+
+                "</tr></table>";
+
+
+            break;
+        case 'gestion':
+            salidasProfesionales.innerHTML = "<table class='table table-hover'> <tr>" +
+                '<td><img src=./img/Administracion/img1.png width="100" height="100"/></td>' + '<td style="padding:50px"><p>Comptable financer junior</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Administracion/img2.jpg width="125" height="100"/></td>' + '<td style="padding:50px"><p>Gestor de personal junior</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Administracion/img3.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Gestor logístico junior</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Administracion/img4.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Contable Financiero</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Administracion/img5.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Gestor de personal</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Administracion/img6.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Gestor logístico </p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Administracion/img7.png width="150" height="100"/></td>' + '<td style="padding:50px"><p>Asistente de contable financiero</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Administracion/img8.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Asistente de gestion de personal</p></td>' + '</tr>' +
+                '<tr>' +
+                '<td><img src=./img/Administracion/img9.jpg width="150" height="100"/></td>' + '<td style="padding:50px"><p>Asistente de direccion</p></td>' +
+
+                "</tr></table>";
+
+
+            break;
+        default:
+            alert("Ningun ciclo seleccionado");
+            break;
+    }
+
     if (score == 500 || timeInSeconds == 120) {
-        $('#staticBackdrop').modal('show');
+        ajaxPuntuacion();
+        $('#exampleModal').modal('show');
+
+
+
         document.getElementById("mostrarResultados").innerHTML = "Puntuacio : " + score + " punts " + '<br>' + "Temps : " + timeInSeconds + " segons";
         if (score == 500) {
             staticBackdropLabel.innerHTML = 'HAS GUANYAT!'
@@ -335,4 +430,16 @@ function showModal() {
         }
 
     }
+}
+
+function ajaxPuntuacion() {
+
+    let xhttp = new XMLHttpRequest();
+
+
+    xhttp.open("GET", "rankingController.php?puntuation=" + score + "&time=" + timeInSeconds, true);
+
+    //xhttp.open("GET", "rankingController.php?time=" + timeGame , true);
+
+    xhttp.send();
 }

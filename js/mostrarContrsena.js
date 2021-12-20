@@ -20,3 +20,7 @@ function mostrarContrasena2() {
         document.getElementById('icon2').className = "glyphicon glyphicon-eye-close";
     }
 }
+
+function changeValueDeleteUser() {
+    document.getElementById('admin').value = "<?php echo $usuario['id_usuario'] ?>";
+}

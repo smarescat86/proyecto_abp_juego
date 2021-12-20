@@ -1,15 +1,29 @@
 body {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: "Anton", sans-serif;
   font-size: 100px;
 }
 
 .animar {
-  animation-name: aparecer;
-  animation-duration: 6s;
+  -webkit-animation-name: aparecer;
+          animation-name: aparecer;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+
+@-webkit-keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes aparecer {
@@ -20,7 +34,6 @@ h1 {
     opacity: 1;
   }
 }
-
 .texto-home {
   position: absolute;
   top: 60%;
@@ -32,7 +45,7 @@ li {
 }
 
 li:hover {
-  color: white;
+  color: #5959d3;
   border-radius: 10px;
 }
 
@@ -69,12 +82,13 @@ li:hover {
   opacity: 1;
   display: block;
   height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
+  transition: 0.5s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .medio {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -152,3 +166,21 @@ li:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
 }
+
+.imagen-juego.block {
+  transition: none;
+  transition: none;
+  filter: grayscale(100%);
+}
+
+.contenedor:hover .imagen-juego.block {
+  opacity: 1;
+}
+
+.fas.fa-lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}/*# sourceMappingURL=estilos.css.map */

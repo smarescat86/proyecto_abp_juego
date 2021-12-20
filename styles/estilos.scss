@@ -27,8 +27,9 @@ li{
   color: white;
 }
 
+
 li:hover{
-  color: white;
+  color: rgb(89, 89, 211);
   //background-color: black;
   border-radius: 10px;
 }
@@ -147,4 +148,26 @@ li:hover{
   background-color:rgba(255, 255, 255, 0.2);
   border-radius: 5px;
 }
-  
+
+//Nuevo
+
+.imagen-juego.block {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.contenedor:hover .imagen-juego.block{
+  opacity: 1;
+}
+
+.fas.fa-lock{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}

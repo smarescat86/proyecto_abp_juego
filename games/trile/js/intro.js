@@ -17,6 +17,10 @@ vaso2Intro.style.left = 1930 + "px";
 inicarIntro();
 
 function inicarIntro() {
+   
+   
+   //document.cookie = "puntuation=''";
+
     moveIntro(vaso1Intro,DERECHA_INTRO,1930);
     
 }

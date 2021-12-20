@@ -1,13 +1,23 @@
 <?php
-require_once('../php_librarys/bd.php');
+    require_once('../php_librarys/bd.php');
 
-$usuarios = selectAdmins();
-if (!isset($_SESSION)) {
+    $usuarios = selectAdmins();
+
+    $admin = [];
+
+    if (isset($_SESSION)) {
+
+        $admin = $_SESSION['admin'];
+        //var_dump($admin);
+
+        $_SESSION['backLandingPage'] = true;
+        
+    }
+
     
-}
 
-$admin = $_SESSION['admin'];
-var_dump($admin);
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,17 +30,22 @@ var_dump($admin);
     <?php
     include '../bootstrap/index.php';
     ?>
-    <link rel="stylesheet" href="../styles/sass/administracion/dashboard/estiloDashboard.css">
+   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../styles/sass/administracion/dashboard/estiloDashboard.css">
+
 </head>
 
 <body>
 
     <?php
-    include('dashboard.php');
+        include('dashboard.php');
+
     ?>
+
     <div class="colJuego col col-8 col-md-9 col-lg-10">
         <div class="row rowJuego title align-items-start">
             <div class="col">
@@ -38,7 +53,7 @@ var_dump($admin);
             </div>
             <div class="col d-flex flex-row-reverse ms-2 text-white" style="margin-top:2%;">
 
-                <button type="button" class="btn  btn-dark btn-sm"><i class="fas fa-sign-out-alt fa-1x text-white">Salir</i></button>
+                <!--<button type="button" class="btn  btn-dark btn-sm"><i class="fas fa-sign-out-alt fa-1x text-white">Salir</i></button>-->
                 &nbsp;
                 <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal"> <i class="fas fa-user-plus fa-1x text-white">Crear admin</i></button>
 
@@ -112,21 +127,29 @@ var_dump($admin);
                     <table class="table">
                         <thead class="table-dark">
                             <tr>
+                                <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Apellido</th>
                                 <th scope="col">nombre_usuario</th>
                                 <th scope="col">Editar</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($usuarios as $usuario) { ?>
                                 <tr class="table-hover">
+                                    <td><?php echo $usuario['id_usuario'] ?></td>
                                     <td><?php echo $usuario['nombre'] ?></td>
                                     <td><?php echo $usuario['apellido'] ?></td>
                                     <td><?php echo $usuario['nombre_usuario'] ?></td>
                                     <td>
                                         <button type="button" style="color:black;" class="btn btn-outline-light" data-toggle="modal" data-target="#myModal2"> <i class="bi bi-pencil-square"></i></button>
                                     </td>
+                                    <form action="../php_controllers/adminController.php" method="post">                        
+                                    <td>
+                                    <button type="submit"  class="btn btn-outline-danger"   name="delete" value="<?php echo $usuario['id_usuario'] ?>"> <i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                   
                                 </tr>
                             <?php } ?>
 
@@ -176,8 +199,8 @@ var_dump($admin);
                             </div>
                             <div class="modal-footer  align-items-center text-center pt-4">
 
-                                <button type="submit" class="btn btn-outline-primary" name="update">Aceptar</button>
-                                <button type="submit" class="btn btn-outline-danger" name="delete"><i class="fas fa-trash-alt"> Eliminar administrador</i></button>
+                                <button type="submit" class="btn btn-outline-primary" name="update" value="<?php echo $usuario['id_usuario'] ?>">Aceptar</button>
+                                
                             </div>
 
                         </div>

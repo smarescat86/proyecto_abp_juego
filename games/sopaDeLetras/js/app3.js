@@ -327,6 +327,7 @@ function gridItemMouseUp(event) {
         }
         markWord(wordFound);
         totalWordsFound++;
+        score += 100;
         addScore();
     }
     
@@ -517,8 +518,7 @@ function timerStart(elements) {
 
 function addScore(divScore) { 
     divScore = document.getElementById('score');
-    divScore.innerHTML = score + ' pts';
-    score += 100;   
+    divScore.innerHTML = score + ' pts';   
 }
 
 function removeMouseListeners() {
@@ -583,6 +583,10 @@ function gameOver() {
             clearInterval(intervalBoard);
             elements.finalButtons.style.visibility = 'visible';
          }, 1000 );
+
+         if(elements.finalText.textContent == "¡You win!") {
+            uploadScorePlayer();
+        }
     }
 }
 
@@ -596,7 +600,6 @@ function loadDataTable() {
     fetch('./data/bd.php', opciones)
     .then(respuesta => respuesta.json())
     .then(resultado => {
-        console.log(resultado);
         elements.cuerpo.innerHTML = '';
         contador = 1;
         resultado.forEach(player => {
@@ -604,7 +607,7 @@ function loadDataTable() {
             <tr>
                 <td>${contador}</td>
                 <td>${player.nombre_usuario}</td>
-                <td>${player.tiempo}</td>
+                <td>${player.tiempo + 's'}</td>
                 <td>${player.puntuacion}</td>
             </tr>`
             contador++;
@@ -613,4 +616,16 @@ function loadDataTable() {
 
 }
 
+//Actualizo el score del jugador en la base de datos
+function uploadScorePlayer() {
+    console.log('entra aca');
+    const opciones = {
+        method: 'POST',
+        body: JSON.stringify({action: 'updateUser', seconds: seconds, score: score})
+    }
+    fetch('./data/bd.php', opciones)
+    .then(() => {
+        loadDataTable();
+    });
+}
     

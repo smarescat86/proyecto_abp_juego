@@ -8,9 +8,9 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "https://localhost:443/projects/Juego2.0/html/index.php",
+            "url": "http://localhost:80/ABP/memory/index.php",
             "webRoot": "${workspaceFolder}"
         }
-        
+
     ]
 }
