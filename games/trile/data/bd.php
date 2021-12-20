@@ -22,7 +22,7 @@
         
         $conexion = openBd();
 
-        $sentenciaText = "select * from usuario_juego where id_juego = " . strval($idTrile);
+        $sentenciaText = "select * from usuario_juego where id_juego = " . strval($idTrile) . " and puntuacion > 0 ORDER BY puntuacion desc LIMIT 10";
 
         $sentencia = $conexion->prepare($sentenciaText);
         $sentencia->execute();

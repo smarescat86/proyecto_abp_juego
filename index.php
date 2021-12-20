@@ -114,8 +114,8 @@ $_SESSION['backLandingPage'] = false;
             <div id="titulo" class="col text-light text-center position-absolute mt-4 pt-4">
                 <h1 class="text-capitalize align-middle mt-4 pt-4"><?php echo $lang["titulo"] ?></h1>
                 <div class="divisor-principal">
-                  <div class="divider-custom-linea""></div>
-                  <div class="divider-custom-icono"><img src="./media/codigoqr-blanco.PNG" draggable="false" alt=""></div>
+                  <div class="divider-custom-linea"></div>
+                  <div class="divider-custom-icono"><img src="./media/codigoqr-nuevoBlanco.PNG" draggable="false" alt=""></div>
                   <div class="divider-custom-linea"></div>
                 </div>
                 

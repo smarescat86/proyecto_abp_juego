@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php  $count = 0; ?>
+                    <?php  $count = 1; ?>
                     <?php foreach($datosTabla as $datoTabla) { ?>
                         <tr>
                         <th scope="row"><?php echo $count++?></th>

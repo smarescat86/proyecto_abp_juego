@@ -54,7 +54,7 @@
             </button>
             
 
-            <div class="salir"><a href="home.html">Salir</a></div>
+            <div class="salir"><a href="../../index.php">Salir</a></div>
 
         </div>
         
@@ -65,76 +65,6 @@
 
         </div>
     </div>
-
-    <!------------- MODAL ---------------->
-    <!-- <div id="myModal" class="modal">
-
-        <div class="modal-content">
-
-            <div class="modal-body">
-
-              <div class="modal-left">
-                <h2 id="modal-texto"></h2>
-              </div>
-                
-                <div class="modal-right">
-                  <h2><img src="./media/trofeo.png" alt="" height="20px" width="20px"> Ranking <img src="./media/trofeo.png" alt="" height="20px" width="20px"></h2>
-                  <table class="tabla">
-                    <tr class="titulos-tabla">
-                      <th>Nick</th>
-                      <th>Ciclos</th>
-                      <th>Tiempo</th>
-                    </tr>
-                    <tr>
-                      <td> <?php 
-                        //echo selectNickNameId(1); //poner session id usuario;
-                       ?> </td>
-                      <td>4</td>
-                      <td>90 sec</td>
-                    </tr>
-                    <tr>
-                      <td>Andres</td>
-                      <td>4</td>
-                      <td>90 sec</td>
-                    </tr>
-                    <tr>
-                      <td>Andres</td>
-                      <td>4</td>
-                      <td>90 sec</td>
-                    </tr>
-                    <tr>
-                      <td>Andres</td>
-                      <td>4</td>
-                      <td>90 sec</td>
-                    </tr>
-                    <tr>
-                      <td>Andres</td>
-                      <td>4</td>
-                      <td>90 sec</td>
-                    </tr>
-                    <tr class="jugador-tabla">
-                      <td>Andres</td>
-                      <td>4</td>
-                      <td>90 sec</td>
-                    </tr>
-                  </table>
-                </div>
-
-            </div>
-            
-            <div class="modal-footer">
-              <div>
-                <button class="boton-reset"><a href="play.html">Volver a jugar</a></button>
-              </div>
-              <div>
-                <button class="boton-back"><a href="home.html">Volver al principio</a></button>
-              </div>
-            </div>
-        </div>
-        
-      
-      </div> -->
-    <!------------------------------------>
     
     <script src="scripts/scripts.js"></script>
 </body>

@@ -49,7 +49,7 @@
             </button>
             
 
-            <div class="salir"><a href="home.html">Salir</a></div>
+            <div class="salir"><a href="../../index.php">Salir</a></div>
 
             <div class="container-ranking">
 <h1 class="ranking-titulo"><img src="media/trofeo.png" height="50px" width="50px" alt=""> RANKING <img src="media/trofeo.png" height="50px" width="50px" alt=""></h1>

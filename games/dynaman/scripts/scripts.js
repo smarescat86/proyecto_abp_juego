@@ -558,8 +558,8 @@ function cogerCiclo(coordenadas){
         document.getElementById("modal-texto").innerHTML = texto;
         modal.style.display = "block";*/
         clearInterval(tempo);
-        borrarMapa();
-        //subirDatos(puntuacion, tiempoTotal);
+        //borrarMapa();
+        subirDatos(puntuacion, tiempoTotal);
     }
 
     function borrarExplosion(){

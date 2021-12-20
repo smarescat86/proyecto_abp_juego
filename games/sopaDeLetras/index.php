@@ -1,7 +1,7 @@
 <?php 
   session_start();
   $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
-  var_dump($user);
+  //var_dump($user);
 ?>
 <!DOCTYPE html>
 <html lang="en">
